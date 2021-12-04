@@ -15,6 +15,7 @@
 		C6F10386275B142A0076F92A /* MutualAidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10385275B142A0076F92A /* MutualAidTests.m */; };
 		C6F10390275B142B0076F92A /* MutualAidUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1038F275B142B0076F92A /* MutualAidUITests.m */; };
 		C6F10392275B142B0076F92A /* MutualAidUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10391275B142B0076F92A /* MutualAidUITestsLaunchTests.m */; };
+		EE7EB1E7F9F11164C72F5479 /* libPods-MutualAid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MutualAid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.debug.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.debug.xcconfig"; sourceTree = "<group>"; };
+		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
 		C6F1036A275B14290076F92A /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7EB1E7F9F11164C72F5479 /* libPods-MutualAid.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084054BFF48D3CED73A97265 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49E12F0CAA2950B026399439 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */,
+				A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C6F1035D275B14290076F92A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +106,8 @@
 				C6F10384275B142A0076F92A /* MutualAidTests */,
 				C6F1038E275B142B0076F92A /* MutualAidUITests */,
 				C6F10367275B14290076F92A /* Products */,
+				49E12F0CAA2950B026399439 /* Pods */,
+				084054BFF48D3CED73A97265 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6F10395275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAid" */;
 			buildPhases = (
+				2687F24935B987EFD403CC26 /* [CP] Check Pods Manifest.lock */,
 				C6F10362275B14290076F92A /* Sources */,
 				C6F10363275B14290076F92A /* Frameworks */,
 				C6F10364275B14290076F92A /* Resources */,
@@ -267,6 +293,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2687F24935B987EFD403CC26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MutualAid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6F10362275B14290076F92A /* Sources */ = {
@@ -437,6 +488,7 @@
 		};
 		C6F10396275B142B0076F92A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +515,7 @@
 		};
 		C6F10397275B142B0076F92A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
