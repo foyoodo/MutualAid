@@ -39,6 +39,7 @@
 		41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MutualAid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.debug.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
+		C64DD98D275B3B0A00A13707 /* MutualAid.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutualAid.pch; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
 		C6F1036A275B14290076F92A /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 				7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */,
 				A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +156,7 @@
 				C6F10369275B14290076F92A /* MAAppDelegate.h */,
 				C6F1036A275B14290076F92A /* MAAppDelegate.m */,
 				C6F1037B275B142A0076F92A /* main.m */,
+				C64DD98D275B3B0A00A13707 /* MutualAid.pch */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -495,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MutualAid/Classes/MutualAid.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MutualAid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -522,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MutualAid/Classes/MutualAid.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MutualAid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
