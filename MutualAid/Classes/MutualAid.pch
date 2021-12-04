@@ -10,7 +10,26 @@
 
 #ifdef __OBJC__
 
-#import <Masonry/Masonry.h>
+#if __has_include(<UIKit/UIColor.h>)
+#   import "UIColor+FYExt.h"
+#endif
+
+#if __has_include(<UIKit/UIImage.h>)
+#   import "UIImage+FYExt.h"
+#endif
+
+#if __has_include(<UIKit/UIView.h>)
+#   import <Masonry/Masonry.h>
+#   import "UIView+FYExt.h"
+#endif
+
+#if __has_include(<UIKit/UIControl.h>)
+#   import "UIControl+FYExt.h"
+#endif
+
+#if __has_include(<UIKit/UIGestureRecognizer.h>)
+#   import "UIGestureRecognizer+FYExt.h"
+#endif
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
