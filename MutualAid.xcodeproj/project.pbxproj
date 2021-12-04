@@ -131,6 +131,16 @@
 			path = FYCategories;
 			sourceTree = "<group>";
 		};
+		C64DD9B5275B728C00A13707 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6F10375275B142A0076F92A /* Assets.xcassets */,
+				C6F10377275B142A0076F92A /* LaunchScreen.storyboard */,
+				C6F1037A275B142A0076F92A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C6F1035D275B14290076F92A = {
 			isa = PBXGroup;
 			children = (
@@ -159,9 +169,7 @@
 				C6F1039E275B17300076F92A /* Classes */,
 				C64DD9A5275B6C2900A13707 /* FYCategories */,
 				C6F103A1275B17E30076F92A /* Views */,
-				C6F1037A275B142A0076F92A /* Info.plist */,
-				C6F10375275B142A0076F92A /* Assets.xcassets */,
-				C6F10377275B142A0076F92A /* LaunchScreen.storyboard */,
+				C64DD9B5275B728C00A13707 /* Resources */,
 			);
 			path = MutualAid;
 			sourceTree = "<group>";
