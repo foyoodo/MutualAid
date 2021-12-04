@@ -8,6 +8,12 @@
 #ifndef __MUTUALAID_PCH__
 #define __MUTUALAID_PCH__
 
+#ifdef __OBJC__
 
+#import <Masonry/Masonry.h>
+
+#import <ReactiveObjC/ReactiveObjC.h>
+
+#endif /* __OBJC__ */
 
 #endif /* __MUTUALAID_PCH__ */

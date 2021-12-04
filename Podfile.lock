@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: bead9b605dc04f6fabe827a8263093a963e64c80
+PODS:
+  - Masonry (1.1.0)
+  - ReactiveObjC (3.1.1)
+
+DEPENDENCIES:
+  - Masonry (~> 1.1.0)
+  - ReactiveObjC (~> 3.1.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Masonry
+    - ReactiveObjC
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+
+PODFILE CHECKSUM: 9900ede16eb40a08e80687b0a3d6577537b86466
 
 COCOAPODS: 1.11.2
