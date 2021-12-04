@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
+		C6F10371275B14290076F92A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10370275B14290076F92A /* ViewController.m */; };
+		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
+		C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F10377275B142A0076F92A /* LaunchScreen.storyboard */; };
+		C6F1037C275B142A0076F92A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1037B275B142A0076F92A /* main.m */; };
+		C6F10386275B142A0076F92A /* MutualAidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10385275B142A0076F92A /* MutualAidTests.m */; };
+		C6F10390275B142B0076F92A /* MutualAidUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1038F275B142B0076F92A /* MutualAidUITests.m */; };
+		C6F10392275B142B0076F92A /* MutualAidUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10391275B142B0076F92A /* MutualAidUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6F10382275B142A0076F92A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6F1035E275B14290076F92A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6F10365275B14290076F92A;
+			remoteInfo = MutualAid;
+		};
+		C6F1038C275B142B0076F92A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6F1035E275B14290076F92A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6F10365275B14290076F92A;
+			remoteInfo = MutualAid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
+		C6F1036A275B14290076F92A /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
+		C6F1036F275B14290076F92A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C6F10370275B14290076F92A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C6F10375275B142A0076F92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6F10378275B142A0076F92A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C6F1037A275B142A0076F92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6F1037B275B142A0076F92A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C6F10381275B142A0076F92A /* MutualAidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MutualAidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F10385275B142A0076F92A /* MutualAidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAidTests.m; sourceTree = "<group>"; };
+		C6F1038B275B142A0076F92A /* MutualAidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MutualAidUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F1038F275B142B0076F92A /* MutualAidUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAidUITests.m; sourceTree = "<group>"; };
+		C6F10391275B142B0076F92A /* MutualAidUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAidUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6F10363275B14290076F92A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F1037E275B142A0076F92A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F10388275B142A0076F92A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6F1035D275B14290076F92A = {
+			isa = PBXGroup;
+			children = (
+				C6F10368275B14290076F92A /* MutualAid */,
+				C6F10384275B142A0076F92A /* MutualAidTests */,
+				C6F1038E275B142B0076F92A /* MutualAidUITests */,
+				C6F10367275B14290076F92A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6F10367275B14290076F92A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6F10366275B14290076F92A /* MutualAid.app */,
+				C6F10381275B142A0076F92A /* MutualAidTests.xctest */,
+				C6F1038B275B142A0076F92A /* MutualAidUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6F10368275B14290076F92A /* MutualAid */ = {
+			isa = PBXGroup;
+			children = (
+				C6F1039E275B17300076F92A /* Classes */,
+				C6F103A1275B17E30076F92A /* Views */,
+				C6F1037A275B142A0076F92A /* Info.plist */,
+				C6F10375275B142A0076F92A /* Assets.xcassets */,
+				C6F10377275B142A0076F92A /* LaunchScreen.storyboard */,
+			);
+			path = MutualAid;
+			sourceTree = "<group>";
+		};
+		C6F10384275B142A0076F92A /* MutualAidTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6F10385275B142A0076F92A /* MutualAidTests.m */,
+			);
+			path = MutualAidTests;
+			sourceTree = "<group>";
+		};
+		C6F1038E275B142B0076F92A /* MutualAidUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C6F1038F275B142B0076F92A /* MutualAidUITests.m */,
+				C6F10391275B142B0076F92A /* MutualAidUITestsLaunchTests.m */,
+			);
+			path = MutualAidUITests;
+			sourceTree = "<group>";
+		};
+		C6F1039E275B17300076F92A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C6F10369275B14290076F92A /* MAAppDelegate.h */,
+				C6F1036A275B14290076F92A /* MAAppDelegate.m */,
+				C6F1037B275B142A0076F92A /* main.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C6F103A1275B17E30076F92A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6F1036F275B14290076F92A /* ViewController.h */,
+				C6F10370275B14290076F92A /* ViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6F10365275B14290076F92A /* MutualAid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F10395275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAid" */;
+			buildPhases = (
+				C6F10362275B14290076F92A /* Sources */,
+				C6F10363275B14290076F92A /* Frameworks */,
+				C6F10364275B14290076F92A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MutualAid;
+			productName = MutualAid;
+			productReference = C6F10366275B14290076F92A /* MutualAid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C6F10380275B142A0076F92A /* MutualAidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F10398275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAidTests" */;
+			buildPhases = (
+				C6F1037D275B142A0076F92A /* Sources */,
+				C6F1037E275B142A0076F92A /* Frameworks */,
+				C6F1037F275B142A0076F92A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6F10383275B142A0076F92A /* PBXTargetDependency */,
+			);
+			name = MutualAidTests;
+			productName = MutualAidTests;
+			productReference = C6F10381275B142A0076F92A /* MutualAidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C6F1038A275B142A0076F92A /* MutualAidUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F1039B275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAidUITests" */;
+			buildPhases = (
+				C6F10387275B142A0076F92A /* Sources */,
+				C6F10388275B142A0076F92A /* Frameworks */,
+				C6F10389275B142A0076F92A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6F1038D275B142B0076F92A /* PBXTargetDependency */,
+			);
+			name = MutualAidUITests;
+			productName = MutualAidUITests;
+			productReference = C6F1038B275B142A0076F92A /* MutualAidUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6F1035E275B14290076F92A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					C6F10365275B14290076F92A = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C6F10380275B142A0076F92A = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C6F10365275B14290076F92A;
+					};
+					C6F1038A275B142A0076F92A = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C6F10365275B14290076F92A;
+					};
+				};
+			};
+			buildConfigurationList = C6F10361275B14290076F92A /* Build configuration list for PBXProject "MutualAid" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C6F1035D275B14290076F92A;
+			productRefGroup = C6F10367275B14290076F92A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6F10365275B14290076F92A /* MutualAid */,
+				C6F10380275B142A0076F92A /* MutualAidTests */,
+				C6F1038A275B142A0076F92A /* MutualAidUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C6F10364275B14290076F92A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */,
+				C6F10376275B142A0076F92A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F1037F275B142A0076F92A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F10389275B142A0076F92A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6F10362275B14290076F92A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F10371275B14290076F92A /* ViewController.m in Sources */,
+				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
+				C6F1037C275B142A0076F92A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F1037D275B142A0076F92A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F10386275B142A0076F92A /* MutualAidTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F10387275B142A0076F92A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F10390275B142B0076F92A /* MutualAidUITests.m in Sources */,
+				C6F10392275B142B0076F92A /* MutualAidUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6F10383275B142A0076F92A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6F10365275B14290076F92A /* MutualAid */;
+			targetProxy = C6F10382275B142A0076F92A /* PBXContainerItemProxy */;
+		};
+		C6F1038D275B142B0076F92A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6F10365275B14290076F92A /* MutualAid */;
+			targetProxy = C6F1038C275B142B0076F92A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C6F10377275B142A0076F92A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F10378275B142A0076F92A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C6F10393275B142B0076F92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C6F10394275B142B0076F92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6F10396275B142B0076F92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MutualAid/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C6F10397275B142B0076F92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MutualAid/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C6F10399275B142B0076F92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAidTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MutualAid.app/MutualAid";
+			};
+			name = Debug;
+		};
+		C6F1039A275B142B0076F92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAidTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MutualAid.app/MutualAid";
+			};
+			name = Release;
+		};
+		C6F1039C275B142B0076F92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAidUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MutualAid;
+			};
+			name = Debug;
+		};
+		C6F1039D275B142B0076F92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42LU364YZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAidUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MutualAid;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6F10361275B14290076F92A /* Build configuration list for PBXProject "MutualAid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F10393275B142B0076F92A /* Debug */,
+				C6F10394275B142B0076F92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F10395275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F10396275B142B0076F92A /* Debug */,
+				C6F10397275B142B0076F92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F10398275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F10399275B142B0076F92A /* Debug */,
+				C6F1039A275B142B0076F92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F1039B275B142B0076F92A /* Build configuration list for PBXNativeTarget "MutualAidUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F1039C275B142B0076F92A /* Debug */,
+				C6F1039D275B142B0076F92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6F1035E275B14290076F92A /* Project object */;
+}
