@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC656275C5B4300851257 /* MASearchViewController.m */; };
+		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
+		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
+		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
 		C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9A9275B6C2900A13707 /* UIControl+FYExt.m */; };
 		C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AA275B6C2900A13707 /* UIImage+FYExt.m */; };
 		C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AB275B6C2A00A13707 /* UIColor+FYExt.m */; };
 		C64DD9B3275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AC275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m */; };
 		C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AD275B6C2A00A13707 /* UIView+FYExt.m */; };
+		C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9B8275BA8BC00A13707 /* MATabBarController.m */; };
+		C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */; };
+		C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9C0275BB56D00A13707 /* MASearchBar.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
-		C6F10371275B14290076F92A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F10370275B14290076F92A /* ViewController.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
 		C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F10377275B142A0076F92A /* LaunchScreen.storyboard */; };
 		C6F1037C275B142A0076F92A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1037B275B142A0076F92A /* main.m */; };
@@ -44,6 +50,14 @@
 		41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MutualAid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.debug.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
+		C61FC655275C5B4300851257 /* MASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchViewController.h; sourceTree = "<group>"; };
+		C61FC656275C5B4300851257 /* MASearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchViewController.m; sourceTree = "<group>"; };
+		C61FC658275CCE3C00851257 /* MASearchAnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchAnimatedTransition.h; sourceTree = "<group>"; };
+		C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchAnimatedTransition.m; sourceTree = "<group>"; };
+		C61FC65B275CD9B100851257 /* MASearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchView.h; sourceTree = "<group>"; };
+		C61FC65C275CD9B100851257 /* MASearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchView.m; sourceTree = "<group>"; };
+		C61FC65E275CE04400851257 /* MASearchNavigationControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchNavigationControllerDelegate.h; sourceTree = "<group>"; };
+		C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchNavigationControllerDelegate.m; sourceTree = "<group>"; };
 		C64DD98D275B3B0A00A13707 /* MutualAid.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutualAid.pch; sourceTree = "<group>"; };
 		C64DD9A6275B6C2900A13707 /* UIColor+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FYExt.h"; sourceTree = "<group>"; };
 		C64DD9A7275B6C2900A13707 /* UIView+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExt.h"; sourceTree = "<group>"; };
@@ -55,11 +69,16 @@
 		C64DD9AD275B6C2A00A13707 /* UIView+FYExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYExt.m"; sourceTree = "<group>"; };
 		C64DD9AE275B6C2A00A13707 /* UIImage+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYExt.h"; sourceTree = "<group>"; };
 		C64DD9AF275B6C2A00A13707 /* UIControl+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+FYExt.h"; sourceTree = "<group>"; };
+		C64DD9B7275BA8BC00A13707 /* MATabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATabBarController.h; sourceTree = "<group>"; };
+		C64DD9B8275BA8BC00A13707 /* MATabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATabBarController.m; sourceTree = "<group>"; };
+		C64DD9BB275BB3E800A13707 /* MAHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAHomeViewController.h; sourceTree = "<group>"; };
+		C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAHomeViewController.m; sourceTree = "<group>"; };
+		C64DD9BF275BB56D00A13707 /* MASearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBar.h; sourceTree = "<group>"; };
+		C64DD9C0275BB56D00A13707 /* MASearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchBar.m; sourceTree = "<group>"; };
+		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
 		C6F1036A275B14290076F92A /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
-		C6F1036F275B14290076F92A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C6F10370275B14290076F92A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C6F10375275B142A0076F92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6F10378275B142A0076F92A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6F1037A275B142A0076F92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +160,42 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C64DD9B6275BA88200A13707 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C64DD9B7275BA8BC00A13707 /* MATabBarController.h */,
+				C64DD9B8275BA8BC00A13707 /* MATabBarController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C64DD9BA275BB3D300A13707 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C64DD9BB275BB3E800A13707 /* MAHomeViewController.h */,
+				C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C64DD9BE275BB51200A13707 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C61FC65B275CD9B100851257 /* MASearchView.h */,
+				C61FC65C275CD9B100851257 /* MASearchView.m */,
+				C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */,
+				C64DD9BF275BB56D00A13707 /* MASearchBar.h */,
+				C64DD9C0275BB56D00A13707 /* MASearchBar.m */,
+				C61FC655275C5B4300851257 /* MASearchViewController.h */,
+				C61FC656275C5B4300851257 /* MASearchViewController.m */,
+				C61FC658275CCE3C00851257 /* MASearchAnimatedTransition.h */,
+				C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */,
+				C61FC65E275CE04400851257 /* MASearchNavigationControllerDelegate.h */,
+				C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		C6F1035D275B14290076F92A = {
 			isa = PBXGroup;
 			children = (
@@ -205,8 +260,9 @@
 		C6F103A1275B17E30076F92A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C6F1036F275B14290076F92A /* ViewController.h */,
-				C6F10370275B14290076F92A /* ViewController.m */,
+				C64DD9BE275BB51200A13707 /* Search */,
+				C64DD9BA275BB3D300A13707 /* Home */,
+				C64DD9B6275BA88200A13707 /* TabBar */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,13 +422,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
+				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
-				C6F10371275B14290076F92A /* ViewController.m in Sources */,
+				C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */,
 				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
 				C6F1037C275B142A0076F92A /* main.m in Sources */,
+				C61FC65D275CD9B100851257 /* MASearchView.m in Sources */,
+				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
+				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,
+				C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */,
 				C64DD9B3275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -525,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -544,7 +606,7 @@
 				DEVELOPMENT_TEAM = 42LU364YZR;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MutualAid/Classes/MutualAid.pch";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MutualAid/Info.plist;
+				INFOPLIST_FILE = MutualAid/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -572,7 +634,7 @@
 				DEVELOPMENT_TEAM = 42LU364YZR;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MutualAid/Classes/MutualAid.pch";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MutualAid/Info.plist;
+				INFOPLIST_FILE = MutualAid/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

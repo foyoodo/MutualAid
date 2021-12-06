@@ -6,7 +6,7 @@
 //
 
 #import "MAAppDelegate.h"
-#import "ViewController.h"
+#import "MATabBarController.h"
 
 @interface MAAppDelegate ()
 
@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [ViewController new];
+    self.window.rootViewController = [MATabBarController new];
     [self.window makeKeyAndVisible];
     return YES;
 }

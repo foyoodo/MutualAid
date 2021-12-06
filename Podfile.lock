@@ -1,8 +1,10 @@
 PODS:
+  - FDFullscreenPopGesture (1.1)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
+  - FDFullscreenPopGesture (from `https://github.com/forkingdog/FDFullscreenPopGesture`)
   - Masonry (~> 1.1.0)
   - ReactiveObjC (~> 3.1.1)
 
@@ -11,10 +13,20 @@ SPEC REPOS:
     - Masonry
     - ReactiveObjC
 
+EXTERNAL SOURCES:
+  FDFullscreenPopGesture:
+    :git: https://github.com/forkingdog/FDFullscreenPopGesture
+
+CHECKOUT OPTIONS:
+  FDFullscreenPopGesture:
+    :commit: 44ddc103fd7ce7ffd5250b5a39ee69aca4465c95
+    :git: https://github.com/forkingdog/FDFullscreenPopGesture
+
 SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 9900ede16eb40a08e80687b0a3d6577537b86466
+PODFILE CHECKSUM: 95d6d87924bab476021d7e66cde59a2982a1e1f9
 
 COCOAPODS: 1.11.2
