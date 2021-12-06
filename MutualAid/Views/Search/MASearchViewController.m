@@ -7,8 +7,13 @@
 
 #import "MASearchViewController.h"
 #import "MASearchBar.h"
+#import "MASearchRecommendView.h"
+#import "MASearchResultView.h"
 
 @interface MASearchViewController ()
+
+@property (nonatomic, strong) MASearchRecommendView *searchRecommendView;
+@property (nonatomic, strong) MASearchResultView *searchResultView;
 
 @end
 
@@ -51,6 +56,22 @@
 
 - (void)searchBarDidCancel {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Lazy Load
+
+- (MASearchRecommendView *)searchRecommendView {
+    if (!_searchRecommendView) {
+        _searchRecommendView = [MASearchRecommendView new];
+    }
+    return _searchRecommendView;
+}
+
+- (MASearchResultView *)searchResultView {
+    if (!_searchResultView) {
+        _searchResultView = [MASearchResultView new];
+    }
+    return _searchResultView;
 }
 
 @end
