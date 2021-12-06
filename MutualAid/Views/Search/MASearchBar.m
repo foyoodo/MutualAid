@@ -69,7 +69,7 @@
 - (UIButton *)cancelButton {
     if (!_cancelButton) {
         _cancelButton = [UIButton new];
-        [_cancelButton setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Cancel" attributes:@{
+        [_cancelButton setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Cancel".localized attributes:@{
             NSFontAttributeName: [UIFont systemFontOfSize:13],
             NSForegroundColorAttributeName: [UIColor grayColor]
         }] forState:UIControlStateNormal];

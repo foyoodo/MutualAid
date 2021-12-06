@@ -31,7 +31,7 @@
 static inline UIViewController *tabBarItemWithName(NSString *name, NSString *image, NSString *selectedImage) {
     Class clz = NSClassFromString([NSString stringWithFormat:@"MA%@ViewController", name]);
     UIViewController *vc = [clz new] ?: [UIViewController new];
-    vc.title = name;
+    vc.title = name.localized;
     vc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

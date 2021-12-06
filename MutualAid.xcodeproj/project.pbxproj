@@ -13,6 +13,8 @@
 		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
 		C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35A275E15ED00AE98EC /* MASearchResultView.m */; };
 		C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35D275E16BC00AE98EC /* MASearchRecommendView.m */; };
+		C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C64AB370275E2A9E00AE98EC /* Localizable.strings */; };
+		C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB376275E2B7F00AE98EC /* NSString+MALocalized.m */; };
 		C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9A9275B6C2900A13707 /* UIControl+FYExt.m */; };
 		C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AA275B6C2900A13707 /* UIImage+FYExt.m */; };
 		C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9AB275B6C2A00A13707 /* UIColor+FYExt.m */; };
@@ -64,6 +66,10 @@
 		C64AB35A275E15ED00AE98EC /* MASearchResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchResultView.m; sourceTree = "<group>"; };
 		C64AB35C275E16BC00AE98EC /* MASearchRecommendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendView.h; sourceTree = "<group>"; };
 		C64AB35D275E16BC00AE98EC /* MASearchRecommendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchRecommendView.m; sourceTree = "<group>"; };
+		C64AB371275E2A9E00AE98EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C64AB373275E2AB800AE98EC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C64AB375275E2B7F00AE98EC /* NSString+MALocalized.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MALocalized.h"; sourceTree = "<group>"; };
+		C64AB376275E2B7F00AE98EC /* NSString+MALocalized.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MALocalized.m"; sourceTree = "<group>"; };
 		C64DD98D275B3B0A00A13707 /* MutualAid.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutualAid.pch; sourceTree = "<group>"; };
 		C64DD9A6275B6C2900A13707 /* UIColor+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FYExt.h"; sourceTree = "<group>"; };
 		C64DD9A7275B6C2900A13707 /* UIView+FYExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExt.h"; sourceTree = "<group>"; };
@@ -139,6 +145,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C64AB374275E2B2900AE98EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C64DD9A5275B6C2900A13707 /* FYCategories */,
+				C64AB378275E2B8900AE98EC /* MAExt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C64AB378275E2B8900AE98EC /* MAExt */ = {
+			isa = PBXGroup;
+			children = (
+				C64AB375275E2B7F00AE98EC /* NSString+MALocalized.h */,
+				C64AB376275E2B7F00AE98EC /* NSString+MALocalized.m */,
+			);
+			path = MAExt;
+			sourceTree = "<group>";
+		};
 		C64DD9A5275B6C2900A13707 /* FYCategories */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +186,7 @@
 				C6F10375275B142A0076F92A /* Assets.xcassets */,
 				C6F10377275B142A0076F92A /* LaunchScreen.storyboard */,
 				C6F1037A275B142A0076F92A /* Info.plist */,
+				C64AB370275E2A9E00AE98EC /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -232,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				C6F1039E275B17300076F92A /* Classes */,
-				C64DD9A5275B6C2900A13707 /* FYCategories */,
 				C6F103A1275B17E30076F92A /* Views */,
+				C64AB374275E2B2900AE98EC /* Extensions */,
 				C64DD9B5275B728C00A13707 /* Resources */,
 			);
 			path = MutualAid;
@@ -363,6 +388,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C6F1035D275B14290076F92A;
 			productRefGroup = C6F10367275B14290076F92A /* Products */;
@@ -382,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */,
+				C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */,
 				C6F10376275B142A0076F92A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
@@ -484,6 +512,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C64AB370275E2A9E00AE98EC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C64AB371275E2A9E00AE98EC /* Base */,
+				C64AB373275E2AB800AE98EC /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C6F10377275B142A0076F92A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -499,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -558,6 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

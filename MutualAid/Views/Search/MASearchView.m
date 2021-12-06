@@ -34,7 +34,7 @@
             make.right.equalTo(self).offset(-12);
         }];
 
-        textField.placeholder = @"Search";
+        textField.placeholder = @"Search".localized;
     }
     return self;
 }
