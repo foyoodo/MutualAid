@@ -33,7 +33,7 @@
             make.bottom.equalTo(self).offset(-8);
             make.height.equalTo(@(36));
         }];
-        [searchView addTarget:self action:@selector(searchBarDidClick) forControlEvents:UIControlEventTouchUpInside];
+        [searchView addTarget:self action:@selector(searchViewDidClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -52,7 +52,7 @@
 
 #pragma mark - Private Mehtods
 
-- (void)searchBarDidClick {
+- (void)searchViewDidClick {
     if (self.delegate && [self.delegate respondsToSelector:@selector(searchBarDidClick)]) {
         [self.delegate searchBarDidClick];
     }

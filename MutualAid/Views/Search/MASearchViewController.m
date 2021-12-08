@@ -27,7 +27,7 @@
     [super viewDidLoad];
 
     self.fd_prefersNavigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
+    self.view.backgroundColor = [UIColor systemGray5Color];
 
     MASearchBar *searchBar = [MASearchBar new];
     [self.view addSubview:(_searchBar = searchBar)];

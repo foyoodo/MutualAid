@@ -7,6 +7,14 @@
 
 #import "MASearchView.h"
 
+@interface MASearchView ()
+
+@property (nonatomic, strong) UIView *containerView;
+
+@property (nonatomic, strong) MASConstraint *containerViewHorizontalConstraint;
+
+@end
+
 @implementation MASearchView
 
 #pragma mark - Init Methods
@@ -17,21 +25,33 @@
         self.layer.borderColor = self.backgroundColor.CGColor;
         self.layer.borderWidth = 1.0;
 
+        UIView *containerView = [UIView new];
+        containerView.userInteractionEnabled = NO;
+        [self addSubview:(_containerView = containerView)];
+        [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.centerY.equalTo(self);
+            self.containerViewHorizontalConstraint = make.centerX.equalTo(self);
+        }];
+
         UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageWithSymbol:@"magnifyingglass"]];
-        [self addSubview:(_icon = icon)];
+        [containerView addSubview:(_icon = icon)];
         [icon mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self);
-            make.left.equalTo(self).offset(120);
+            make.top.greaterThanOrEqualTo(containerView);
+            make.left.equalTo(containerView).offset(12);
+            make.bottom.lessThanOrEqualTo(containerView);
             make.width.height.equalTo(@(20));
+            make.centerY.equalTo(containerView);
         }];
 
         UITextField *textField = [UITextField new];
         textField.userInteractionEnabled = NO;
-        [self addSubview:(_textField = textField)];
+        [containerView addSubview:(_textField = textField)];
         [textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(icon);
+            make.top.greaterThanOrEqualTo(containerView);
             make.left.equalTo(icon.mas_right).offset(8);
-            make.right.equalTo(self).offset(-12);
+            make.right.equalTo(containerView).offset(-12);
+            make.bottom.lessThanOrEqualTo(containerView);
+            make.centerY.equalTo(icon);
         }];
 
         textField.placeholder = @"Search".localized;
@@ -42,11 +62,12 @@
 #pragma mark - Public Methods
 
 - (void)prepareForTransitionIfShow:(BOOL)show {
-    [self.icon mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self.containerViewHorizontalConstraint uninstall];
         if (show) {
-            make.left.equalTo(self).offset(12);
+            self.containerViewHorizontalConstraint = make.left.right.equalTo(self);
         } else {
-            make.left.equalTo(self).offset(120);
+            self.containerViewHorizontalConstraint = make.centerX.equalTo(self);
         }
     }];
 }
