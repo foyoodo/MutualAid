@@ -24,6 +24,7 @@
 		C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */; };
 		C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9C0275BB56D00A13707 /* MASearchBar.m */; };
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
+		C6938B722760E6CF00F466DA /* MAPicListCardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
 		C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F10377275B142A0076F92A /* LaunchScreen.storyboard */; };
@@ -90,6 +91,8 @@
 		C64DD9C0275BB56D00A13707 /* MASearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchBar.m; sourceTree = "<group>"; };
 		C6938B6927609CC400F466DA /* MAStickyBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAStickyBaseViewController.h; sourceTree = "<group>"; };
 		C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyBaseViewController.m; sourceTree = "<group>"; };
+		C6938B702760E6CF00F466DA /* MAPicListCardViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListCardViewCell.h; sourceTree = "<group>"; };
+		C6938B712760E6CF00F466DA /* MAPicListCardViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardViewCell.m; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 			children = (
 				C64DD9BB275BB3E800A13707 /* MAHomeViewController.h */,
 				C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */,
+				C6938B702760E6CF00F466DA /* MAPicListCardViewCell.h */,
+				C6938B712760E6CF00F466DA /* MAPicListCardViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */,
 				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
+				C6938B722760E6CF00F466DA /* MAPicListCardViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
 				C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */,
