@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) MASearchView *searchView;
 
-@property (nonatomic, weak) id<MASearchBarDelegate> delegate;
+@property (nonatomic, assign, readonly) CGFloat height;
 
-@property (nonatomic, copy) void (^didClickBlock)(void);
+@property (nonatomic, weak) id<MASearchBarDelegate> delegate;
 
 @end
 

@@ -27,9 +27,9 @@
         searchView.layer.cornerRadius = 18;
         [self addSubview:(_searchView = searchView)];
         [searchView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self).offset(8);
-            make.left.equalTo(self).offset(18);
-            self.searchViewHorizontalConstraint = make.right.equalTo(self).offset(-18);
+            make.top.equalTo(self).offset(12);
+            make.left.equalTo(self).offset(12);
+            self.searchViewHorizontalConstraint = make.right.equalTo(self).offset(-12);
             make.bottom.equalTo(self).offset(-8);
             make.height.equalTo(@(36));
         }];
@@ -45,9 +45,13 @@
     [self.searchView prepareForTransitionIfShow:YES];
     [self.searchView mas_updateConstraints:^(MASConstraintMaker *make) {
         [self.searchViewHorizontalConstraint uninstall];
-        self.searchViewHorizontalConstraint = make.right.equalTo(self.cancelButton.mas_left).offset(-8);
+        self.searchViewHorizontalConstraint = make.right.equalTo(self.cancelButton.mas_left).offset(-4);
     }];
     [self layoutIfNeeded];
+}
+
+- (CGFloat)height {
+    return 12 + 36 + 8;
 }
 
 #pragma mark - Private Mehtods
@@ -75,7 +79,7 @@
         }] forState:UIControlStateNormal];
         [self addSubview:_cancelButton];
         [_cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self);
+            make.centerY.equalTo(self.searchView);
             make.right.equalTo(self).offset(-8);
             make.width.equalTo(@(44));
             make.height.equalTo(self.searchView);

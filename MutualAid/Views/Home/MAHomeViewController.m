@@ -10,7 +10,9 @@
 #import "MASearchViewController.h"
 #import "MASearchNavigationControllerDelegate.h"
 
-@interface MAHomeViewController ()
+@interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *mainTableView;
 
 @property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
 
@@ -30,34 +32,85 @@
 
     self.navigationController.delegate = self.navigationControllerDelegate;
 
-    UIScrollView *scrollView = [UIScrollView new];
-    [self.view addSubview:scrollView];
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UITableView *mainTableView = [UITableView new];
+    mainTableView.backgroundColor = [UIColor systemBlueColor];
+    mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (@available(iOS 15.0, *)) {
+        mainTableView.sectionHeaderTopPadding = 0;
+    }
+    mainTableView.delegate = self;
+    mainTableView.dataSource = self;
+    [self.view addSubview:(_mainTableView = mainTableView)];
+    [mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
 
-    UIView *contentView = [UIView new];
-    [scrollView addSubview:contentView];
-    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scrollView);
-        make.width.equalTo(scrollView);
-        make.height.equalTo(@(900));
-    }];
-
-    MASearchBar *searchBar = [MASearchBar new];
-    [contentView addSubview:(_searchBar = searchBar)];
-    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(contentView.mas_safeAreaLayoutGuideTop).offset(48);
-        make.left.right.equalTo(contentView);
-    }];
-    [searchBar setDelegate:self];
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
+    tableHeaderView.backgroundColor = [UIColor systemBlueColor];
+    mainTableView.tableHeaderView = tableHeaderView;
 }
 
-- (MASearchNavigationControllerDelegate *)navigationControllerDelegate {
-    if (!_navigationControllerDelegate) {
-        _navigationControllerDelegate = [MASearchNavigationControllerDelegate new];
+- (void)viewDidLayoutSubviews {
+    [self.searchBar roundedWithRadius:15 corner:UIRectCornerTopLeft | UIRectCornerTopRight];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.mainTableView) {
+        static BOOL flag = YES;
+        if (scrollView.contentOffset.y >= self.mainTableView.tableHeaderView.frame.size.height - self.mainTableView.safeAreaInsets.top) {
+            if (flag) {
+                flag = NO;
+                [UIView animateWithDuration:0.1 animations:^{
+                    self.mainTableView.backgroundColor = [UIColor systemGroupedBackgroundColor];
+                    self.mainTableView.tableHeaderView.backgroundColor = [UIColor systemGroupedBackgroundColor];
+                }];
+            }
+        } else {
+            flag = YES;
+            [UIView animateWithDuration:0.1 animations:^{
+                self.mainTableView.backgroundColor = [UIColor systemBlueColor];
+                self.mainTableView.tableHeaderView.backgroundColor = [UIColor systemBlueColor];
+            }];
+        }
     }
-    return _navigationControllerDelegate;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 1000;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.searchBar.height;
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.searchBar;
+    }
+    return nil;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [UITableViewCell new];
+    cell.backgroundColor = [UIColor systemGroupedBackgroundColor];
+    return cell;
 }
 
 #pragma mark - MASearchBarDelegate
@@ -66,6 +119,24 @@
     MASearchViewController *searchVC = [MASearchViewController new];
     searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
+}
+
+#pragma mark - Lazy Load
+
+- (MASearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = [MASearchBar new];
+        _searchBar.backgroundColor = [UIColor systemGroupedBackgroundColor];
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
+}
+
+- (MASearchNavigationControllerDelegate *)navigationControllerDelegate {
+    if (!_navigationControllerDelegate) {
+        _navigationControllerDelegate = [MASearchNavigationControllerDelegate new];
+    }
+    return _navigationControllerDelegate;
 }
 
 @end
