@@ -10,6 +10,7 @@
 #import "MASearchViewController.h"
 #import "MASearchNavigationControllerDelegate.h"
 #import "MAPicListCardViewCell.h"
+#import "MASectionHeaderView.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -88,7 +89,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 300;
+        return 200;
+    } else if (indexPath.section == 1) {
+        return 100;
     }
     return UITableViewAutomaticDimension;
 }
@@ -97,18 +100,22 @@
     if (section == 0) {
         return self.searchBar.height;
     }
-    return 0;
+    return [MASectionHeaderView height];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return self.searchBar;
+    } else if (section == 1) {
+        return [[MASectionHeaderView alloc] initWithTitle:@"Hotspot Information".localized];
+    } else if (section == 2) {
+        return [[MASectionHeaderView alloc] initWithTitle:@"Offline Course".localized];
     }
-    return nil;
+    return [[MASectionHeaderView alloc] initWithTitle:@"None".localized];
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 || indexPath.section == 1) {
         return NO;
     }
     return YES;
@@ -118,31 +125,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (tableView == self.mainTableView) {
-        return 2;
+        return 3;
     }
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return 1;
-    } else if (section == 1) {
+    } else if (section == 2) {
         return self.picListData.count;
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        UITableViewCell *cell = [UITableViewCell new];
-        cell.backgroundColor = [UIColor systemGroupedBackgroundColor];
-        return cell;
-    } else if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         MAPicListCardViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardViewCell class])];
-        cell.title = [NSString stringWithFormat:@"Title %zd", indexPath.row];
+        cell.title = [NSString stringWithFormat:@"%@ %zd", @"Title".localized, indexPath.row];
         return cell;
     }
-    return [UITableViewCell new];
+    UITableViewCell *cell = [UITableViewCell new];
+    cell.backgroundColor = [UIColor systemGroupedBackgroundColor];
+    return cell;
 }
 
 #pragma mark - MASearchBarDelegate

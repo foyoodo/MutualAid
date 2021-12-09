@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB952761F59900C5E5AE /* MASectionHeaderView.m */; };
 		C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC656275C5B4300851257 /* MASearchViewController.m */; };
 		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
@@ -56,6 +57,8 @@
 		41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MutualAid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.debug.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
+		C605DB942761F59900C5E5AE /* MASectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASectionHeaderView.h; sourceTree = "<group>"; };
+		C605DB952761F59900C5E5AE /* MASectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASectionHeaderView.m; sourceTree = "<group>"; };
 		C61FC655275C5B4300851257 /* MASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchViewController.h; sourceTree = "<group>"; };
 		C61FC656275C5B4300851257 /* MASearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchViewController.m; sourceTree = "<group>"; };
 		C61FC658275CCE3C00851257 /* MASearchAnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchAnimatedTransition.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */,
 				C6938B702760E6CF00F466DA /* MAPicListCardViewCell.h */,
 				C6938B712760E6CF00F466DA /* MAPicListCardViewCell.m */,
+				C605DB942761F59900C5E5AE /* MASectionHeaderView.h */,
+				C605DB952761F59900C5E5AE /* MASectionHeaderView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				C6F1037C275B142A0076F92A /* main.m in Sources */,
 				C61FC65D275CD9B100851257 /* MASearchView.m in Sources */,
 				C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */,
+				C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */,
 				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
 				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,
 				C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */,

@@ -6,8 +6,12 @@
   
 */
 
+"None"="None";
+"Title"="Title";
 "Cancel"="Cancel";
 "Home"="Home";
 "Adress"="Adress";
 "Mine"="Mine";
 "Search"="Search";
+"Hotspot Information"="Hotspot Information";
+"Offline Course"="Offline Course";
