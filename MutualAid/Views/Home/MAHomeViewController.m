@@ -15,6 +15,8 @@
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, strong) UIView *safeAreaTopMaskView;
+
 @property (nonatomic, strong) UITableView *mainTableView;
 
 @property (nonatomic, strong) MAHotNewsView *hotNewsView;
@@ -40,7 +42,7 @@
     self.navigationController.delegate = self.navigationControllerDelegate;
 
     UITableView *mainTableView = [UITableView new];
-    mainTableView.backgroundColor = [UIColor systemBlueColor];
+    mainTableView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (@available(iOS 15.0, *)) {
         mainTableView.sectionHeaderTopPadding = 0;
@@ -55,7 +57,7 @@
     }];
 
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
-    tableHeaderView.backgroundColor = [UIColor systemBlueColor];
+    tableHeaderView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     mainTableView.tableHeaderView = tableHeaderView;
 
     [mainTableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
@@ -66,6 +68,14 @@
         make.top.equalTo(mainTableView).offset(388 + 4);
         make.left.equalTo(mainTableView).offset(12);
         make.width.equalTo(mainTableView).offset(-24);
+    }];
+
+    UIView *safeAreaTopMaskView = [UIView new];
+    safeAreaTopMaskView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:(_safeAreaTopMaskView = safeAreaTopMaskView)];
+    [safeAreaTopMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideTop);
     }];
 }
 
@@ -84,14 +94,18 @@
                 [UIView animateWithDuration:0.1 animations:^{
                     self.mainTableView.backgroundColor = [UIColor systemGroupedBackgroundColor];
                     self.mainTableView.tableHeaderView.backgroundColor = [UIColor systemGroupedBackgroundColor];
+                    self.safeAreaTopMaskView.backgroundColor = [UIColor systemGroupedBackgroundColor];
                 }];
+                self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
             }
         } else {
             flag = YES;
             [UIView animateWithDuration:0.1 animations:^{
-                self.mainTableView.backgroundColor = [UIColor systemBlueColor];
-                self.mainTableView.tableHeaderView.backgroundColor = [UIColor systemBlueColor];
+                self.mainTableView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+                self.mainTableView.tableHeaderView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+                self.safeAreaTopMaskView.backgroundColor = [UIColor clearColor];
             }];
+            self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
     }
 }
@@ -190,7 +204,7 @@
 - (NSMutableArray *)picListData {
     if (!_picListData) {
         _picListData = [NSMutableArray array];
-        [_picListData addObjectsFromArray:@[@"0",@"1", @"2", @"3", @"4"].mutableCopy];
+        [_picListData addObjectsFromArray:@[@"0",@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"].mutableCopy];
     }
     return _picListData;
 }
