@@ -10,6 +10,7 @@
 		C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB952761F59900C5E5AE /* MASectionHeaderView.m */; };
 		C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */; };
 		C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */; };
+		C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DBA3276242E700C5E5AE /* MANavigationBar.m */; };
 		C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC656275C5B4300851257 /* MASearchViewController.m */; };
 		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
@@ -65,6 +66,8 @@
 		C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAHotNewsView.m; sourceTree = "<group>"; };
 		C605DB9B2762002B00C5E5AE /* MAHotNewsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAHotNewsCollectionViewCell.h; sourceTree = "<group>"; };
 		C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAHotNewsCollectionViewCell.m; sourceTree = "<group>"; };
+		C605DBA2276242E700C5E5AE /* MANavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationBar.h; sourceTree = "<group>"; };
+		C605DBA3276242E700C5E5AE /* MANavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationBar.m; sourceTree = "<group>"; };
 		C61FC655275C5B4300851257 /* MASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchViewController.h; sourceTree = "<group>"; };
 		C61FC656275C5B4300851257 /* MASearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchViewController.m; sourceTree = "<group>"; };
 		C61FC658275CCE3C00851257 /* MASearchAnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchAnimatedTransition.h; sourceTree = "<group>"; };
@@ -167,6 +170,15 @@
 				C605DB952761F59900C5E5AE /* MASectionHeaderView.m */,
 			);
 			path = SectionHeader;
+			sourceTree = "<group>";
+		};
+		C605DB9E276241FF00C5E5AE /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C605DBA2276242E700C5E5AE /* MANavigationBar.h */,
+				C605DBA3276242E700C5E5AE /* MANavigationBar.m */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		C64AB374275E2B2900AE98EC /* Extensions */ = {
@@ -335,6 +347,7 @@
 		C6F103A1275B17E30076F92A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C605DB9E276241FF00C5E5AE /* NavigationBar */,
 				C6938B6827609C6300F466DA /* Base */,
 				C64DD9BE275BB51200A13707 /* Search */,
 				C64DD9BA275BB3D300A13707 /* Home */,
@@ -512,6 +525,7 @@
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
+				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
 				C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */,
 				C6F1037C275B142A0076F92A /* main.m in Sources */,
 				C61FC65D275CD9B100851257 /* MASearchView.m in Sources */,

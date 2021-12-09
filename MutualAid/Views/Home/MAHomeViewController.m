@@ -12,6 +12,7 @@
 #import "MAPicListCardTableViewCell.h"
 #import "MASectionHeaderView.h"
 #import "MAHotNewsView.h"
+#import "MANavigationBar.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -56,9 +57,9 @@
         make.edges.equalTo(self.view);
     }];
 
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
-    tableHeaderView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
-    mainTableView.tableHeaderView = tableHeaderView;
+    MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
+    navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+    mainTableView.tableHeaderView = navigationBar;
 
     [mainTableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
 
