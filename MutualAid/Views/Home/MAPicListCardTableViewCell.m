@@ -1,13 +1,13 @@
 //
-//  MAPicListCardViewCell.m
+//  MAPicListCardTableViewCell.m
 //  MutualAid
 //
 //  Created by foyoodo on 2021/12/8.
 //
 
-#import "MAPicListCardViewCell.h"
+#import "MAPicListCardTableViewCell.h"
 
-@interface MAPicListCardViewCell ()
+@interface MAPicListCardTableViewCell ()
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIImageView *imageView;
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation MAPicListCardViewCell
+@implementation MAPicListCardTableViewCell
 
 @synthesize imageView = _imageView;
 

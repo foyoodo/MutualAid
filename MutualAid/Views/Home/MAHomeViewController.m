@@ -9,12 +9,15 @@
 #import "MASearchBar.h"
 #import "MASearchViewController.h"
 #import "MASearchNavigationControllerDelegate.h"
-#import "MAPicListCardViewCell.h"
+#import "MAPicListCardTableViewCell.h"
 #import "MASectionHeaderView.h"
+#import "MAHotNewsView.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
+
+@property (nonatomic, strong) MAHotNewsView *hotNewsView;
 
 @property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
 
@@ -55,7 +58,15 @@
     tableHeaderView.backgroundColor = [UIColor systemBlueColor];
     mainTableView.tableHeaderView = tableHeaderView;
 
-    [mainTableView registerClass:[MAPicListCardViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardViewCell class])];
+    [mainTableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
+
+    MAHotNewsView *hotNewsView = [MAHotNewsView new];
+    [mainTableView addSubview:(_hotNewsView = hotNewsView)];
+    [hotNewsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(mainTableView).offset(388 + 4);
+        make.left.equalTo(mainTableView).offset(12);
+        make.width.equalTo(mainTableView).offset(-24);
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -91,7 +102,7 @@
     if (indexPath.section == 0) {
         return 200;
     } else if (indexPath.section == 1) {
-        return 100;
+        return [MAHotNewsView height];
     }
     return UITableViewAutomaticDimension;
 }
@@ -107,7 +118,7 @@
     if (section == 0) {
         return self.searchBar;
     } else if (section == 1) {
-        return [[MASectionHeaderView alloc] initWithTitle:@"Hotspot Information".localized];
+        return [[MASectionHeaderView alloc] initWithTitle:@"Hot News".localized];
     } else if (section == 2) {
         return [[MASectionHeaderView alloc] initWithTitle:@"Offline Course".localized];
     }
@@ -141,7 +152,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
-        MAPicListCardViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardViewCell class])];
+        MAPicListCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
         cell.title = [NSString stringWithFormat:@"%@ %zd", @"Title".localized, indexPath.row];
         return cell;
     }

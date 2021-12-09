@@ -1,5 +1,5 @@
 //
-//  MAPicListCardViewCell.h
+//  MAPicListCardTableViewCell.h
 //  MutualAid
 //
 //  Created by foyoodo on 2021/12/8.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAPicListCardViewCell : UITableViewCell
+@interface MAPicListCardTableViewCell : UITableViewCell
 
 @property (nonatomic, copy) NSString *title;
 
