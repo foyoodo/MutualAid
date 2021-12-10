@@ -62,6 +62,10 @@
     navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     mainTableView.tableHeaderView = navigationBar;
 
+    UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 8)];
+    tableFooterView.backgroundColor = [UIColor systemGroupedBackgroundColor];
+    mainTableView.tableFooterView = tableFooterView;
+
     [mainTableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
 
     MAHotNewsView *hotNewsView = [MAHotNewsView new];

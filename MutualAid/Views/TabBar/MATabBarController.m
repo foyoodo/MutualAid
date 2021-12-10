@@ -24,6 +24,10 @@
         tabBarItemWithName(@"Mine", @"mine_normal", @"mine_highlight")
     ];
     self.delegate = self;
+
+    if (@available(iOS 15.0, *)) {
+        self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance;
+    }
 }
 
 #pragma mark - Private Methods
