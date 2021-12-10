@@ -6,6 +6,7 @@
 //
 
 #import "MAHotNewsCollectionViewCell.h"
+#import "MAPicListModel.h"
 
 @interface MAHotNewsCollectionViewCell ()
 
@@ -22,8 +23,9 @@
     if (self = [super initWithFrame:frame]) {
 
         UIImageView *imageView = [UIImageView new];
-        imageView.backgroundColor = [UIColor systemRedColor];
         imageView.layer.cornerRadius = 4;
+        imageView.layer.masksToBounds = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:(_imageView = imageView)];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(12);
@@ -33,7 +35,7 @@
         }];
 
         UILabel *titleLabel = [UILabel new];
-        titleLabel.font = [UIFont systemFontOfSize:13];
+        titleLabel.font = [UIFont systemFontOfSize:12];
         titleLabel.numberOfLines = 2;
         [self.contentView addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -47,16 +49,13 @@
 
 #pragma mark - Public Methods
 
-- (NSString *)title {
-    return self.titleLabel.text;
-}
-
-- (void)setTitle:(NSString *)title {
-    self.titleLabel.text = title;
-}
-
 + (CGSize)itemSize {
-    return CGSizeMake(160, 80 + 36 + 24);
+    return CGSizeMake(160, 80 + 30 + 24);
+}
+
+- (void)setData:(MAPicListModel *)cellModel {
+    [self.titleLabel setText:cellModel.title];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:cellModel.picUrl]];
 }
 
 @end

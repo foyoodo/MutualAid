@@ -6,12 +6,15 @@
 //
 
 #import "MAPicListCardTableViewCell.h"
+#import "MAPicListModel.h"
 
 @interface MAPicListCardTableViewCell ()
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) MAPicListModel *cellModel;
 
 @end
 
@@ -37,8 +40,9 @@
         }];
 
         UIImageView *imageView = [UIImageView new];
-        imageView.backgroundColor = [UIColor systemRedColor];
         imageView.layer.cornerRadius = 8;
+        imageView.layer.masksToBounds = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         [containerView addSubview:(_imageView = imageView)];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.equalTo(containerView).offset(8);
@@ -58,6 +62,13 @@
     return self;
 }
 
+#pragma mark - Public Methods
+
+- (void)setData:(MAPicListModel *)cellModel {
+    [self.titleLabel setText:cellModel.title];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:cellModel.picUrl]];
+}
+
 #pragma mark - Override
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
@@ -70,16 +81,6 @@
             self.containerView.backgroundColor = [UIColor whiteColor];
         }
     }];
-}
-
-#pragma mark - Getter & Setter
-
-- (NSString *)title {
-    return self.titleLabel.text;
-}
-
-- (void)setTitle:(NSString *)title {
-    self.titleLabel.text = title;
 }
 
 @end

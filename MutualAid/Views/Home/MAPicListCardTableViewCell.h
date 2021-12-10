@@ -9,9 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MAPicListModel;
+
 @interface MAPicListCardTableViewCell : UITableViewCell
 
-@property (nonatomic, copy) NSString *title;
+- (void)setData:(MAPicListModel *)cellModel;
 
 @end
 

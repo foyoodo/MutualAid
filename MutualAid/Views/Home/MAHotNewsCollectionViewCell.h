@@ -9,9 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MAPicListModel;
+
 @interface MAHotNewsCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSString *title;
+- (void)setData:(MAPicListModel *)cellModel;
 
 @property (nonatomic, assign, class, readonly) CGSize itemSize;
 

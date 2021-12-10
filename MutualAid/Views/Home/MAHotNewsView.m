@@ -7,12 +7,13 @@
 
 #import "MAHotNewsView.h"
 #import "MAHotNewsCollectionViewCell.h"
+#import "MAPicListModel.h"
 
 @interface MAHotNewsView () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) NSMutableArray *dataSourceArray;
+@property (nonatomic, strong) NSMutableArray<MAPicListModel *> *dataSourceArray;
 
 @end
 
@@ -64,21 +65,22 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MAHotNewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MAHotNewsCollectionViewCell class]) forIndexPath:indexPath];
-    NSMutableString *mutableString = [NSMutableString stringWithString:[NSString stringWithFormat:@"%@ %zd", @"Title".localized, indexPath.item]];
-    int n = arc4random() % 4;
-    for (int i = 0; i < n; ++i) {
-        [mutableString appendString:[mutableString mutableCopy]];
-    }
-    cell.title = mutableString;
+    [cell setData:[self.dataSourceArray objectAtIndex:indexPath.item]];
     return cell;
 }
 
 #pragma mark - Lazy Load
 
-- (NSMutableArray *)dataSourceArray {
+- (NSMutableArray<MAPicListModel *> *)dataSourceArray {
     if (!_dataSourceArray) {
         _dataSourceArray = [NSMutableArray array];
-        [_dataSourceArray addObjectsFromArray:@[@"0",@"1", @"2", @"3", @"4"].mutableCopy];
+        [_dataSourceArray addObjectsFromArray:@[
+            [MAPicListModel modelWithTitle:@"宝山又上新了一批“救命神器” AED，“救”在你身边" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/25d0ac79a76b69342cfff0d2b6193bc9.jpg"],
+            [MAPicListModel modelWithTitle:@"“救命神器”AED要配好更要用好" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/2cd4dd3765e34a7c123e792db1719582.jpg"],
+            [MAPicListModel modelWithTitle:@"阿伯突然晕倒情况危急 中大校园内AED成功救人" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/a4846a16c9a7bde3f529602f7bf043e3.jpg"],
+            [MAPicListModel modelWithTitle:@"全广州已布设超1100台AED，“十四五”期间拟配置4500台" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/e7ce7a399506ce590ce44afa85a020e4.jpg"],
+            [MAPicListModel modelWithTitle:@"沈阳大力推进救护培训工作 提高应急救护知识普及率" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/0aa9da09a1d6702c632974f9582f5bc7.jpg"],
+        ]];
     }
     return _dataSourceArray;
 }

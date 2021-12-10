@@ -13,6 +13,7 @@
 #import "MASectionHeaderView.h"
 #import "MAHotNewsView.h"
 #import "MANavigationBar.h"
+#import "MAPicListModel.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,7 +25,7 @@
 
 @property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
 
-@property (nonatomic, strong) NSMutableArray *picListData;
+@property (nonatomic, strong) NSMutableArray<MAPicListModel *> *picListData;
 
 @end
 
@@ -168,7 +169,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         MAPicListCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
-        cell.title = [NSString stringWithFormat:@"%@ %zd", @"Title".localized, indexPath.row];
+        [cell setData:[self.picListData objectAtIndex:indexPath.row]];
         return cell;
     }
     UITableViewCell *cell = [UITableViewCell new];
@@ -202,10 +203,16 @@
     return _navigationControllerDelegate;
 }
 
-- (NSMutableArray *)picListData {
+- (NSMutableArray<MAPicListModel *> *)picListData {
     if (!_picListData) {
         _picListData = [NSMutableArray array];
-        [_picListData addObjectsFromArray:@[@"0",@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"].mutableCopy];
+        [_picListData addObjectsFromArray:@[
+            [MAPicListModel modelWithTitle:@"常见急症急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/68f4534217eda27fdb5b81ecb513a741.jpg"],
+            [MAPicListModel modelWithTitle:@"公众 CPR AED 课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/d4bf7b3e8ebe404ab48710c19afd3ae3.jpg"],
+            [MAPicListModel modelWithTitle:@"公众必会急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/8062674e17bcbcc8c920d06597b73a07.jpg"],
+            [MAPicListModel modelWithTitle:@"美国心脏协会心脏救护员课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/ed37a644d441d0d3694569d47bb5da9f.jpg"],
+            [MAPicListModel modelWithTitle:@"国际野外医学协会野外高级急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/c5451deb77b9185a79410b33f2096958.jpg"]
+        ]];
     }
     return _picListData;
 }
