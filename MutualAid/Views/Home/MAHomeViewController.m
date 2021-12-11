@@ -85,7 +85,7 @@
 - (void)viewDidLayoutSubviews {
     [self.searchBar roundedWithRadius:15 corner:UIRectCornerTopLeft | UIRectCornerTopRight];
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - 83 - 48);
+        make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - self.view.safeAreaInsets.bottom - self.view.safeAreaInsets.top);
     }];
 }
 
