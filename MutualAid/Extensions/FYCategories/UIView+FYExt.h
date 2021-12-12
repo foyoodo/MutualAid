@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView(FYExt)
 
+@property (nonatomic, weak, readonly) UIViewController *viewController;
+
 - (void)roundedWithRadius:(CGFloat)radius corner:(UIRectCorner)corner;
 
 @end

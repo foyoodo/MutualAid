@@ -52,7 +52,8 @@
     }];
     self.mainTableView.mj_header.automaticallyChangeAlpha = YES;
 
-    MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 90)];
+    MANavigationBar *navigationBar = [[MANavigationBar new] initWithFrame:CGRectMake(0, 0, 0, 90)];
+    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:nil]];
     navigationBar.backgroundColor = [UIColor systemGray5Color];
     self.mainTableView.tableHeaderView = navigationBar;
 
