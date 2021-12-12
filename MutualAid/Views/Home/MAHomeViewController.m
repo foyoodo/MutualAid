@@ -95,6 +95,14 @@
     if (scrollView == self.mainTableView) {
         CGFloat alpha = fmin(fmax((1 - scrollView.contentOffset.y / (self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top)), 0), 1);
         self.mainTableView.backgroundColor = [[UIColor colorNamed:@"AccentColor"] colorWithAlphaComponent:alpha];
+
+        if (self.tableView.contentOffset.y > 0) {
+            self.mainTableView.contentOffset = CGPointMake(self.mainTableView.contentOffset.x, self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top);
+        }
+    }
+
+    if (self.mainTableView.contentOffset.y < self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top) {
+        self.tableView.contentOffset = CGPointZero;
     }
 }
 
