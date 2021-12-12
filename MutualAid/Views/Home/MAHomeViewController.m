@@ -14,6 +14,7 @@
 #import "MAHotNewsView.h"
 #import "MANavigationBar.h"
 #import "MAPicListModel.h"
+#import "MJRefresh.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -41,11 +42,21 @@
 
     self.navigationController.delegate = self.navigationControllerDelegate;
 
-    self.mainTableView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+    self.mainTableView.backgroundColor = [UIColor systemGroupedBackgroundColor];
     self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    self.mainTableView.bounces = YES;
+    self.mainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.mainTableView.mj_header endRefreshing];
+        });
+    }];
+    self.mainTableView.mj_header.automaticallyChangeAlpha = YES;
 
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 90)];
+    navigationBar.backgroundColor = [UIColor systemGray5Color];
     self.mainTableView.tableHeaderView = navigationBar;
+
+    [self.mainTableView sendSubviewToBack:self.mainTableView.tableHeaderView];
 
     self.stickyView = self.searchBar;
 
@@ -83,18 +94,21 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    [self.searchBar roundedWithRadius:15 corner:UIRectCornerTopLeft | UIRectCornerTopRight];
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - self.view.safeAreaInsets.bottom - self.view.safeAreaInsets.top);
     }];
+    CGRect frame = self.mainTableView.tableHeaderView.frame;
+    frame.size.height = self.view.safeAreaInsets.top + 44;
+    self.mainTableView.tableHeaderView.frame = frame;
+    self.mainTableView.mj_header.ignoredScrollViewContentInsetTop = -self.view.safeAreaInsets.top;
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == self.mainTableView) {
-        CGFloat alpha = fmin(fmax((1 - scrollView.contentOffset.y / (self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top)), 0), 1);
-        self.mainTableView.backgroundColor = [[UIColor colorNamed:@"AccentColor"] colorWithAlphaComponent:alpha];
+        CGFloat alpha = fmin(1 - fmax(0, fabs(scrollView.contentOffset.y / (self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top))), 1);
+        self.mainTableView.tableHeaderView.alpha = alpha;
 
         if (self.tableView.contentOffset.y > 0) {
             self.mainTableView.contentOffset = CGPointMake(self.mainTableView.contentOffset.x, self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top);

@@ -1,6 +1,7 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
   - Masonry (1.1.0)
+  - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
@@ -9,12 +10,14 @@ PODS:
 DEPENDENCIES:
   - FDFullscreenPopGesture (from `https://github.com/forkingdog/FDFullscreenPopGesture`)
   - Masonry (~> 1.1.0)
+  - MJRefresh (~> 3.7.5)
   - ReactiveObjC (~> 3.1.1)
   - SDWebImage (~> 5.12.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
+    - MJRefresh
     - ReactiveObjC
     - SDWebImage
 
@@ -30,9 +33,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
 
-PODFILE CHECKSUM: 5510e1876b326259844561565430235328e649ba
+PODFILE CHECKSUM: 20818abc5db568a5b7f1967d64af9fc44771b8dd
 
 COCOAPODS: 1.11.2
