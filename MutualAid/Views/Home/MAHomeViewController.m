@@ -65,10 +65,10 @@
     if (@available(iOS 15.0, *)) {
         tableView.sectionHeaderTopPadding = 0;
     }
+    tableView.showsHorizontalScrollIndicator = NO;
     tableView.bounces = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
-
     tableView.sectionFooterHeight = 0;
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -94,13 +94,16 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - self.view.safeAreaInsets.bottom - self.view.safeAreaInsets.top);
-    }];
     CGRect frame = self.mainTableView.tableHeaderView.frame;
     frame.size.height = self.view.safeAreaInsets.top + 44;
     self.mainTableView.tableHeaderView.frame = frame;
+
     self.mainTableView.mj_header.ignoredScrollViewContentInsetTop = -self.view.safeAreaInsets.top;
+
+    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mainTableView).offset(frame.size.height + [self heightForStickyView]);
+        make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - self.view.safeAreaInsets.bottom - self.view.safeAreaInsets.top);
+    }];
 }
 
 #pragma mark - UIScrollViewDelegate
