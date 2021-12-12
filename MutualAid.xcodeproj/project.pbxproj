@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */; };
 		C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB952761F59900C5E5AE /* MASectionHeaderView.m */; };
 		C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */; };
 		C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */; };
@@ -61,6 +62,8 @@
 		41347B8C83771A5A693EDB84 /* libPods-MutualAid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MutualAid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7576942F0896C94C923429ED /* Pods-MutualAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.debug.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
+		C6023DD927662FBB00556C07 /* MAMessageCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMessageCenterViewController.h; sourceTree = "<group>"; };
+		C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMessageCenterViewController.m; sourceTree = "<group>"; };
 		C605DB942761F59900C5E5AE /* MASectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASectionHeaderView.h; sourceTree = "<group>"; };
 		C605DB952761F59900C5E5AE /* MASectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASectionHeaderView.m; sourceTree = "<group>"; };
 		C605DB982761FDCC00C5E5AE /* MAHotNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAHotNewsView.h; sourceTree = "<group>"; };
@@ -164,6 +167,15 @@
 				A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C6023DD827662F6300556C07 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C6023DD927662FBB00556C07 /* MAMessageCenterViewController.h */,
+				C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */,
+			);
+			path = MessageCenter;
 			sourceTree = "<group>";
 		};
 		C605DB972761FCBD00C5E5AE /* SectionHeader */ = {
@@ -363,6 +375,7 @@
 				C6938B6827609C6300F466DA /* Base */,
 				C605DB9E276241FF00C5E5AE /* NavigationBar */,
 				C64DD9BE275BB51200A13707 /* Search */,
+				C6023DD827662F6300556C07 /* MessageCenter */,
 				C64DD9BA275BB3D300A13707 /* Home */,
 				C64DD9B6275BA88200A13707 /* TabBar */,
 			);
@@ -556,6 +569,7 @@
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
+				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
 				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
 				C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */,

@@ -53,8 +53,12 @@
     self.mainTableView.mj_header.automaticallyChangeAlpha = YES;
 
     MANavigationBar *navigationBar = [[MANavigationBar new] initWithFrame:CGRectMake(0, 0, 0, 90)];
-    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:nil]];
-    navigationBar.backgroundColor = [UIColor systemGray5Color];
+    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:^{
+        UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }]];
+    navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     self.mainTableView.tableHeaderView = navigationBar;
 
     [self.mainTableView sendSubviewToBack:self.mainTableView.tableHeaderView];
