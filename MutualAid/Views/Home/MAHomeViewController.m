@@ -6,6 +6,7 @@
 //
 
 #import "MAHomeViewController.h"
+#import "MAStickyScrollView.h"
 #import "MASearchBar.h"
 #import "MASearchViewController.h"
 #import "MASearchNavigationControllerDelegate.h"
@@ -17,6 +18,8 @@
 #import "MJRefresh.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) MAStickyScrollView *stickyScrollView;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -42,52 +45,30 @@
 
     self.navigationController.delegate = self.navigationControllerDelegate;
 
-    self.mainTableView.backgroundColor = [UIColor systemGroupedBackgroundColor];
-    self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    self.mainTableView.bounces = YES;
-    self.mainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.mainTableView.mj_header endRefreshing];
-        });
-    }];
-    self.mainTableView.mj_header.automaticallyChangeAlpha = YES;
-
-    MANavigationBar *navigationBar = [[MANavigationBar new] initWithFrame:CGRectMake(0, 0, 0, 90)];
-    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:^{
-        UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    }]];
-    navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
-    self.mainTableView.tableHeaderView = navigationBar;
-
-    [self.mainTableView sendSubviewToBack:self.mainTableView.tableHeaderView];
-
-    self.stickyView = self.searchBar;
-
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (@available(iOS 15.0, *)) {
         tableView.sectionHeaderTopPadding = 0;
     }
+    tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     tableView.showsHorizontalScrollIndicator = NO;
-    tableView.bounces = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
     tableView.sectionFooterHeight = 0;
     tableView.delegate = self;
     tableView.dataSource = self;
-    [self.mainTableView addSubview:(_tableView = tableView)];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mainTableView).offset(navigationBar.frame.size.height + [self heightForStickyView]);
-        make.width.equalTo(self.mainTableView);
-        make.height.equalTo(self.mainTableView);
+    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [tableView.mj_header endRefreshing];
+        });
     }];
-    [tableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
+    tableView.mj_header.automaticallyChangeAlpha = YES;
 
     UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 8)];
     tableFooterView.backgroundColor = [UIColor systemGroupedBackgroundColor];
     tableView.tableFooterView = tableFooterView;
+
+    [tableView registerClass:[MAPicListCardTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
 
     MAHotNewsView *hotNewsView = [MAHotNewsView new];
     [tableView addSubview:(_hotNewsView = hotNewsView)];
@@ -96,35 +77,45 @@
         make.left.equalTo(tableView).offset(12);
         make.width.equalTo(tableView).offset(-24);
     }];
+
+    MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
+    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:^{
+        UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }]];
+
+    MAStickyScrollView *stickyScrollView = [[MAStickyScrollView alloc] initWithScrollView:(_tableView = tableView)];
+    stickyScrollView.stickyContainerBackgroundView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+    stickyScrollView.stickyHeaderView = navigationBar;
+    stickyScrollView.stickyView = self.searchBar;
+
+    [self.view addSubview:(_stickyScrollView = stickyScrollView)];
+    [stickyScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
-    CGRect frame = self.mainTableView.tableHeaderView.frame;
-    frame.size.height = self.view.safeAreaInsets.top + 44;
-    self.mainTableView.tableHeaderView.frame = frame;
+    [super viewDidLayoutSubviews];
 
-    self.mainTableView.mj_header.ignoredScrollViewContentInsetTop = -self.view.safeAreaInsets.top;
-
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mainTableView).offset(frame.size.height + [self heightForStickyView]);
-        make.height.equalTo(self.mainTableView).offset(-[self heightForStickyView] - self.view.safeAreaInsets.bottom - self.view.safeAreaInsets.top);
-    }];
+    self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyContainerViewHeight - self.view.safeAreaInsets.top;
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.mainTableView) {
-        CGFloat alpha = fmin(1 - fmax(0, fabs(scrollView.contentOffset.y / (self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top))), 1);
-        self.mainTableView.tableHeaderView.alpha = alpha;
-
-        if (self.tableView.contentOffset.y > 0) {
-            self.mainTableView.contentOffset = CGPointMake(self.mainTableView.contentOffset.x, self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top);
-        }
+    CGFloat alpha = 1 - fmin(1, fabs((scrollView.contentOffset.y + self.stickyScrollView.stickyContainerViewHeight) / 44));
+    if (self.stickyScrollView.stickyContainerBackgroundView.alpha != alpha) {
+        self.stickyScrollView.stickyContainerBackgroundView.alpha = alpha;
+        self.stickyScrollView.stickyHeaderView.alpha = alpha;
     }
 
-    if (self.mainTableView.contentOffset.y < self.mainTableView.tableHeaderView.frame.size.height - self.view.safeAreaInsets.top) {
-        self.tableView.contentOffset = CGPointZero;
+    CGFloat contentOffset = scrollView.contentOffset.y + self.stickyScrollView.stickyContainerViewHeight + self.stickyScrollView.safeAreaInsets.top;
+    if (contentOffset < self.stickyScrollView.stickyHeaderViewHeight) {
+        self.stickyScrollView.stickyContainerView.backgroundColor = [UIColor clearColor];
+    } else {
+        self.stickyScrollView.stickyContainerView.backgroundColor = [UIColor systemGroupedBackgroundColor];
     }
 }
 
@@ -142,7 +133,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if  (section == 0) {
+    if (section == 0) {
         return [[MASectionHeaderView alloc] initWithTitle:@"Hot News".localized];
     } else if (section == 1) {
         return [[MASectionHeaderView alloc] initWithTitle:@"Offline Course".localized];
@@ -160,10 +151,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (tableView == self.tableView) {
-        return 2;
-    }
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -194,22 +182,15 @@
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 
-#pragma mark - MAStickyBaseProtocol
-
-- (CGFloat)heightForStickyView {
-    return self.searchBar.height;
-}
-
-- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [UIScreen mainScreen].bounds.size.height - self.view.safeAreaInsets.top - [self heightForStickyView];
-}
-
 #pragma mark - Lazy Load
 
 - (MASearchBar *)searchBar {
     if (!_searchBar) {
         _searchBar = [MASearchBar new];
+        _searchBar.frame = CGRectMake(0, 0, 0, _searchBar.height);
         _searchBar.backgroundColor = [UIColor systemGroupedBackgroundColor];
+        _searchBar.layer.cornerRadius = 16;
+        _searchBar.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
         _searchBar.delegate = self;
     }
     return _searchBar;

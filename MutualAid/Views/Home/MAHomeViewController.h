@@ -5,12 +5,12 @@
 //  Created by foyoodo on 2021/12/4.
 //
 
-#import "MAStickyBaseViewController.h"
+#import <UIKit/UIKit.h>
 #import "MASearchBarDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAHomeViewController : MAStickyBaseViewController <MASearchBarDelegate>
+@interface MAHomeViewController : UIViewController <MASearchBarDelegate>
 
 @end
 
