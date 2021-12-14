@@ -12,6 +12,7 @@
 #import "MASearchNavigationControllerDelegate.h"
 #import "MAPicListCardTableViewCell.h"
 #import "MASectionHeaderView.h"
+#import "MACycleBannerView.h"
 #import "MATopListView.h"
 #import "MAHotNewsView.h"
 #import "MANavigationBar.h"
@@ -24,6 +25,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) MACycleBannerView *cycleBannerView;
 @property (nonatomic, strong) MATopListView *topListView;
 @property (nonatomic, strong) MAHotNewsView *hotNewsView;
 
@@ -47,13 +49,15 @@
 
     self.navigationController.delegate = self.navigationControllerDelegate;
 
+    CGFloat cycleBannerViewHeight = floor(([UIScreen mainScreen].bounds.size.width - 12 * 2) * 0.35);
+
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (@available(iOS 15.0, *)) {
         tableView.sectionHeaderTopPadding = 0;
     }
     tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    tableView.contentInset = UIEdgeInsetsMake(4 + [MATopListView height], 0, 0, 0);
+    tableView.contentInset = UIEdgeInsetsMake(4 + cycleBannerViewHeight + 12 + [MATopListView height], 0, 0, 0);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
@@ -88,6 +92,11 @@
         make.bottom.equalTo(tableView.mas_top);
         make.width.equalTo(tableView).offset(-24);
     }];
+
+    MACycleBannerView *cycleBannerView = [MACycleBannerView new];
+    cycleBannerView.frame = CGRectMake(12, -[MATopListView height] - 12 - cycleBannerViewHeight, [UIScreen mainScreen].bounds.size.width - 24, cycleBannerViewHeight);
+    cycleBannerView.collectionView.layer.cornerRadius = 12;
+    [tableView addSubview:(_cycleBannerView = cycleBannerView)];
 
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:^{
