@@ -12,6 +12,7 @@
 #import "MASearchNavigationControllerDelegate.h"
 #import "MAPicListCardTableViewCell.h"
 #import "MASectionHeaderView.h"
+#import "MATopListView.h"
 #import "MAHotNewsView.h"
 #import "MANavigationBar.h"
 #import "MAPicListModel.h"
@@ -23,6 +24,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) MATopListView *topListView;
 @property (nonatomic, strong) MAHotNewsView *hotNewsView;
 
 @property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
@@ -51,7 +53,7 @@
         tableView.sectionHeaderTopPadding = 0;
     }
     tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
+    tableView.contentInset = UIEdgeInsetsMake(4 + [MATopListView height], 0, 0, 0);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
@@ -76,6 +78,14 @@
     [hotNewsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(tableView).offset([MASectionHeaderView height]);
         make.left.equalTo(tableView).offset(12);
+        make.width.equalTo(tableView).offset(-24);
+    }];
+
+    MATopListView *topListView = [MATopListView new];
+    [tableView addSubview:(_topListView = topListView)];
+    [topListView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(tableView).offset(12);
+        make.bottom.equalTo(tableView.mas_top);
         make.width.equalTo(tableView).offset(-24);
     }];
 

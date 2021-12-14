@@ -30,6 +30,8 @@
 		C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9C0275BB56D00A13707 /* MASearchBar.m */; };
 		C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6590C402766FD6700845973 /* MAStickyScrollView.m */; };
 		C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C65A619A276351D300CE6029 /* MAPicListModel.m */; };
+		C680C5B827686EBF00662440 /* MATopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5B727686EBF00662440 /* MATopListView.m */; };
+		C680C5BB27686F3100662440 /* MATopListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5BA27686F3100662440 /* MATopListCollectionViewCell.m */; };
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
@@ -110,6 +112,10 @@
 		C6590C402766FD6700845973 /* MAStickyScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyScrollView.m; sourceTree = "<group>"; };
 		C65A6199276351D300CE6029 /* MAPicListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListModel.h; sourceTree = "<group>"; };
 		C65A619A276351D300CE6029 /* MAPicListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListModel.m; sourceTree = "<group>"; };
+		C680C5B627686EBF00662440 /* MATopListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATopListView.h; sourceTree = "<group>"; };
+		C680C5B727686EBF00662440 /* MATopListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATopListView.m; sourceTree = "<group>"; };
+		C680C5B927686F3100662440 /* MATopListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATopListCollectionViewCell.h; sourceTree = "<group>"; };
+		C680C5BA27686F3100662440 /* MATopListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATopListCollectionViewCell.m; sourceTree = "<group>"; };
 		C6938B6927609CC400F466DA /* MAStickyBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAStickyBaseViewController.h; sourceTree = "<group>"; };
 		C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyBaseViewController.m; sourceTree = "<group>"; };
 		C6938B702760E6CF00F466DA /* MAPicListCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListCardTableViewCell.h; sourceTree = "<group>"; };
@@ -258,14 +264,12 @@
 			isa = PBXGroup;
 			children = (
 				C605DB972761FCBD00C5E5AE /* SectionHeader */,
+				C680C5BC2768816400662440 /* TopList */,
+				C680C5BD2768817E00662440 /* HotNews */,
 				C64DD9BB275BB3E800A13707 /* MAHomeViewController.h */,
 				C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */,
 				C6938B702760E6CF00F466DA /* MAPicListCardTableViewCell.h */,
 				C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */,
-				C605DB982761FDCC00C5E5AE /* MAHotNewsView.h */,
-				C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */,
-				C605DB9B2762002B00C5E5AE /* MAHotNewsCollectionViewCell.h */,
-				C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -299,6 +303,28 @@
 				C65A619A276351D300CE6029 /* MAPicListModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C680C5BC2768816400662440 /* TopList */ = {
+			isa = PBXGroup;
+			children = (
+				C680C5B627686EBF00662440 /* MATopListView.h */,
+				C680C5B727686EBF00662440 /* MATopListView.m */,
+				C680C5B927686F3100662440 /* MATopListCollectionViewCell.h */,
+				C680C5BA27686F3100662440 /* MATopListCollectionViewCell.m */,
+			);
+			path = TopList;
+			sourceTree = "<group>";
+		};
+		C680C5BD2768817E00662440 /* HotNews */ = {
+			isa = PBXGroup;
+			children = (
+				C605DB982761FDCC00C5E5AE /* MAHotNewsView.h */,
+				C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */,
+				C605DB9B2762002B00C5E5AE /* MAHotNewsCollectionViewCell.h */,
+				C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */,
+			);
+			path = HotNews;
 			sourceTree = "<group>";
 		};
 		C6938B6827609C6300F466DA /* Base */ = {
@@ -568,11 +594,13 @@
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
+				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
 				C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */,
 				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
+				C680C5BB27686F3100662440 /* MATopListCollectionViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
