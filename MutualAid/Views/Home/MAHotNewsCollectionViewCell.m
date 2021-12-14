@@ -23,12 +23,12 @@
     if (self = [super initWithFrame:frame]) {
 
         UIImageView *imageView = [UIImageView new];
-        imageView.layer.cornerRadius = 4;
+        imageView.layer.cornerRadius = 8;
         imageView.layer.masksToBounds = YES;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:(_imageView = imageView)];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView).offset(12);
+            make.top.equalTo(self.contentView).offset(8);
             make.left.equalTo(self.contentView);
             make.right.equalTo(self.contentView);
             make.height.equalTo(imageView.mas_width).multipliedBy(0.5);
@@ -50,7 +50,7 @@
 #pragma mark - Public Methods
 
 + (CGSize)itemSize {
-    return CGSizeMake(160, 80 + 30 + 24);
+    return CGSizeMake(160, 80 + 30 + 16);
 }
 
 - (void)setData:(MAPicListModel *)cellModel {

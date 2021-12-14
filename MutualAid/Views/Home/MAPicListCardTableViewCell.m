@@ -10,7 +10,6 @@
 
 @interface MAPicListCardTableViewCell ()
 
-@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
@@ -30,13 +29,12 @@
 
         UIView *containerView = [UIView new];
         containerView.backgroundColor = [UIColor whiteColor];
-        containerView.layer.cornerRadius = 12;
         [self.contentView addSubview:(_containerView = containerView)];
         [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView).offset(4);
+            make.top.equalTo(self.contentView);
             make.left.equalTo(self.contentView).offset(12);
             make.right.equalTo(self.contentView).offset(-12);
-            make.bottom.equalTo(self.contentView).offset(-4);
+            make.bottom.equalTo(self.contentView).offset(-0.5);
         }];
 
         UIImageView *imageView = [UIImageView new];
@@ -58,6 +56,22 @@
             make.left.equalTo(imageView.mas_right).offset(8);
             make.right.lessThanOrEqualTo(containerView);
         }];
+
+        UIView *separatorView = [UIView new];
+        separatorView.backgroundColor = [UIColor whiteColor];
+        [containerView addSubview:(_separatorView = separatorView)];
+        [separatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(containerView.mas_bottom);
+            make.left.right.equalTo(containerView);
+            make.height.equalTo(@(0.5));
+        }];
+        UIView *separatorLineView = [UIView new];
+        separatorLineView.backgroundColor = [UIColor systemGray4Color];
+        [separatorView addSubview:separatorLineView];
+        [separatorLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.right.bottom.equalTo(separatorView);
+            make.left.equalTo(titleLabel);
+        }];
     }
     return self;
 }
@@ -71,16 +85,13 @@
 
 #pragma mark - Override
 
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-    [super setHighlighted:highlighted animated:animated];
+- (void)prepareForReuse {
+    [super prepareForReuse];
 
-    [UIView animateWithDuration:0.2 animations:^{
-        if (highlighted) {
-            self.containerView.backgroundColor = [UIColor systemGray5Color];
-        } else {
-            self.containerView.backgroundColor = [UIColor whiteColor];
-        }
-    }];
+    self.containerView.layer.cornerRadius = 0;
+    self.containerView.layer.maskedCorners = 0;
+
+    self.separatorView.hidden = NO;
 }
 
 @end

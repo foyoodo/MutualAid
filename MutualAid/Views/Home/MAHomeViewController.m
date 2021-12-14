@@ -64,7 +64,7 @@
     }];
     tableView.mj_header.automaticallyChangeAlpha = YES;
 
-    UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 8)];
+    UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 12)];
     tableFooterView.backgroundColor = [UIColor systemGroupedBackgroundColor];
     tableView.tableFooterView = tableFooterView;
 
@@ -99,7 +99,9 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 
-    self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyContainerViewHeight - self.view.safeAreaInsets.top;
+    if (self.tableView.mj_header.ignoredScrollViewContentInsetTop == 0) {
+        self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyHeaderViewHeight;
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -148,6 +150,34 @@
     return YES;
 }
 
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        MAPicListCardTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]];
+        if (cell) {
+            cell.separatorView.hidden = YES;
+        }
+        cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.containerView.backgroundColor = [UIColor systemGray5Color];
+        if (indexPath.row < self.picListData.count - 1) {
+            cell.separatorView.hidden = YES;
+        }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        MAPicListCardTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]];
+        if (cell) {
+            cell.separatorView.hidden = NO;
+        }
+        cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.containerView.backgroundColor = [UIColor whiteColor];
+        if (indexPath.row < self.picListData.count - 1) {
+            cell.separatorView.hidden = NO;
+        }
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -166,6 +196,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         MAPicListCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
+        if (indexPath.row == 0) {
+            cell.containerView.layer.cornerRadius = 12;
+            cell.containerView.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
+        } else if (indexPath.row == self.picListData.count - 1) {
+            cell.containerView.layer.cornerRadius = 12;
+            cell.containerView.layer.maskedCorners = kCALayerMinXMaxYCorner | kCALayerMaxXMaxYCorner;
+            cell.separatorView.hidden = YES;
+        }
         [cell setData:[self.picListData objectAtIndex:indexPath.row]];
         return cell;
     }

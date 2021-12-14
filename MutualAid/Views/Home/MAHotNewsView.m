@@ -28,7 +28,7 @@
         UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flowLayout.itemSize = [MAHotNewsCollectionViewCell itemSize];
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 12, 0, 12);
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 8, 0, 8);
 
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
         collectionView.backgroundColor = [UIColor whiteColor];

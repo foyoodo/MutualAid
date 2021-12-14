@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setData:(MAPicListModel *)cellModel;
 
+@property (nonatomic, strong, readonly) UIView *containerView;
+@property (nonatomic, strong, readonly) UIView *separatorView;
+
 @end
 
 NS_ASSUME_NONNULL_END
