@@ -51,7 +51,7 @@
 #pragma mark - Public Methods
 
 + (CGFloat)height {
-    return [MAHotNewsCollectionViewCell itemSize].height + 8;
+    return [MAHotNewsCollectionViewCell itemSize].height;
 }
 
 #pragma mark - UICollectionViewDelegate

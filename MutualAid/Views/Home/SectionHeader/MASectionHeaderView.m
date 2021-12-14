@@ -30,8 +30,8 @@
         titleLabel.text = title;
         [self addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self);
             make.left.equalTo(self).offset(20);
+            make.bottom.equalTo(self).offset(-6);
         }];
     }
     return self;
@@ -40,7 +40,7 @@
 #pragma mark - Public Methods
 
 + (CGFloat)height {
-    return 32;
+    return 40;
 }
 
 - (NSString *)title {
