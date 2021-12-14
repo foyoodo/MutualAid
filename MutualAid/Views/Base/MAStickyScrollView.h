@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) CGFloat stickyContainerViewHeight;
 @property (nonatomic, assign, readonly) CGFloat stickyHeaderViewHeight;
 
+@property (nonatomic, assign, readonly) UIEdgeInsets contentInset;
+
 @end
 
 NS_ASSUME_NONNULL_END

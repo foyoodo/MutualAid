@@ -51,6 +51,7 @@
         tableView.sectionHeaderTopPadding = 0;
     }
     tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
@@ -100,20 +101,20 @@
     [super viewDidLayoutSubviews];
 
     if (self.tableView.mj_header.ignoredScrollViewContentInsetTop == 0) {
-        self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyHeaderViewHeight;
+        self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyHeaderViewHeight + self.stickyScrollView.contentInset.top - self.stickyScrollView.stickyContainerViewHeight;
     }
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat alpha = 1 - fmin(1, fabs((scrollView.contentOffset.y + self.stickyScrollView.stickyContainerViewHeight) / 44));
+    CGFloat alpha = 1 - fmin(1, fabs((scrollView.contentOffset.y + self.stickyScrollView.contentInset.top) / 44));
     if (self.stickyScrollView.stickyContainerBackgroundView.alpha != alpha) {
         self.stickyScrollView.stickyContainerBackgroundView.alpha = alpha;
         self.stickyScrollView.stickyHeaderView.alpha = alpha;
     }
 
-    CGFloat contentOffset = scrollView.contentOffset.y + self.stickyScrollView.stickyContainerViewHeight + self.stickyScrollView.safeAreaInsets.top;
+    CGFloat contentOffset = scrollView.contentOffset.y + self.stickyScrollView.contentInset.top + self.stickyScrollView.safeAreaInsets.top;
     if (contentOffset < self.stickyScrollView.stickyHeaderViewHeight) {
         self.stickyScrollView.stickyContainerView.backgroundColor = [UIColor clearColor];
     } else {

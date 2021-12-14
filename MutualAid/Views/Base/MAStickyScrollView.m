@@ -16,6 +16,8 @@
 @property (nonatomic, assign) CGFloat stickyHeaderViewHeight;
 @property (nonatomic, assign) CGFloat stickyViewHeight;
 
+@property (nonatomic, assign) UIEdgeInsets contentInset;
+
 @end
 
 @implementation MAStickyScrollView
@@ -52,12 +54,13 @@
         UIEdgeInsets contentInset = self.mainScrollView.contentInset;
         contentInset.top += self.stickyContainerViewHeight;
         contentInset.bottom += self.safeAreaInsets.bottom;
+        self.contentInset = contentInset;
         self.mainScrollView.contentInset = contentInset;
-        self.mainScrollView.contentOffset = CGPointMake(0, -self.stickyContainerViewHeight);
+        self.mainScrollView.contentOffset = CGPointMake(0, -contentInset.top);
         self.mainScrollView.scrollIndicatorInsets = UIEdgeInsetsMake(self.stickyHeaderView.bounds.size.height, 0, 0, 0);
         [self addSubview:self.mainScrollView];
 
-        self.stickyContainerView.frame = CGRectMake(0, -self.stickyContainerViewHeight, self.bounds.size.width, self.stickyContainerViewHeight);
+        self.stickyContainerView.frame = CGRectMake(0, -contentInset.top, self.bounds.size.width, self.stickyContainerViewHeight);
         [self.mainScrollView addSubview:self.stickyContainerView];
 
         self.stickyContainerBackgroundView.frame = self.stickyContainerView.frame;
@@ -78,11 +81,11 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"contentOffset"]) {
         UIScrollView *scrollView = (UIScrollView *)object;
-        CGFloat contentOffset = scrollView.contentOffset.y + self.stickyContainerViewHeight + self.safeAreaInsets.top;
+        CGFloat contentOffset = scrollView.contentOffset.y + self.contentInset.top + self.safeAreaInsets.top;
         if (contentOffset < self.stickyHeaderViewHeight) {
             if (self.stickyContainerView.superview != self.mainScrollView) {
                 CGRect frame = self.stickyContainerView.frame;
-                frame.origin.y = -self.stickyContainerViewHeight;
+                frame.origin.y = -self.contentInset.top;
                 self.stickyContainerView.frame = frame;
                 self.stickyContainerBackgroundView.frame = frame;
                 [self.mainScrollView addSubview:self.stickyContainerBackgroundView];
