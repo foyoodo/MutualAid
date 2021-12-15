@@ -32,7 +32,7 @@
 
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
         collectionView.backgroundColor = [UIColor whiteColor];
-        collectionView.layer.cornerRadius = 12;
+        collectionView.layer.cornerRadius = 8;
         collectionView.showsVerticalScrollIndicator = NO;
         collectionView.showsHorizontalScrollIndicator = NO;
         collectionView.delegate = self;

@@ -95,7 +95,7 @@
 
     MACycleBannerView *cycleBannerView = [MACycleBannerView new];
     cycleBannerView.frame = CGRectMake(12, -[MATopListView height] - 12 - cycleBannerViewHeight, [UIScreen mainScreen].bounds.size.width - 24, cycleBannerViewHeight);
-    cycleBannerView.collectionView.layer.cornerRadius = 12;
+    cycleBannerView.collectionView.layer.cornerRadius = 8;
     [tableView addSubview:(_cycleBannerView = cycleBannerView)];
 
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
@@ -230,10 +230,10 @@
     if (indexPath.section == 1) {
         MAPicListCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAPicListCardTableViewCell class])];
         if (indexPath.row == 0) {
-            cell.containerView.layer.cornerRadius = 12;
+            cell.containerView.layer.cornerRadius = 8;
             cell.containerView.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
         } else if (indexPath.row == self.picListData.count - 1) {
-            cell.containerView.layer.cornerRadius = 12;
+            cell.containerView.layer.cornerRadius = 8;
             cell.containerView.layer.maskedCorners = kCALayerMinXMaxYCorner | kCALayerMaxXMaxYCorner;
             cell.separatorView.hidden = YES;
         }

@@ -63,7 +63,9 @@
         self.stickyContainerView.frame = CGRectMake(0, -contentInset.top, self.bounds.size.width, self.stickyContainerViewHeight);
         [self.mainScrollView addSubview:self.stickyContainerView];
 
-        self.stickyContainerBackgroundView.frame = self.stickyContainerView.frame;
+        CGRect frame = self.stickyContainerView.frame;
+        frame.size.height -= 1;
+        self.stickyContainerBackgroundView.frame = frame;
         [self.mainScrollView insertSubview:self.stickyContainerBackgroundView belowSubview:self.stickyContainerView];
 
         if (self.stickyHeaderView) {
@@ -87,6 +89,7 @@
                 CGRect frame = self.stickyContainerView.frame;
                 frame.origin.y = -self.contentInset.top;
                 self.stickyContainerView.frame = frame;
+                frame.size.height -= 1;
                 self.stickyContainerBackgroundView.frame = frame;
                 [self.mainScrollView addSubview:self.stickyContainerBackgroundView];
                 [self.mainScrollView addSubview:self.stickyContainerView];
@@ -96,6 +99,7 @@
                 CGRect frame = self.stickyContainerView.frame;
                 frame.origin.y = -self.stickyHeaderViewHeight + self.safeAreaInsets.top;
                 self.stickyContainerView.frame = frame;
+                frame.size.height -= 1;
                 self.stickyContainerBackgroundView.frame = frame;
                 [self addSubview:self.stickyContainerBackgroundView];
                 [self addSubview:self.stickyContainerView];
