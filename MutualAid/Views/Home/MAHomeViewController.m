@@ -114,6 +114,8 @@
     [stickyScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+
+    [self requestData];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -122,6 +124,17 @@
     if (self.tableView.mj_header.ignoredScrollViewContentInsetTop == 0) {
         self.tableView.mj_header.ignoredScrollViewContentInsetTop = self.stickyScrollView.stickyHeaderViewHeight + self.stickyScrollView.contentInset.top - self.stickyScrollView.stickyContainerViewHeight;
     }
+}
+
+#pragma mark - Private Methods
+
+- (void)requestData {
+    [self.cycleBannerView setData:@[
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/5f7e6a0ddd6e327aef1eefdd02bb1d3a.jpg"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/d64b5e0b83d924ad8b9affe8a67d97e4.jpg"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/825b9e523a0023cce39701041f3ff259.jpg"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/270d8698057bc5d7c1c0a3456cdac295.jpg"],
+    ]];
 }
 
 #pragma mark - UIScrollViewDelegate

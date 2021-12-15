@@ -9,7 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MAPicListModel;
+
 @interface MACycleBannerView : UIView
+
+- (void)setData:(NSArray<MAPicListModel *> *)modelArray;
 
 @property (nonatomic, strong, readonly) UICollectionView *collectionView;
 
