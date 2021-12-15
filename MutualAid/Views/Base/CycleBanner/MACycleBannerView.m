@@ -10,8 +10,10 @@
 #import "MACycleBannerView.h"
 #import "MACycleBannerCollectionViewCell.h"
 #import "MAPicListModel.h"
+#import "NSTimer+MAExt.h"
 
 static const CGFloat kPageControlHeight = 35.0;
+static const NSTimeInterval kCycleScrollInterval = 3.0;
 
 @interface MACycleBannerView () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -23,6 +25,8 @@ static const CGFloat kPageControlHeight = 35.0;
 
 @property (nonatomic, strong) NSMutableArray<MAPicListModel *> *dataSourceArray;
 
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation MACycleBannerView
@@ -31,21 +35,25 @@ static const CGFloat kPageControlHeight = 35.0;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self initializeSubViews];
+        [self setupUI];
     }
     return self;
 }
 
 #pragma mark - Life Cycle
 
+- (void)dealloc {
+    [self.timer invalidate];
+}
+
 - (void)layoutSubviews {
     if (!CGSizeEqualToSize(self.bounds.size, CGSizeZero)) {
         if (CGRectEqualToRect(self.collectionView.frame, CGRectZero)) {
             self.collectionView.frame = self.bounds;
+            self.collectionViewFlowLayout.itemSize = self.bounds.size;
+            self.collectionView.contentOffset = CGPointMake(self.collectionView.bounds.size.width, 0);
+            self.pageControl.frame = CGRectMake(0, self.bounds.size.height - kPageControlHeight, self.bounds.size.width, kPageControlHeight);
         }
-        self.collectionViewFlowLayout.itemSize = self.bounds.size;
-        self.collectionView.contentOffset = CGPointMake(self.collectionView.bounds.size.width, 0);
-        self.pageControl.frame = CGRectMake(0, self.bounds.size.height - kPageControlHeight, self.bounds.size.width, kPageControlHeight);
     }
 }
 
@@ -64,12 +72,12 @@ static const CGFloat kPageControlHeight = 35.0;
 
 #pragma mark - Private Mthods
 
-- (void)initializeSubViews {
+- (void)setupUI {
     UICollectionViewFlowLayout *collectionViewFlowLayout = [UICollectionViewFlowLayout new];
     collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     collectionViewFlowLayout.minimumLineSpacing = 0;
 
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:(_collectionViewFlowLayout = collectionViewFlowLayout)];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:(_collectionViewFlowLayout = collectionViewFlowLayout)];
     collectionView.showsVerticalScrollIndicator = NO;
     collectionView.showsHorizontalScrollIndicator = NO;
     collectionView.bounces = NO;
@@ -82,6 +90,13 @@ static const CGFloat kPageControlHeight = 35.0;
     [collectionView registerClass:[MACycleBannerCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([MACycleBannerCollectionViewCell class])];
 
     [self addSubview:self.pageControl];
+
+    [self setupTimer];
+}
+
+- (void)setupTimer {
+    _timer = [NSTimer scheduledTimerWithTimeInterval:kCycleScrollInterval target:self selector:@selector(scrollToNext) repeats:YES];
+    _timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
 }
 
 - (void)cycleScroll {
@@ -97,9 +112,21 @@ static const CGFloat kPageControlHeight = 35.0;
     }
 }
 
+- (void)scrollToNext {
+    if (self.collectionView.isDragging) {
+        return;
+    }
+    [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.collectionView.bounds.size.width, 0) animated:YES];
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self cycleScroll];
+    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     [self cycleScroll];
 }
 
@@ -141,6 +168,5 @@ static const CGFloat kPageControlHeight = 35.0;
     }
     return _dataSourceArray;
 }
-
 
 @end
