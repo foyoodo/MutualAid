@@ -101,7 +101,6 @@
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[[UIImage imageNamed:@"message_normal"] resizeWithHeight:22] handler:^{
         UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
-        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }]];
 
@@ -249,7 +248,6 @@
 
 - (void)searchBarDidClick {
     MASearchViewController *searchVC = [MASearchViewController new];
-    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 

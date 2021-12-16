@@ -27,6 +27,7 @@
     [super viewDidLoad];
 
     self.fd_prefersNavigationBarHidden = YES;
+    self.ma_prefersTabBarHidden = YES;
     self.view.backgroundColor = [UIColor systemGray5Color];
 
     MASearchBar *searchBar = [MASearchBar new];
@@ -42,6 +43,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.searchBar.searchView.textField setUserInteractionEnabled:YES];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.searchBar.searchView.textField becomeFirstResponder];

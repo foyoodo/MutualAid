@@ -15,6 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.ma_prefersTabBarHidden = YES;
+
     self.title = @"Message Center".localized;
     self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
 }

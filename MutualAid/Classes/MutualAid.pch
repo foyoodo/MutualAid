@@ -39,8 +39,13 @@
 #   import "UIGestureRecognizer+FYExt.h"
 #endif
 
+#if __has_include(<UIKit/UIViewController.h>)
+#   import "UIViewController+MATabBar.h"
+#endif
+
 #if __has_include(<UIKit/UINavigationController.h>)
 #   import "UINavigationController+FDFullscreenPopGesture.h"
+#   import "UIViewController+MATabBar.h"
 #endif
 
 #import <ReactiveObjC/ReactiveObjC.h>
