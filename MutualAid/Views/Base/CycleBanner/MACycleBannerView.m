@@ -119,6 +119,12 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
     [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.collectionView.bounds.size.width, 0) animated:YES];
 }
 
+- (void)pageControlSelectionAction:(UIPageControl *)pageControl {
+    NSInteger page = pageControl.currentPage;
+    [self.collectionView setContentOffset:CGPointMake((page + 1) * self.collectionView.bounds.size.width, 0) animated:YES];
+    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -142,13 +148,6 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
     return cell;
 }
 
-#pragma mark - Action
-
-- (void)pageControlSelectionAction:(UIPageControl *)pageControl {
-    NSInteger page = pageControl.currentPage;
-    [self.collectionView setContentOffset:CGPointMake((page + 1) * self.collectionView.bounds.size.width, 0) animated:YES];
-}
-
 #pragma mark - Lazy Load
 
 - (UIPageControl *)pageControl {
@@ -157,7 +156,6 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
         _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor systemGray5Color];
         [_pageControl addTarget:self action:@selector(pageControlSelectionAction:) forControlEvents:UIControlEventValueChanged];
-        self.pageControl.numberOfPages = self.dataSourceArray.count - 2;
     }
     return _pageControl;
 }
