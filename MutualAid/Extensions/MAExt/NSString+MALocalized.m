@@ -7,7 +7,7 @@
 
 #import "NSString+MALocalized.h"
 
-@implementation NSString(MALocalized)
+@implementation NSString (MALocalized)
 
 - (NSString *)localized {
     return [NSBundle.mainBundle localizedStringForKey:self ?: @"" value:@"" table:nil];

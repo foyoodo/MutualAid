@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView(FYExt)
+@interface UIView (FYExt)
 
 @property (nonatomic, weak, readonly) UIViewController *viewController;
 

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString(MALocalized)
+@interface NSString (MALocalized)
 
 @property (nonatomic, copy, readonly) NSString *localized;
 

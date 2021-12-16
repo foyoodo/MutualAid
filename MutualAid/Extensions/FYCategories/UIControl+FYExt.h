@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIControl(FYExt)
+@interface UIControl (FYExt)
 
 - (instancetype)initWithActionBlock:(void (^)(id sender))block forControlEvents:(UIControlEvents)events;
 

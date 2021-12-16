@@ -34,7 +34,7 @@
 
 @end
 
-@implementation UIControl(FYExt)
+@implementation UIControl (FYExt)
 
 - (instancetype)initWithActionBlock:(void (^)(id _Nonnull))block forControlEvents:(UIControlEvents)events {
     if (self = [self init]) {

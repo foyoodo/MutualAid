@@ -7,7 +7,7 @@
 
 #import "UIColor+FYExt.h"
 
-@implementation UIColor(FYExt)
+@implementation UIColor (FYExt)
 
 + (UIColor *)colorWithHex:(int)hex {
     return [UIColor colorWithHex:hex alpha:1.0];

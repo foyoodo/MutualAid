@@ -7,7 +7,7 @@
 
 #import "UIImage+FYExt.h"
 
-@implementation UIImage(FYExt)
+@implementation UIImage (FYExt)
 
 + (instancetype)imageWithSymbol:(NSString *)name {
     if (@available(iOS 13.0, *)) {

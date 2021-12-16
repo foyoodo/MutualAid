@@ -32,7 +32,7 @@
 
 @end
 
-@implementation UIGestureRecognizer(FYExt)
+@implementation UIGestureRecognizer (FYExt)
 
 - (instancetype)initWithActionBlock:(void (^)(id _Nonnull sender))block {
     if (self = [self init]) {

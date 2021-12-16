@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage(FYExt)
+@interface UIImage (FYExt)
 
 + (instancetype)imageWithSymbol:(NSString *)name;
 + (instancetype)imageWithSymbol:(NSString *)name height:(CGFloat)height;

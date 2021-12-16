@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIColor(FYExt)
+@interface UIColor (FYExt)
 
 + (UIColor *)colorWithHex:(int)hex;
 + (UIColor *)colorWithHex:(int)hex alpha:(CGFloat)alpha;

@@ -35,7 +35,7 @@
 
 @end
 
-@implementation NSTimer(MAExt)
+@implementation NSTimer (MAExt)
 
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector repeats:(BOOL)yesOrNo {
     return [WeakTarget scheduledTimerWithTimeInterval:ti target:aTarget selector:aSelector repeats:yesOrNo];
