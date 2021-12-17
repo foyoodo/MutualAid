@@ -29,6 +29,7 @@
 		C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9B8275BA8BC00A13707 /* MATabBarController.m */; };
 		C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */; };
 		C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DD9C0275BB56D00A13707 /* MASearchBar.m */; };
+		C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DEBCC276C7FDF003D87D0 /* MAMapViewController.m */; };
 		C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6590C402766FD6700845973 /* MAStickyScrollView.m */; };
 		C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C65A619A276351D300CE6029 /* MAPicListModel.m */; };
 		C680C5B827686EBF00662440 /* MATopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5B727686EBF00662440 /* MATopListView.m */; };
@@ -114,6 +115,8 @@
 		C64DD9BC275BB3E800A13707 /* MAHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAHomeViewController.m; sourceTree = "<group>"; };
 		C64DD9BF275BB56D00A13707 /* MASearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBar.h; sourceTree = "<group>"; };
 		C64DD9C0275BB56D00A13707 /* MASearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchBar.m; sourceTree = "<group>"; };
+		C64DEBCB276C7FDF003D87D0 /* MAMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMapViewController.h; sourceTree = "<group>"; };
+		C64DEBCC276C7FDF003D87D0 /* MAMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMapViewController.m; sourceTree = "<group>"; };
 		C6590C3F2766FD6700845973 /* MAStickyScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAStickyScrollView.h; sourceTree = "<group>"; };
 		C6590C402766FD6700845973 /* MAStickyScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyScrollView.m; sourceTree = "<group>"; };
 		C65A6199276351D300CE6029 /* MAPicListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListModel.h; sourceTree = "<group>"; };
@@ -312,6 +315,15 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		C64DEBCA276C7FC6003D87D0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C64DEBCB276C7FDF003D87D0 /* MAMapViewController.h */,
+				C64DEBCC276C7FDF003D87D0 /* MAMapViewController.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		C65A6198276351A400CE6029 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +448,7 @@
 				C64DD9BE275BB51200A13707 /* Search */,
 				C6023DD827662F6300556C07 /* MessageCenter */,
 				C64DD9BA275BB3D300A13707 /* Home */,
+				C64DEBCA276C7FC6003D87D0 /* Map */,
 				C64DD9B6275BA88200A13707 /* TabBar */,
 			);
 			path = Views;
@@ -620,6 +633,7 @@
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
+				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,

@@ -20,7 +20,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.viewControllers = @[
         tabBarItemWithName(@"Home", @"home_normal", @"home_highlight"),
-        tabBarItemWithName(@"Adress", @"adress_normal", @"adress_highlight"),
+        tabBarItemWithName(@"Map", @"map_normal", @"map_highlight"),
         tabBarItemWithName(@"Mine", @"mine_normal", @"mine_highlight")
     ];
     self.delegate = self;
