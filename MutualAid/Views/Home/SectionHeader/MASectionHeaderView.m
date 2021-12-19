@@ -7,12 +7,6 @@
 
 #import "MASectionHeaderView.h"
 
-@interface MASectionHeaderView ()
-
-@property (nonatomic, strong) UILabel *titleLabel;
-
-@end
-
 @implementation MASectionHeaderView
 
 #pragma mark - Init Methods
@@ -41,6 +35,18 @@
 
 + (CGFloat)height {
     return 40;
+}
+
+- (CGFloat)paddingLeft {
+    return 0;
+}
+
+- (void)setPaddingLeft:(CGFloat)paddingLeft {
+    if (paddingLeft >= 0) {
+        [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(paddingLeft);
+        }];
+    }
 }
 
 - (NSString *)title {

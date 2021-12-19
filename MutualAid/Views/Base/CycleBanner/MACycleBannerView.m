@@ -95,8 +95,13 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
 }
 
 - (void)setupTimer {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:kCycleScrollInterval target:self selector:@selector(scrollToNext) repeats:YES];
+    @weakify(self)
+    _timer = [NSTimer timerWithTimeInterval:kCycleScrollInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+        @strongify(self)
+        [self scrollToNext];
+    }];
     _timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)cycleScroll {

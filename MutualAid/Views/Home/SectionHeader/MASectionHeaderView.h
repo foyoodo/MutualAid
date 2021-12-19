@@ -13,7 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTitle:(NSString *)title;
 
+@property (nonatomic, strong, readonly) UILabel *titleLabel;
+
 @property (nonatomic, assign, class, readonly) CGFloat height;
+
+@property (nonatomic, assign) CGFloat paddingLeft;
 
 @property (nonatomic, copy) NSString *title;
 

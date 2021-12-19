@@ -56,7 +56,6 @@
     if (@available(iOS 15.0, *)) {
         tableView.sectionHeaderTopPadding = 0;
     }
-    tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     tableView.contentInset = UIEdgeInsetsMake(4 + cycleBannerViewHeight + 12 + [MATopListView height], 0, 0, 0);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.rowHeight = UITableViewAutomaticDimension;

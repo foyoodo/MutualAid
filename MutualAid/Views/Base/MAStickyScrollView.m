@@ -51,6 +51,7 @@
         self.stickyContainerViewHeight = self.stickyHeaderViewHeight + self.stickyViewHeight;
 
         self.mainScrollView.frame = self.bounds;
+        self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         UIEdgeInsets contentInset = self.mainScrollView.contentInset;
         contentInset.top += self.stickyContainerViewHeight;
         contentInset.bottom += self.safeAreaInsets.bottom;
