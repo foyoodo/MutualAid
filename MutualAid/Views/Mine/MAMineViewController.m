@@ -10,6 +10,7 @@
 #import "MAMineStickyView.h"
 #import "MANavigationBar.h"
 #import "MASectionHeaderView.h"
+#import "MAMineHeaderView.h"
 
 static const CGFloat kStickyViewHeight = 80;
 
@@ -45,8 +46,8 @@ static const CGFloat kStickyViewHeight = 80;
     navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:nil]];
 
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
-    tableView.tableHeaderView = tableHeaderView;
+    MAMineHeaderView *headerView = [[MAMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, 0, 200)];
+    tableView.tableHeaderView = headerView;
 
     MAStickyScrollView *stickyScrollView = [[MAStickyScrollView alloc] initWithScrollView:(_tableView = tableView)];
     stickyScrollView.stickyHeaderView = navigationBar;
@@ -117,7 +118,9 @@ static const CGFloat kStickyViewHeight = 80;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return [UITableViewCell new];
+        UITableViewCell *cell = [UITableViewCell new];
+        cell.backgroundColor = [UIColor clearColor];
+        return cell;
     }
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     cell.backgroundColor = [UIColor clearColor];
