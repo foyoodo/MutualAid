@@ -20,6 +20,9 @@
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
 		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
 		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
+		C6466CF82771ED7C00EFF487 /* MAImageTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF72771ED7C00EFF487 /* MAImageTitleModel.m */; };
+		C6466CFB2771F30A00EFF487 /* MAMineRecommendedServiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CFA2771F30A00EFF487 /* MAMineRecommendedServiceView.m */; };
+		C6466CFE2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CFD2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m */; };
 		C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35A275E15ED00AE98EC /* MASearchResultView.m */; };
 		C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35D275E16BC00AE98EC /* MASearchRecommendView.m */; };
 		C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C64AB370275E2A9E00AE98EC /* Localizable.strings */; };
@@ -102,6 +105,12 @@
 		C6466CF127717C4D00EFF487 /* MAMineCounterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineCounterView.m; sourceTree = "<group>"; };
 		C6466CF3277182E700EFF487 /* MAMineEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineEntryView.h; sourceTree = "<group>"; };
 		C6466CF4277182E700EFF487 /* MAMineEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineEntryView.m; sourceTree = "<group>"; };
+		C6466CF62771ED7C00EFF487 /* MAImageTitleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAImageTitleModel.h; sourceTree = "<group>"; };
+		C6466CF72771ED7C00EFF487 /* MAImageTitleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAImageTitleModel.m; sourceTree = "<group>"; };
+		C6466CF92771F30A00EFF487 /* MAMineRecommendedServiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineRecommendedServiceView.h; sourceTree = "<group>"; };
+		C6466CFA2771F30A00EFF487 /* MAMineRecommendedServiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineRecommendedServiceView.m; sourceTree = "<group>"; };
+		C6466CFC2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineRecommendedServiceCollectionViewCell.h; sourceTree = "<group>"; };
+		C6466CFD2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineRecommendedServiceCollectionViewCell.m; sourceTree = "<group>"; };
 		C64AB359275E15ED00AE98EC /* MASearchResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchResultView.h; sourceTree = "<group>"; };
 		C64AB35A275E15ED00AE98EC /* MASearchResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchResultView.m; sourceTree = "<group>"; };
 		C64AB35C275E16BC00AE98EC /* MASearchRecommendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendView.h; sourceTree = "<group>"; };
@@ -357,6 +366,10 @@
 				C6466CF4277182E700EFF487 /* MAMineEntryView.m */,
 				C644B09A277079C600842AFA /* MAMineActivityBanner.h */,
 				C644B09B277079C600842AFA /* MAMineActivityBanner.m */,
+				C6466CF92771F30A00EFF487 /* MAMineRecommendedServiceView.h */,
+				C6466CFA2771F30A00EFF487 /* MAMineRecommendedServiceView.m */,
+				C6466CFC2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.h */,
+				C6466CFD2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -366,6 +379,8 @@
 			children = (
 				C65A6199276351D300CE6029 /* MAPicListModel.h */,
 				C65A619A276351D300CE6029 /* MAPicListModel.m */,
+				C6466CF62771ED7C00EFF487 /* MAImageTitleModel.h */,
+				C6466CF72771ED7C00EFF487 /* MAImageTitleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -690,6 +705,7 @@
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
+				C6466CFB2771F30A00EFF487 /* MAMineRecommendedServiceView.m in Sources */,
 				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
 				C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */,
 				C64DEBD1276C8B7D003D87D0 /* MAMineViewController.m in Sources */,
@@ -699,8 +715,10 @@
 				C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */,
 				C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */,
 				C61CFA5B276B4EF40042FCEB /* UIViewController+MATabBar.m in Sources */,
+				C6466CFE2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m in Sources */,
 				C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */,
 				C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */,
+				C6466CF82771ED7C00EFF487 /* MAImageTitleModel.m in Sources */,
 				C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */,
 				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
 				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,

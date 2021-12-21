@@ -11,6 +11,8 @@
 #import "MANavigationBar.h"
 #import "MASectionHeaderView.h"
 #import "MAMineHeaderView.h"
+#import "MAImageTitleModel.h"
+#import "MAMineRecommendedServiceView.h"
 
 static const CGFloat kStickyViewHeight = 90;
 
@@ -21,6 +23,10 @@ static const CGFloat kStickyViewHeight = 90;
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) MAMineStickyView *stickyView;
+
+@property (nonatomic, strong) MAMineRecommendedServiceView *recommendedServiceView;
+
+@property (nonatomic, strong) NSMutableArray<MAImageTitleModel *> *imageTitleArray;
 
 @end
 
@@ -57,6 +63,14 @@ static const CGFloat kStickyViewHeight = 90;
     [self.view addSubview:(_stickyScrollView = stickyScrollView)];
     [stickyScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
+    }];
+
+    MAMineRecommendedServiceView *recommendedServiceView = [MAMineRecommendedServiceView new];
+    [tableView addSubview:(_recommendedServiceView = recommendedServiceView)];
+    [recommendedServiceView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(tableView).offset(40 + [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+        make.left.equalTo(tableView).offset(10);
+        make.width.equalTo(tableView).offset(-20);
     }];
 }
 
@@ -103,7 +117,7 @@ static const CGFloat kStickyViewHeight = 90;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 200;
+        return [self.recommendedServiceView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
     }
     return 50;
 }
@@ -122,7 +136,7 @@ static const CGFloat kStickyViewHeight = 90;
     if (section == 0) {
         return 1;
     }
-    return 4;
+    return self.imageTitleArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -133,10 +147,24 @@ static const CGFloat kStickyViewHeight = 90;
     }
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"%zd", indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.imageView.image = [UIImage systemImageNamed:@"book"];
+    cell.imageView.image = [self.imageTitleArray objectAtIndex:indexPath.row].image;
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.text = [self.imageTitleArray objectAtIndex:indexPath.row].title;
     return cell;
+}
+
+#pragma mark - Lazy Load
+
+- (NSMutableArray<MAImageTitleModel *> *)imageTitleArray {
+    if (!_imageTitleArray) {
+        _imageTitleArray = [@[
+            [[MAImageTitleModel alloc] initWithImage:[UIImage systemImageNamed:@"questionmark"] title:@"联系我们"],
+            [[MAImageTitleModel alloc] initWithImage:[UIImage systemImageNamed:@"figure.walk"] title:@"关怀模式"],
+            [[MAImageTitleModel alloc] initWithImage:[UIImage systemImageNamed:@"gearshape"] title:@"设置"]
+        ] mutableCopy];
+    }
+    return _imageTitleArray;
 }
 
 @end

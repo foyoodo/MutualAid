@@ -22,6 +22,7 @@
 
         UILabel *titleLabel = [UILabel new];
         titleLabel.font = [UIFont systemFontOfSize:12];
+        titleLabel.text = @" ";
         [self addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(imageView.mas_bottom).offset(8);
