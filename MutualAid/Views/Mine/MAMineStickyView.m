@@ -23,7 +23,11 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor systemGroupedBackgroundColor];
 
+        self.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.layer.shadowOffset = CGSizeMake(0, 2);
+
         UIImageView *avatorImageView = [UIImageView new];
+        avatorImageView.layer.masksToBounds = YES;
         [self addSubview:(_avatorImageView = avatorImageView)];
         [avatorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.equalTo(self).offset(8);
@@ -32,6 +36,7 @@
         }];
 
         UILabel *nameLabel = [UILabel new];
+        nameLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         nameLabel.textColor = [UIColor darkGrayColor];
         [self addSubview:(_nameLabel = nameLabel)];
         [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,6 +49,14 @@
         nameLabel.text = @"foyoodo";
     }
     return self;
+}
+
+#pragma mark - Life Cycle
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    self.avatorImageView.layer.cornerRadius = self.avatorImageView.bounds.size.width / 2;
 }
 
 @end

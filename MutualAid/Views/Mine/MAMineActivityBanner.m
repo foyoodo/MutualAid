@@ -28,7 +28,7 @@
 
         self.layer.borderColor = [UIColor colorNamed:@"AccentColor"].CGColor;
         self.layer.borderWidth = 1.0;
-        self.layer.cornerRadius = 8;
+        self.layer.cornerRadius = 6;
 
         UIView *leftContainerView = [UIView new];
         [self addSubview:(_leftContainerView = leftContainerView)];

@@ -58,7 +58,9 @@
         self.contentInset = contentInset;
         self.mainScrollView.contentInset = contentInset;
         self.mainScrollView.contentOffset = CGPointMake(0, -contentInset.top);
-        self.mainScrollView.scrollIndicatorInsets = UIEdgeInsetsMake(self.stickyHeaderView.bounds.size.height, 0, 0, 0);
+        UIEdgeInsets verticalScrollIndicatorInsets = self.mainScrollView.verticalScrollIndicatorInsets;
+        verticalScrollIndicatorInsets.top += self.stickyHeaderView.bounds.size.height;
+        self.mainScrollView.verticalScrollIndicatorInsets = verticalScrollIndicatorInsets;
         [self addSubview:self.mainScrollView];
 
         self.stickyContainerView.frame = CGRectMake(0, -contentInset.top, self.bounds.size.width, self.stickyContainerViewHeight);

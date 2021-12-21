@@ -12,7 +12,7 @@
 #import "MASectionHeaderView.h"
 #import "MAMineHeaderView.h"
 
-static const CGFloat kStickyViewHeight = 80;
+static const CGFloat kStickyViewHeight = 90;
 
 @interface MAMineViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -37,6 +37,7 @@ static const CGFloat kStickyViewHeight = 80;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.sectionFooterHeight = 0;
     tableView.estimatedRowHeight = 100;
+    tableView.verticalScrollIndicatorInsets = UIEdgeInsetsMake(20, 0, 0, 0);
     tableView.delegate = self;
     tableView.dataSource = self;
 
@@ -46,7 +47,8 @@ static const CGFloat kStickyViewHeight = 80;
     navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:nil]];
 
-    MAMineHeaderView *headerView = [[MAMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, 0, 200)];
+    MAMineHeaderView *headerView = [MAMineHeaderView new];
+    headerView.frame = CGRectMake(0, 0, 0, [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
     tableView.tableHeaderView = headerView;
 
     MAStickyScrollView *stickyScrollView = [[MAStickyScrollView alloc] initWithScrollView:(_tableView = tableView)];
@@ -67,8 +69,15 @@ static const CGFloat kStickyViewHeight = 80;
         if (contentOffset > 0) {
             frame.size.height = fmax(kStickyViewHeight - contentOffset, 56);
             self.stickyView.frame = frame;
+
+            CGFloat opacity = fmin(contentOffset, 50) / 500;
+            self.stickyView.layer.shadowOpacity = opacity;
         } else {
             frame.size.height = kStickyViewHeight;
+
+            if (self.stickyView.layer.shadowOpacity != 0) {
+                self.stickyView.layer.shadowOpacity = 0;
+            }
         }
         self.stickyView.frame = frame;
     }

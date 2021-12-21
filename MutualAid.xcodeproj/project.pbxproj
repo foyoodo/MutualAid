@@ -18,6 +18,8 @@
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
 		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
+		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
+		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
 		C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35A275E15ED00AE98EC /* MASearchResultView.m */; };
 		C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64AB35D275E16BC00AE98EC /* MASearchRecommendView.m */; };
 		C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C64AB370275E2A9E00AE98EC /* Localizable.strings */; };
@@ -96,6 +98,10 @@
 		C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchNavigationControllerDelegate.m; sourceTree = "<group>"; };
 		C644B09A277079C600842AFA /* MAMineActivityBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineActivityBanner.h; sourceTree = "<group>"; };
 		C644B09B277079C600842AFA /* MAMineActivityBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineActivityBanner.m; sourceTree = "<group>"; };
+		C6466CF027717C4D00EFF487 /* MAMineCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineCounterView.h; sourceTree = "<group>"; };
+		C6466CF127717C4D00EFF487 /* MAMineCounterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineCounterView.m; sourceTree = "<group>"; };
+		C6466CF3277182E700EFF487 /* MAMineEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineEntryView.h; sourceTree = "<group>"; };
+		C6466CF4277182E700EFF487 /* MAMineEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineEntryView.m; sourceTree = "<group>"; };
 		C64AB359275E15ED00AE98EC /* MASearchResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchResultView.h; sourceTree = "<group>"; };
 		C64AB35A275E15ED00AE98EC /* MASearchResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchResultView.m; sourceTree = "<group>"; };
 		C64AB35C275E16BC00AE98EC /* MASearchRecommendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendView.h; sourceTree = "<group>"; };
@@ -345,6 +351,10 @@
 				C6DEEC34276F5845000BF19F /* MAMineStickyView.m */,
 				C67D78192770B6A7005B91F7 /* MAMineHeaderView.h */,
 				C67D781A2770B6A7005B91F7 /* MAMineHeaderView.m */,
+				C6466CF027717C4D00EFF487 /* MAMineCounterView.h */,
+				C6466CF127717C4D00EFF487 /* MAMineCounterView.m */,
+				C6466CF3277182E700EFF487 /* MAMineEntryView.h */,
+				C6466CF4277182E700EFF487 /* MAMineEntryView.m */,
 				C644B09A277079C600842AFA /* MAMineActivityBanner.h */,
 				C644B09B277079C600842AFA /* MAMineActivityBanner.m */,
 			);
@@ -669,6 +679,7 @@
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
+				C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */,
 				C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */,
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
 				C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */,
@@ -680,6 +691,7 @@
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
 				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
+				C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */,
 				C64DEBD1276C8B7D003D87D0 /* MAMineViewController.m in Sources */,
 				C64AB35B275E15ED00AE98EC /* MASearchResultView.m in Sources */,
 				C6F1037C275B142A0076F92A /* main.m in Sources */,
