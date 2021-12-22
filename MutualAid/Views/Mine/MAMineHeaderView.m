@@ -48,9 +48,9 @@
         MAMineActivityBanner *activityBanner = [MAMineActivityBanner new];
         [self addSubview:(_activityBanner = activityBanner)];
         [activityBanner mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(entryStackView.mas_bottom).offset(20);
+            make.top.equalTo(entryStackView.mas_bottom).offset(10);
             make.left.right.equalTo(counterStackView);
-            make.bottom.equalTo(self).offset(-10);
+            make.bottom.equalTo(self);
             make.height.equalTo(@(70));
         }];
 

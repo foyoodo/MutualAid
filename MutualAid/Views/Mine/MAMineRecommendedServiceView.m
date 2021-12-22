@@ -35,7 +35,7 @@
         NSInteger count = (self.imageTitleArray.count - 1) / 4 + 1;
         [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
-            make.height.equalTo(@(([[MAMineEntryView new] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height * count) + ((self.imageTitleArray.count - 1) / 4) * (count - 1)));
+            make.height.equalTo(@([[MAMineEntryView new] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height * count));
         }];
 
         [collectionView registerClass:[MAMineRecommendedServiceCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([MAMineRecommendedServiceCollectionViewCell class])];
