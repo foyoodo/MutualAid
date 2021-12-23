@@ -15,8 +15,9 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 
 @implementation MAMediator (BaseActions)
 
-- (UIViewController *)MAMediator_webViewControllerWithURL:(NSURL *)requestURL {
-    return [self performTarget:kMAMediatorTargetBase action:kMAMediatorActionWebViewController params:@{ @"requestURL": requestURL } shouldCacheTarget:NO];
+- (UIViewController *)MAMediator_webViewControllerWithTitle:(NSString *)title
+                                                 requestURL:(NSURL *)requestURL {
+    return [self performTarget:kMAMediatorTargetBase action:kMAMediatorActionWebViewController params:@{ @"title": title, @"requestURL": requestURL } shouldCacheTarget:NO];
 }
 
 - (UITableViewCell *)MAMediator_cellForTableView:(UITableView *)tableView

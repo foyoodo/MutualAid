@@ -12,6 +12,7 @@
 
 - (UIViewController *)Action_webViewController:(NSDictionary *)params {
     MAWebViewController *webViewController = [MAWebViewController new];
+    webViewController.title = params[@"title"];
     webViewController.requestURL = params[@"requestURL"];
     return webViewController;
 }

@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MAMediator (BaseActions)
 
-- (UIViewController *)MAMediator_webViewControllerWithURL:(NSURL *)requestURL;
+- (UIViewController *)MAMediator_webViewControllerWithTitle:(NSString *)title
+                                                 requestURL:(NSURL *)requestURL;
 
 - (UITableViewCell *)MAMediator_cellForTableView:(UITableView *)tableView
                                         withFont:(UIFont *)font

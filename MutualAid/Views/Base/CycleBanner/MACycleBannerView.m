@@ -146,7 +146,7 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
+    UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithTitle:[self.dataSourceArray objectAtIndex:indexPath.item].title requestURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
     [CT() pushViewController:webViewController animated:YES];
 }
 

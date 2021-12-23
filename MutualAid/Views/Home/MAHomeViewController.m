@@ -18,6 +18,8 @@
 #import "MANavigationBar.h"
 #import "MAPicListModel.h"
 #import "MJRefresh.h"
+#import "MAMediator+BaseActions.h"
+#import "CTMediator+HandyTools.h"
 
 @interface MAHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -209,6 +211,13 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithTitle:[self.picListData objectAtIndex:indexPath.row].title requestURL:[NSURL URLWithString:[self.picListData objectAtIndex:indexPath.row].jumpUrl]];
+        [CT() pushViewController:webViewController animated:YES];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -275,11 +284,11 @@
     if (!_picListData) {
         _picListData = [NSMutableArray array];
         [_picListData addObjectsFromArray:@[
-            [MAPicListModel modelWithTitle:@"常见急症急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/68f4534217eda27fdb5b81ecb513a741.jpg"],
-            [MAPicListModel modelWithTitle:@"公众 CPR AED 课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/d4bf7b3e8ebe404ab48710c19afd3ae3.jpg"],
-            [MAPicListModel modelWithTitle:@"公众必会急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/8062674e17bcbcc8c920d06597b73a07.jpg"],
-            [MAPicListModel modelWithTitle:@"美国心脏协会心脏救护员课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/ed37a644d441d0d3694569d47bb5da9f.jpg"],
-            [MAPicListModel modelWithTitle:@"国际野外医学协会野外高级急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/c5451deb77b9185a79410b33f2096958.jpg"],
+            [MAPicListModel modelWithTitle:@"常见急症急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/68f4534217eda27fdb5b81ecb513a741.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=15"],
+            [MAPicListModel modelWithTitle:@"公众 CPR AED 课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/d4bf7b3e8ebe404ab48710c19afd3ae3.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=14"],
+            [MAPicListModel modelWithTitle:@"公众必会急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/8062674e17bcbcc8c920d06597b73a07.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=18"],
+            [MAPicListModel modelWithTitle:@"美国心脏协会心脏救护员课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/ed37a644d441d0d3694569d47bb5da9f.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=18"],
+            [MAPicListModel modelWithTitle:@"国际野外医学协会野外高级急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/c5451deb77b9185a79410b33f2096958.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=12"],
         ]];
     }
     return _picListData;
