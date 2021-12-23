@@ -8,6 +8,8 @@
 #import "MAHotNewsView.h"
 #import "MAHotNewsCollectionViewCell.h"
 #import "MAPicListModel.h"
+#import "MAMediator+BaseActions.h"
+#import "CTMediator+HandyTools.h"
 
 @interface MAHotNewsView () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -56,6 +58,10 @@
 
 #pragma mark - UICollectionViewDelegate
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithTitle:@"资讯详情" requestURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
+    [CT() pushViewController:webViewController animated:YES];
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -75,11 +81,11 @@
     if (!_dataSourceArray) {
         _dataSourceArray = [NSMutableArray array];
         [_dataSourceArray addObjectsFromArray:@[
-            [MAPicListModel modelWithTitle:@"宝山又上新了一批“救命神器” AED，“救”在你身边" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/25d0ac79a76b69342cfff0d2b6193bc9.jpg"],
-            [MAPicListModel modelWithTitle:@"“救命神器”AED要配好更要用好" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/2cd4dd3765e34a7c123e792db1719582.jpg"],
-            [MAPicListModel modelWithTitle:@"阿伯突然晕倒情况危急 中大校园内AED成功救人" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/a4846a16c9a7bde3f529602f7bf043e3.jpg"],
-            [MAPicListModel modelWithTitle:@"全广州已布设超1100台AED，“十四五”期间拟配置4500台" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/e7ce7a399506ce590ce44afa85a020e4.jpg"],
-            [MAPicListModel modelWithTitle:@"沈阳大力推进救护培训工作 提高应急救护知识普及率" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/0aa9da09a1d6702c632974f9582f5bc7.jpg"],
+            [MAPicListModel modelWithTitle:@"宝山又上新了一批“救命神器” AED，“救”在你身边" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/25d0ac79a76b69342cfff0d2b6193bc9.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/contentMessage?id=150"],
+            [MAPicListModel modelWithTitle:@"“救命神器”AED要配好更要用好" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/2cd4dd3765e34a7c123e792db1719582.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/contentMessage?id=149"],
+            [MAPicListModel modelWithTitle:@"阿伯突然晕倒情况危急 中大校园内AED成功救人" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/a4846a16c9a7bde3f529602f7bf043e3.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/contentMessage?id=148"],
+            [MAPicListModel modelWithTitle:@"全广州已布设超1100台AED，“十四五”期间拟配置4500台" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/e7ce7a399506ce590ce44afa85a020e4.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/contentMessage?id=147"],
+            [MAPicListModel modelWithTitle:@"沈阳大力推进救护培训工作 提高应急救护知识普及率" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/0aa9da09a1d6702c632974f9582f5bc7.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/contentMessage?id=146"],
         ]];
     }
     return _dataSourceArray;
