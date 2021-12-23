@@ -13,6 +13,7 @@
 #import "MAMineHeaderView.h"
 #import "MAImageTitleModel.h"
 #import "MAMineRecommendedServiceView.h"
+#import "MAMediator+BaseActions.h"
 
 static const CGFloat kStickyViewHeight = 90;
 
@@ -99,6 +100,13 @@ static const CGFloat kStickyViewHeight = 90;
 
 #pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return;
+    }
+    [[MAMediator sharedInstance] MAMediator_configTableViewCell:cell withTitle:[self.imageTitleArray objectAtIndex:indexPath.row].title andImage:[self.imageTitleArray objectAtIndex:indexPath.row].image];
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     MASectionHeaderView *sectionHeaderView = nil;
     if (section == 0) {
@@ -145,13 +153,7 @@ static const CGFloat kStickyViewHeight = 90;
         cell.backgroundColor = [UIColor clearColor];
         return cell;
     }
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.imageView.image = [self.imageTitleArray objectAtIndex:indexPath.row].image;
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
-    cell.textLabel.text = [self.imageTitleArray objectAtIndex:indexPath.row].title;
-    return cell;
+    return [[MAMediator sharedInstance] MAMediator_cellForTableView:tableView withFont:[UIFont systemFontOfSize:15] andIdentifier:@"id"];
 }
 
 #pragma mark - Lazy Load

@@ -12,4 +12,5 @@ target $project_name do
   pod 'SDWebImage', '~> 5.12.1'
   pod 'MJRefresh', '~> 3.7.5'
   pod 'FDFullscreenPopGesture', :git => "https://github.com/forkingdog/FDFullscreenPopGesture"
+  pod 'CTMediator', '~> 46'
 end

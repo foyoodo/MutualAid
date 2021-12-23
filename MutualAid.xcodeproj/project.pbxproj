@@ -47,6 +47,9 @@
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
+		C6BC5910277460F800973364 /* MAMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC590F277460F800973364 /* MAMediator.m */; };
+		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
+		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
@@ -161,6 +164,12 @@
 		C6AC216A276A37B700E71A95 /* NSTimer+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MAExt.h"; sourceTree = "<group>"; };
 		C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MAExt.m"; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
+		C6BC590E277460F800973364 /* MAMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMediator.h; sourceTree = "<group>"; };
+		C6BC590F277460F800973364 /* MAMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMediator.m; sourceTree = "<group>"; };
+		C6BC5912277469BF00973364 /* Target_Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Base.h; sourceTree = "<group>"; };
+		C6BC5913277469BF00973364 /* Target_Base.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_Base.m; sourceTree = "<group>"; };
+		C6BC59172774711E00973364 /* MAMediator+BaseActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAMediator+BaseActions.h"; sourceTree = "<group>"; };
+		C6BC59182774711E00973364 /* MAMediator+BaseActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAMediator+BaseActions.m"; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,8 +435,45 @@
 				C6590C3F2766FD6700845973 /* MAStickyScrollView.h */,
 				C6590C402766FD6700845973 /* MAStickyScrollView.m */,
 				C680C5BE2768854800662440 /* CycleBanner */,
+				C6BC59112774699A00973364 /* Actions */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		C6BC590D277460D800973364 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC59152774708F00973364 /* MAMediator */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C6BC59112774699A00973364 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC5912277469BF00973364 /* Target_Base.h */,
+				C6BC5913277469BF00973364 /* Target_Base.m */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		C6BC59152774708F00973364 /* MAMediator */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC59162774709D00973364 /* MAMediatorCategories */,
+				C6BC590E277460F800973364 /* MAMediator.h */,
+				C6BC590F277460F800973364 /* MAMediator.m */,
+			);
+			path = MAMediator;
+			sourceTree = "<group>";
+		};
+		C6BC59162774709D00973364 /* MAMediatorCategories */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC59172774711E00973364 /* MAMediator+BaseActions.h */,
+				C6BC59182774711E00973364 /* MAMediator+BaseActions.m */,
+			);
+			path = MAMediatorCategories;
 			sourceTree = "<group>";
 		};
 		C6F1035D275B14290076F92A = {
@@ -456,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F1039E275B17300076F92A /* Classes */,
+				C6BC590D277460D800973364 /* Services */,
 				C65A6198276351A400CE6029 /* Model */,
 				C6F103A1275B17E30076F92A /* Views */,
 				C64AB374275E2B2900AE98EC /* Extensions */,
@@ -706,6 +753,7 @@
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
 				C6466CFB2771F30A00EFF487 /* MAMineRecommendedServiceView.m in Sources */,
+				C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */,
 				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
 				C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */,
 				C64DEBD1276C8B7D003D87D0 /* MAMineViewController.m in Sources */,
@@ -719,10 +767,12 @@
 				C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */,
 				C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */,
 				C6466CF82771ED7C00EFF487 /* MAImageTitleModel.m in Sources */,
+				C6BC5914277469BF00973364 /* Target_Base.m in Sources */,
 				C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */,
 				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
 				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,
 				C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */,
+				C6BC5910277460F800973364 /* MAMediator.m in Sources */,
 				C64DD9B3275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
