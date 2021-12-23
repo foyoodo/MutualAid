@@ -11,6 +11,8 @@
 #import "MACycleBannerCollectionViewCell.h"
 #import "MAPicListModel.h"
 #import "NSTimer+MAExt.h"
+#import "MAMediator+BaseActions.h"
+#import "CTMediator+HandyTools.h"
 
 static const CGFloat kPageControlHeight = 35.0;
 static const NSTimeInterval kCycleScrollInterval = 3.0;
@@ -139,6 +141,13 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     [self cycleScroll];
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
+    [CT() pushViewController:webViewController animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource

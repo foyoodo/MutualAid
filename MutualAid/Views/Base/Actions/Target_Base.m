@@ -6,8 +6,15 @@
 //
 
 #import "Target_Base.h"
+#import "MAWebViewController.h"
 
 @implementation Target_Base
+
+- (UIViewController *)Action_webViewController:(NSDictionary *)params {
+    MAWebViewController *webViewController = [MAWebViewController new];
+    webViewController.requestURL = params[@"requestURL"];
+    return webViewController;
+}
 
 - (UITableViewCell *)Action_cell:(NSDictionary *)params {
     UITableView *tableView = params[@"tableView"];

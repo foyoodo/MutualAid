@@ -128,10 +128,10 @@
 
 - (void)requestData {
     [self.cycleBannerView setData:@[
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/5f7e6a0ddd6e327aef1eefdd02bb1d3a.jpg"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/d64b5e0b83d924ad8b9affe8a67d97e4.jpg"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/825b9e523a0023cce39701041f3ff259.jpg"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/270d8698057bc5d7c1c0a3456cdac295.jpg"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/5f7e6a0ddd6e327aef1eefdd02bb1d3a.jpg" jumpUrl:@"http://h-gracetc.cn:9300/hhstatics/2021/11/03/683232d4-22ed-4422-b791-2a960eaec1df.jpg"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/d64b5e0b83d924ad8b9affe8a67d97e4.jpg" jumpUrl:@"https://h-gracetc.cn:9360/hhfxiang/train.html"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/825b9e523a0023cce39701041f3ff259.jpg" jumpUrl:@"https://www.wjx.cn/vj/rCUbLO8.aspx"],
+        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/270d8698057bc5d7c1c0a3456cdac295.jpg" jumpUrl:@"https://www.wenjuan.com/s/UZBZJvuOuX/"],
     ]];
 }
 

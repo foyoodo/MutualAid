@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Target_Base : NSObject
 
+- (UIViewController *)Action_webViewController:(NSDictionary *)params;
+
 - (UITableViewCell *)Action_cell:(NSDictionary *)params;
 
 - (void)Action_configCell:(NSDictionary *)params;

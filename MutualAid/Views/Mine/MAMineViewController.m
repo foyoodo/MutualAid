@@ -35,6 +35,10 @@ static const CGFloat kStickyViewHeight = 90;
 
 #pragma mark - Life Cycle
 
+- (void)dealloc {
+    [[MAMediator sharedInstance] MAMediator_cleanTableViewCellTarget];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
