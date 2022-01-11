@@ -44,7 +44,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.searchBar.searchView.textField setUserInteractionEnabled:YES];
+    self.searchBar.searchView.textFieldUserInteractionEnabled = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.searchBar.searchView.textField becomeFirstResponder];
     });

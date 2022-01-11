@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)prepareForTransitionIfShow:(BOOL)show;
 
+@property (nonatomic, assign) BOOL textFieldUserInteractionEnabled;
+
 @property (nonatomic, strong, readonly) UIImageView *icon;
 @property (nonatomic, strong, readonly) UITextField *textField;
 

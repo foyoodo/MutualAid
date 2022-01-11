@@ -59,7 +59,7 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *webViewController = [[MAMediator sharedInstance] MAMediator_webViewControllerWithTitle:@"资讯详情" requestURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
+    UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:@"资讯详情" requestURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl]];
     [CT() pushViewController:webViewController animated:YES];
 }
 

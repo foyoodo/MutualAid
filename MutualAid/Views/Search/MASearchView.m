@@ -26,7 +26,6 @@
         self.layer.borderWidth = 1.0;
 
         UIView *containerView = [UIView new];
-        containerView.userInteractionEnabled = NO;
         [self addSubview:(_containerView = containerView)];
         [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.centerY.equalTo(self);
@@ -44,7 +43,6 @@
         }];
 
         UITextField *textField = [UITextField new];
-        textField.userInteractionEnabled = NO;
         [containerView addSubview:(_textField = textField)];
         [textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.greaterThanOrEqualTo(containerView);
@@ -53,6 +51,8 @@
             make.bottom.lessThanOrEqualTo(containerView);
             make.centerY.equalTo(icon);
         }];
+
+        self.textFieldUserInteractionEnabled = NO;
 
         textField.placeholder = @"Search".localized;
     }
@@ -70,6 +70,17 @@
             self.containerViewHorizontalConstraint = make.centerX.equalTo(self);
         }
     }];
+}
+
+#pragma mark - Getter & Setter
+
+- (BOOL)textFieldUserInteractionEnabled {
+    return self.containerView.userInteractionEnabled && self.textField.userInteractionEnabled;
+}
+
+- (void)setTextFieldUserInteractionEnabled:(BOOL)enabled {
+    self.containerView.userInteractionEnabled = enabled;
+    self.textField.userInteractionEnabled = enabled;
 }
 
 @end

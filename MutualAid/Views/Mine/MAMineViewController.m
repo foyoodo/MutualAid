@@ -36,7 +36,7 @@ static const CGFloat kStickyViewHeight = 90;
 #pragma mark - Life Cycle
 
 - (void)dealloc {
-    [[MAMediator sharedInstance] MAMediator_cleanTableViewCellTarget];
+    [[MAMediator sharedInstance] baseActions_cleanTableViewCellTarget];
 }
 
 - (void)viewDidLoad {
@@ -108,7 +108,7 @@ static const CGFloat kStickyViewHeight = 90;
     if (indexPath.section == 0) {
         return;
     }
-    [[MAMediator sharedInstance] MAMediator_configTableViewCell:cell withTitle:[self.imageTitleArray objectAtIndex:indexPath.row].title andImage:[self.imageTitleArray objectAtIndex:indexPath.row].image];
+    [[MAMediator sharedInstance] baseActions_configTableViewCell:cell withTitle:[self.imageTitleArray objectAtIndex:indexPath.row].title andImage:[self.imageTitleArray objectAtIndex:indexPath.row].image];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -157,7 +157,7 @@ static const CGFloat kStickyViewHeight = 90;
         cell.backgroundColor = [UIColor clearColor];
         return cell;
     }
-    return [[MAMediator sharedInstance] MAMediator_cellForTableView:tableView withFont:[UIFont systemFontOfSize:15] andIdentifier:@"id"];
+    return [[MAMediator sharedInstance] baseActions_cellForTableView:tableView withFont:[UIFont systemFontOfSize:15] andIdentifier:@"id"];
 }
 
 #pragma mark - Lazy Load

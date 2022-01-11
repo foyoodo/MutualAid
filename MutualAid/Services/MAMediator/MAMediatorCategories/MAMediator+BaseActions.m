@@ -15,12 +15,15 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 
 @implementation MAMediator (BaseActions)
 
-- (UIViewController *)MAMediator_webViewControllerWithTitle:(NSString *)title
+- (UIViewController *)baseActions_webViewControllerWithTitle:(NSString *)title
                                                  requestURL:(NSURL *)requestURL {
-    return [self performTarget:kMAMediatorTargetBase action:kMAMediatorActionWebViewController params:@{ @"title": title, @"requestURL": requestURL } shouldCacheTarget:NO];
+    return [self performTarget:kMAMediatorTargetBase
+                        action:kMAMediatorActionWebViewController
+                        params:@{ @"title": title, @"requestURL": requestURL }
+             shouldCacheTarget:NO];
 }
 
-- (UITableViewCell *)MAMediator_cellForTableView:(UITableView *)tableView
+- (UITableViewCell *)baseActions_cellForTableView:(UITableView *)tableView
                                         withFont:(UIFont *)font
                                    andIdentifier:(NSString *)identifier {
     return [self performTarget:kMAMediatorTargetBase
@@ -29,7 +32,7 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
              shouldCacheTarget:YES];
 }
 
-- (void)MAMediator_configTableViewCell:(UITableViewCell *)cell
+- (void)baseActions_configTableViewCell:(UITableViewCell *)cell
                              withTitle:(NSString *)title
                               andImage:(UIImage *)image {
     [self performTarget:kMAMediatorTargetBase
@@ -38,7 +41,7 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
       shouldCacheTarget:YES];
 }
 
-- (void)MAMediator_cleanTableViewCellTarget {
+- (void)baseActions_cleanTableViewCellTarget {
     NSString *fullTargetName = [NSString stringWithFormat:@"Target_%@", kMAMediatorTargetBase];
     [self releaseCachedTargetWithFullTargetName:fullTargetName];
 }
