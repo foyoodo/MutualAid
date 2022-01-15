@@ -7,6 +7,7 @@
 
 #import "MAAppDelegate.h"
 #import "MATabBarController.h"
+#import "MAFloatingButton.h"
 
 @interface MAAppDelegate ()
 
@@ -19,8 +20,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MATabBarController new];
     [self.window makeKeyAndVisible];
+
+    MAFloatingButton *floatingButton = [MAFloatingButton new];
+    [self.window addSubview:floatingButton];
+
     return YES;
 }
-
 
 @end
