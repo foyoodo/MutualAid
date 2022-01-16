@@ -41,6 +41,10 @@
         self.fy_draggable = YES;
         self.fy_draggableViewDelegate = self;
         self.fy_draggablePanGestureRecognizerView = circle;
+
+        FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll];
+        configuration.recognizerContentInset = UIEdgeInsetsMake(5, 15, 5, 15);
+        self.fy_draggableViewConfiguration = configuration;
     }
     return self;
 }

@@ -34,20 +34,20 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if (self.targetDraggableView.fy_draggableViewConfiguration.direction == FYDraggableViewDirectionNone) {
-        return NO;
-    }
+    FYDraggableViewConfiguration *configuration = self.targetDraggableView.fy_draggableViewConfiguration;
 
-    if (self.targetDraggableView.fy_draggablePanGestureRecognizerView == self.targetDraggableView) {
-        return YES;
+    if (configuration.direction == FYDraggableViewDirectionNone) {
+        return NO;
     }
 
     CGPoint point = [gestureRecognizer locationInView:self.targetDraggableView.fy_draggablePanGestureRecognizerView];
     CGRect bounds = self.targetDraggableView.fy_draggablePanGestureRecognizerView.bounds;
-    if (point.x + 15 >= bounds.origin.x && point.x - 15 <= bounds.origin.x + bounds.size.width) {
-        if (point.y + 10 >= bounds.origin.y && point.y - 10 <= bounds.origin.y + bounds.size.height) {
-            return YES;
-        }
+
+    BOOL cda = point.x + configuration.recognizerContentInset.left >= bounds.origin.x && point.x - configuration.recognizerContentInset.right <= bounds.origin.x + bounds.size.width;
+    BOOL cdb = point.y + configuration.recognizerContentInset.top >= bounds.origin.y && point.y - configuration.recognizerContentInset.bottom <= bounds.origin.y + bounds.size.height;
+
+    if (cda && cdb) {
+        return YES;
     }
 
     return NO;

@@ -43,6 +43,8 @@ typedef NS_OPTIONS(NSUInteger, FYDraggableViewDirection) {
 
 @property (nonatomic, assign) FYDraggableViewDirection direction;
 
+@property (nonatomic, assign) UIEdgeInsets recognizerContentInset;
+
 @end
 
 @interface UIView (FYDraggable)
