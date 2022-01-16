@@ -21,7 +21,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.frame = CGRectMake(300, 300, 112, 56);
+        self.frame = CGRectMake(0, 300, 112, 56);
 
         UIView *containerView = [[UIView alloc] initWithFrame:self.bounds];
         containerView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
@@ -33,8 +33,8 @@
         circle.layer.cornerRadius = 23;
         [self addSubview:(_circle = circle)];
         [circle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self).offset(5);
-            make.right.bottom.equalTo(self).offset(-5);
+            make.top.left.equalTo(self).offset(5);
+            make.bottom.equalTo(self).offset(-5);
             make.width.equalTo(circle.mas_height);
         }];
 
@@ -42,8 +42,9 @@
         self.fy_draggableViewDelegate = self;
         self.fy_draggablePanGestureRecognizerView = circle;
 
-        FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll];
-        configuration.recognizerContentInset = UIEdgeInsetsMake(5, 15, 5, 15);
+        FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll position:FYDraggableViewPositionLeft];
+        configuration.recognizerContentInsets = UIEdgeInsetsMake(5, 5, 5, 10);
+        configuration.extraContentInsets = UIEdgeInsetsMake(0, 0, 0, -56);
         self.fy_draggableViewConfiguration = configuration;
     }
     return self;
@@ -54,7 +55,6 @@
 - (void)fy_draggableViewWillBeginDragging:(UIView *)view {
     CGFloat dx = 56;
     CGRect frame = self.containerView.frame;
-    frame.origin.x += dx;
     frame.size.width -= dx;
     [UIView animateWithDuration:0.2 animations:^{
         self.containerView.frame = frame;
@@ -64,7 +64,6 @@
 - (void)fy_draggableViewDidEndDragging:(UIView *)view willDecelerate:(BOOL)decelerate {
     CGFloat dx = 56;
     CGRect frame = self.containerView.frame;
-    frame.origin.x -= dx;
     frame.size.width += dx;
     [UIView animateWithDuration:0.2 animations:^{
         self.containerView.frame = frame;

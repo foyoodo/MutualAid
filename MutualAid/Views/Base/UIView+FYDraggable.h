@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
 typedef NS_OPTIONS(NSUInteger, FYDraggableViewDirection) {
     FYDraggableViewDirectionNone       = 0,
     FYDraggableViewDirectionUp         = 1 << 0,
@@ -35,17 +36,34 @@ typedef NS_OPTIONS(NSUInteger, FYDraggableViewDirection) {
     FYDraggableViewDirectionVertical   = FYDraggableViewDirectionUp   | FYDraggableViewDirectionDown
 };
 
+typedef NS_OPTIONS(NSUInteger, FYDraggableViewPosition) {
+    FYDraggableViewPositionNone       = 0,
+    FYDraggableViewPositionTop        = 1 << 0,
+    FYDraggableViewPositionLeft       = 1 << 1,
+    FYDraggableViewPositionRight      = 1 << 2,
+    FYDraggableViewPositionBottom     = 1 << 3
+};
+
 @interface FYDraggableViewConfiguration : NSObject
 
 + (instancetype)configurationWithDirection:(FYDraggableViewDirection)direction;
 
++ (instancetype)configurationWithDirection:(FYDraggableViewDirection)direction position:(FYDraggableViewPosition)position;
+
 - (instancetype)initWithDirection:(FYDraggableViewDirection)direction;
+
+- (instancetype)initWithDirection:(FYDraggableViewDirection)direction position:(FYDraggableViewPosition)position;
 
 @property (nonatomic, assign) FYDraggableViewDirection direction;
 
-@property (nonatomic, assign) UIEdgeInsets recognizerContentInset;
+@property (nonatomic, assign) FYDraggableViewPosition position;
+
+@property (nonatomic, assign) UIEdgeInsets recognizerContentInsets;
+
+@property (nonatomic, assign) UIEdgeInsets extraContentInsets;
 
 @end
+
 
 @interface UIView (FYDraggable)
 

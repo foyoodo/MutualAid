@@ -43,11 +43,16 @@
     CGPoint point = [gestureRecognizer locationInView:self.targetDraggableView.fy_draggablePanGestureRecognizerView];
     CGRect bounds = self.targetDraggableView.fy_draggablePanGestureRecognizerView.bounds;
 
-    BOOL cda = point.x + configuration.recognizerContentInset.left >= bounds.origin.x && point.x - configuration.recognizerContentInset.right <= bounds.origin.x + bounds.size.width;
-    BOOL cdb = point.y + configuration.recognizerContentInset.top >= bounds.origin.y && point.y - configuration.recognizerContentInset.bottom <= bounds.origin.y + bounds.size.height;
+    if (UIEdgeInsetsEqualToEdgeInsets(configuration.recognizerContentInsets, UIEdgeInsetsZero)) {
+        return CGRectContainsPoint(bounds, point);
+    }
+    else {
+        BOOL cda = point.x + configuration.recognizerContentInsets.left >= bounds.origin.x && point.x - configuration.recognizerContentInsets.right <= bounds.origin.x + bounds.size.width;
+        BOOL cdb = point.y + configuration.recognizerContentInsets.top >= bounds.origin.y && point.y - configuration.recognizerContentInsets.bottom <= bounds.origin.y + bounds.size.height;
 
-    if (cda && cdb) {
-        return YES;
+        if (cda && cdb) {
+            return YES;
+        }
     }
 
     return NO;
@@ -63,6 +68,11 @@
     return [[self alloc] initWithDirection:direction];
 }
 
++ (instancetype)configurationWithDirection:(FYDraggableViewDirection)direction position:(FYDraggableViewPosition)position
+{
+    return [[self alloc] initWithDirection:direction position:position];
+}
+
 - (instancetype)init
 {
     return [self initWithDirection:FYDraggableViewDirectionAll];
@@ -70,8 +80,14 @@
 
 - (instancetype)initWithDirection:(FYDraggableViewDirection)direction
 {
+    return [self initWithDirection:direction position:FYDraggableViewPositionNone];
+}
+
+- (instancetype)initWithDirection:(FYDraggableViewDirection)direction position:(FYDraggableViewPosition)position
+{
     if (self = [super init]) {
         _direction = direction;
+        _position = position;
     }
     return self;
 }
@@ -101,7 +117,8 @@
             [self addGestureRecognizer:self.fy_draggablePanGestureRecognizer];
             [self.fy_draggablePanGestureRecognizer addTarget:self action:@selector(fy_draggableDragInside:)];
         }
-    } else {
+    }
+    else {
         if (objc_getAssociatedObject(self, @selector(fy_draggablePanGestureRecognizer))) {
             [self removeGestureRecognizer:self.fy_draggablePanGestureRecognizer];
         }
@@ -228,6 +245,17 @@
             }
 
             CGPoint center = CGPointMake(self.center.x + dx, self.center.y + dy);
+
+            CGFloat superFrameWidth = self.superview.frame.size.width;
+            CGFloat superFrameHeight = self.superview.frame.size.height;
+
+            UIEdgeInsets extraContentInsets = self.fy_draggableViewConfiguration.extraContentInsets;
+
+            center.x = MAX(center.x, self.bounds.size.width / 2 + self.superview.safeAreaInsets.left + extraContentInsets.left);
+            center.x = MIN(center.x, superFrameWidth - self.bounds.size.width / 2 - self.superview.safeAreaInsets.right - extraContentInsets.right);
+            center.y = MAX(center.y, self.bounds.size.height / 2 + self.superview.safeAreaInsets.top + extraContentInsets.top);
+            center.y = MIN(center.y, superFrameHeight - self.bounds.size.height / 2 - self.superview.safeAreaInsets.bottom - extraContentInsets.bottom);
+
             if (!CGPointEqualToPoint(self.center, center)) {
                 self.center = center;
 
@@ -240,20 +268,67 @@
         } break;
 
         case UIGestureRecognizerStateEnded: {
+            FYDraggableViewPosition position = self.fy_draggableViewConfiguration.position;
+
+            if (position == FYDraggableViewPositionNone) {
+                if (self.fy_draggableViewDelegate) {
+                    if ([self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewWillEndDragging:targetCenter:)]) {
+                        [self.fy_draggableViewDelegate fy_draggableViewWillEndDragging:self targetCenter:self.center];
+                    }
+                    if ([self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewDidEndDragging:willDecelerate:)]) {
+                        [self.fy_draggableViewDelegate fy_draggableViewDidEndDragging:self willDecelerate:NO];
+                    }
+                }
+                break;
+            }
+
+            UIEdgeInsets extraContentInsets = self.fy_draggableViewConfiguration.extraContentInsets;
+
             CGPoint center = self.center;
             CGFloat superFrameWidth = self.superview.frame.size.width;
+            CGFloat superFrameHeight = self.superview.frame.size.height;
 
-            if (center.x > superFrameWidth / 2) {
-                center.x = superFrameWidth - self.bounds.size.width / 2;
-            } else {
-                center.x = self.bounds.size.width / 2;
+            if (position & FYDraggableViewPositionLeft && position & FYDraggableViewPositionRight) {
+                if (center.x < superFrameWidth / 2) {
+                    center.x = self.bounds.size.width / 2 + self.superview.safeAreaInsets.left + extraContentInsets.left;
+                }
+                else {
+                    center.x = superFrameWidth - self.bounds.size.width / 2 - self.superview.safeAreaInsets.right - extraContentInsets.right;
+                }
+            }
+            else if (position & FYDraggableViewPositionLeft) {
+                center.x = self.bounds.size.width / 2 + self.superview.safeAreaInsets.left + extraContentInsets.left;
+            }
+            else if (position & FYDraggableViewPositionRight) {
+                center.x = superFrameWidth - self.bounds.size.width / 2 - self.superview.safeAreaInsets.right - extraContentInsets.right;
+            }
+
+
+            if (position & FYDraggableViewPositionTop && position & FYDraggableViewPositionBottom) {
+                if (center.y < superFrameHeight / 2) {
+                    center.y = self.bounds.size.height / 2 + self.superview.safeAreaInsets.top + extraContentInsets.top;
+                }
+                else {
+                    center.y = superFrameHeight - self.bounds.size.height / 2 - self.superview.safeAreaInsets.bottom - extraContentInsets.bottom;
+                }
+            }
+            else if (position & FYDraggableViewPositionTop) {
+                center.y = self.bounds.size.height / 2 + self.superview.safeAreaInsets.top + extraContentInsets.top;
+            }
+            else if (position & FYDraggableViewPositionBottom) {
+                center.y = superFrameHeight - self.bounds.size.height / 2 - self.superview.safeAreaInsets.bottom - extraContentInsets.bottom;
             }
 
             if (self.fy_draggableViewDelegate && [self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewWillEndDragging:targetCenter:)]) {
                 [self.fy_draggableViewDelegate fy_draggableViewWillEndDragging:self targetCenter:center];
             }
 
-            if (!CGPointEqualToPoint(self.center, center)) {
+            if (CGPointEqualToPoint(self.center, center)) {
+                if (self.fy_draggableViewDelegate && [self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewDidEndDragging:willDecelerate:)]) {
+                    [self.fy_draggableViewDelegate fy_draggableViewDidEndDragging:self willDecelerate:NO];
+                }
+            }
+            else {
                 if (self.fy_draggableViewDelegate && [self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewDidEndDragging:willDecelerate:)]) {
                     [self.fy_draggableViewDelegate fy_draggableViewDidEndDragging:self willDecelerate:YES];
                 }
@@ -269,10 +344,6 @@
                         [self.fy_draggableViewDelegate fy_draggableViewDidEndDecelerating:self];
                     }
                 }];
-            } else {
-                if (self.fy_draggableViewDelegate && [self.fy_draggableViewDelegate respondsToSelector:@selector(fy_draggableViewDidEndDragging:willDecelerate:)]) {
-                    [self.fy_draggableViewDelegate fy_draggableViewDidEndDragging:self willDecelerate:NO];
-                }
             }
         } break;
 
