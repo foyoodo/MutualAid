@@ -1,6 +1,7 @@
 PODS:
   - CTMediator (46)
   - FDFullscreenPopGesture (1.1)
+  - FYDraggableView (0.0.1)
   - Masonry (1.1.0)
   - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - CTMediator (~> 46)
   - FDFullscreenPopGesture (from `https://github.com/forkingdog/FDFullscreenPopGesture`)
+  - FYDraggableView (~> 0.0.1)
   - Masonry (~> 1.1.0)
   - MJRefresh (~> 3.7.5)
   - ReactiveObjC (~> 3.1.1)
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CTMediator
+    - FYDraggableView
     - Masonry
     - MJRefresh
     - ReactiveObjC
@@ -36,11 +39,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FYDraggableView: 83ece5ea65f232a3537005d3b79a220e7869c08f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
 
-PODFILE CHECKSUM: b8f0e0db957aec01587520ca02d26915c88bce59
+PODFILE CHECKSUM: fc4dab7293d7464b01a032d377d53fc8fa78ed27
 
 COCOAPODS: 1.11.2

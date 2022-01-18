@@ -17,7 +17,6 @@
 		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
 		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
-		C635F25C2792641600C8657F /* NSObject+FYDraggableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C635F25B2792641600C8657F /* NSObject+FYDraggableSupport.m */; };
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
 		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
 		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
@@ -53,7 +52,6 @@
 		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
 		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
 		C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC591B27748DF500973364 /* MAWebViewController.m */; };
-		C6D3565E2791AE2B009CFBEA /* UIView+FYDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3565D2791AE2B009CFBEA /* UIView+FYDraggable.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
@@ -106,8 +104,6 @@
 		C61FC65C275CD9B100851257 /* MASearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchView.m; sourceTree = "<group>"; };
 		C61FC65E275CE04400851257 /* MASearchNavigationControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchNavigationControllerDelegate.m; sourceTree = "<group>"; };
-		C635F25A2792641600C8657F /* NSObject+FYDraggableSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FYDraggableSupport.h"; sourceTree = "<group>"; };
-		C635F25B2792641600C8657F /* NSObject+FYDraggableSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FYDraggableSupport.m"; sourceTree = "<group>"; };
 		C644B09A277079C600842AFA /* MAMineActivityBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineActivityBanner.h; sourceTree = "<group>"; };
 		C644B09B277079C600842AFA /* MAMineActivityBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineActivityBanner.m; sourceTree = "<group>"; };
 		C6466CF027717C4D00EFF487 /* MAMineCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineCounterView.h; sourceTree = "<group>"; };
@@ -180,8 +176,6 @@
 		C6BC59182774711E00973364 /* MAMediator+BaseActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAMediator+BaseActions.m"; sourceTree = "<group>"; };
 		C6BC591A27748DF500973364 /* MAWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAWebViewController.h; sourceTree = "<group>"; };
 		C6BC591B27748DF500973364 /* MAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWebViewController.m; sourceTree = "<group>"; };
-		C6D3565C2791AE2B009CFBEA /* UIView+FYDraggable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FYDraggable.h"; sourceTree = "<group>"; };
-		C6D3565D2791AE2B009CFBEA /* UIView+FYDraggable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYDraggable.m"; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,10 +444,6 @@
 				C6590C402766FD6700845973 /* MAStickyScrollView.m */,
 				C658B6C327918452000429A9 /* MAFloatingButton.h */,
 				C658B6C427918452000429A9 /* MAFloatingButton.m */,
-				C635F25A2792641600C8657F /* NSObject+FYDraggableSupport.h */,
-				C635F25B2792641600C8657F /* NSObject+FYDraggableSupport.m */,
-				C6D3565C2791AE2B009CFBEA /* UIView+FYDraggable.h */,
-				C6D3565D2791AE2B009CFBEA /* UIView+FYDraggable.m */,
 				C680C5BE2768854800662440 /* CycleBanner */,
 				C6BC59112774699A00973364 /* Actions */,
 			);
@@ -753,14 +743,12 @@
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
-				C635F25C2792641600C8657F /* NSObject+FYDraggableSupport.m in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
 				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
-				C6D3565E2791AE2B009CFBEA /* UIView+FYDraggable.m in Sources */,
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
