@@ -39,6 +39,12 @@
     [searchBar prepareForTransition];
     [searchBar setDelegate:self];
 
+    [self.view addSubview:self.searchRecommendView];
+    [self.searchRecommendView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(searchBar.mas_bottom);
+        make.left.right.bottom.equalTo(self.view);
+    }];
+
     [self.view layoutIfNeeded];
 }
 
@@ -55,6 +61,12 @@
     [self.searchBar.searchView.textField resignFirstResponder];
 }
 
+#pragma mark - Private Methods
+
+- (void)doSearch:(NSString *)text {
+    self.searchBar.searchView.textField.text = text;
+}
+
 #pragma mark - MASearchBarDelegate
 
 - (void)searchBarDidCancel {
@@ -66,6 +78,11 @@
 - (MASearchRecommendView *)searchRecommendView {
     if (!_searchRecommendView) {
         _searchRecommendView = [MASearchRecommendView new];
+        @weakify(self)
+        _searchRecommendView.doSearchBlock = ^(NSString * _Nonnull text) {
+            @strongify(self)
+            [self doSearch:text];
+        };
     }
     return _searchRecommendView;
 }

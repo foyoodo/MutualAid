@@ -16,7 +16,7 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 @implementation MAMediator (BaseActions)
 
 - (UIViewController *)baseActions_webViewControllerWithTitle:(NSString *)title
-                                                 requestURL:(NSURL *)requestURL {
+                                                  requestURL:(NSURL *)requestURL {
     return [self performTarget:kMAMediatorTargetBase
                         action:kMAMediatorActionWebViewController
                         params:@{ @"title": title, @"requestURL": requestURL }
@@ -24,8 +24,8 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 }
 
 - (UITableViewCell *)baseActions_cellForTableView:(UITableView *)tableView
-                                        withFont:(UIFont *)font
-                                   andIdentifier:(NSString *)identifier {
+                                         withFont:(UIFont *)font
+                                    andIdentifier:(NSString *)identifier {
     return [self performTarget:kMAMediatorTargetBase
                         action:kMAMediatorActionCell
                         params:@{ @"tableView": tableView, @"font": font, @"identifier": identifier }
@@ -33,8 +33,8 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 }
 
 - (void)baseActions_configTableViewCell:(UITableViewCell *)cell
-                             withTitle:(NSString *)title
-                              andImage:(UIImage *)image {
+                              withTitle:(NSString *)title
+                               andImage:(UIImage *)image {
     [self performTarget:kMAMediatorTargetBase
                  action:kMAMediatorActionConfigCell
                  params:@{ @"cell": cell, @"title": title, @"image": image }

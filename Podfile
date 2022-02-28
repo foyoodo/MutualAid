@@ -13,6 +13,7 @@ target $project_name do
   pod 'MJRefresh', '~> 3.7.5'
   pod 'FDFullscreenPopGesture', :git => "https://github.com/forkingdog/FDFullscreenPopGesture"
   pod 'CTMediator', '~> 46'
+  pod 'UICollectionViewLeftAlignedLayout'
 
   pod 'FYDraggableView', '~> 0.0.1'
 end

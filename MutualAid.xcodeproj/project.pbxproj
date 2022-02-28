@@ -53,6 +53,7 @@
 		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
 		C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC591B27748DF500973364 /* MAWebViewController.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
+		C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
 		C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F10377275B142A0076F92A /* LaunchScreen.storyboard */; };
@@ -178,6 +179,8 @@
 		C6BC591B27748DF500973364 /* MAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWebViewController.m; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
+		C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendCollectionViewCell.h; sourceTree = "<group>"; };
+		C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchRecommendCollectionViewCell.m; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F10369275B14290076F92A /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
 		C6F1036A275B14290076F92A /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				C64DD9C0275BB56D00A13707 /* MASearchBar.m */,
 				C64AB35C275E16BC00AE98EC /* MASearchRecommendView.h */,
 				C64AB35D275E16BC00AE98EC /* MASearchRecommendView.m */,
+				C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */,
+				C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */,
 				C64AB359275E15ED00AE98EC /* MASearchResultView.h */,
 				C64AB35A275E15ED00AE98EC /* MASearchResultView.m */,
 				C61FC655275C5B4300851257 /* MASearchViewController.h */,
@@ -760,6 +765,7 @@
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
 				C680C5BB27686F3100662440 /* MATopListCollectionViewCell.m in Sources */,
+				C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,

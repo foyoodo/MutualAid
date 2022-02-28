@@ -8,6 +8,7 @@ PODS:
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
+  - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
   - CTMediator (~> 46)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.7.5)
   - ReactiveObjC (~> 3.1.1)
   - SDWebImage (~> 5.12.1)
+  - UICollectionViewLeftAlignedLayout
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - SDWebImage
+    - UICollectionViewLeftAlignedLayout
 
 EXTERNAL SOURCES:
   FDFullscreenPopGesture:
@@ -44,7 +47,8 @@ SPEC CHECKSUMS:
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: fc4dab7293d7464b01a032d377d53fc8fa78ed27
+PODFILE CHECKSUM: 2ac0d686e14d5f149897acd6e1535473d76639d0
 
 COCOAPODS: 1.11.2
