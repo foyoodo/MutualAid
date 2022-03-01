@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) MASearchView *searchView;
 
+@property (nonatomic, strong, readonly) UITextField *textField;
+
 @property (nonatomic, assign, readonly) CGFloat height;
 
 @property (nonatomic, weak) id<MASearchBarDelegate> delegate;

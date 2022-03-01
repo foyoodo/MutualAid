@@ -89,4 +89,10 @@
     return _cancelButton;
 }
 
+#pragma mark - Getter & Setter
+
+- (UITextField *)textField {
+    return self.searchView.textField;
+}
+
 @end

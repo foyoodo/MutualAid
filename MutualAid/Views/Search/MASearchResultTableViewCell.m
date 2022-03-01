@@ -25,8 +25,6 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor = [UIColor systemGroupedBackgroundColor];
-
         UIImageView *imageView = [UIImageView new];
         imageView.layer.cornerRadius = 8;
         imageView.layer.masksToBounds = YES;

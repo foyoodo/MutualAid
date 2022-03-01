@@ -30,18 +30,16 @@
     self.ma_prefersTabBarHidden = YES;
     self.view.backgroundColor = [UIColor systemGray5Color];
 
-    MASearchBar *searchBar = [MASearchBar new];
-    [self.view addSubview:(_searchBar = searchBar)];
-    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.searchBar];
+    [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
         make.left.right.equalTo(self.view);
     }];
-    [searchBar prepareForTransition];
-    [searchBar setDelegate:self];
+    [self.searchBar prepareForTransition];
 
     [self.view addSubview:self.searchRecommendView];
     [self.searchRecommendView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(searchBar.mas_bottom);
+        make.top.equalTo(self.searchBar.mas_bottom);
         make.left.right.bottom.equalTo(self.view);
     }];
 
@@ -52,23 +50,23 @@
     [super viewWillAppear:animated];
     self.searchBar.searchView.textFieldUserInteractionEnabled = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.searchBar.searchView.textField becomeFirstResponder];
+        [self.searchBar.textField becomeFirstResponder];
     });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.searchBar.searchView.textField resignFirstResponder];
+    [self.searchBar.textField resignFirstResponder];
 }
 
 #pragma mark - Private Methods
 
 - (void)doSearch:(NSString *)text {
-    self.searchBar.searchView.textField.text = text;
-
     BOOL hasContent = text.length > 0;
     self.searchRecommendView.hidden = hasContent;
-    self.searchResultView.hidden = !hasContent;
+    if (hasContent || self->_searchResultView) {
+        self.searchResultView.hidden = !hasContent;
+    }
 }
 
 #pragma mark - MASearchBarDelegate
@@ -79,13 +77,28 @@
 
 #pragma mark - Lazy Load
 
+- (MASearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = [MASearchBar new];
+        _searchBar.delegate = self;
+        @weakify(self)
+        [_searchBar.textField.rac_textSignal subscribeNext:^(NSString * _Nullable text) {
+            @strongify(self)
+            [self doSearch:text];
+        }];
+    }
+    return _searchBar;
+}
+
 - (MASearchRecommendView *)searchRecommendView {
     if (!_searchRecommendView) {
         _searchRecommendView = [MASearchRecommendView new];
         @weakify(self)
         _searchRecommendView.doSearchBlock = ^(NSString * _Nonnull text) {
             @strongify(self)
-            [self doSearch:text];
+            self.searchBar.textField.text = text;
+            // rac_textSignal contacts with `UIControlEventEditingChanged`
+            [self.searchBar.textField sendActionsForControlEvents:UIControlEventEditingChanged];
         };
     }
     return _searchRecommendView;
@@ -97,8 +110,8 @@
         @weakify(self)
         _searchResultView.didScrollBlock = ^{
             @strongify(self)
-            if (self.searchBar.searchView.textField.isFirstResponder) {
-                [self.searchBar.searchView.textField resignFirstResponder];
+            if (self.searchBar.textField.isFirstResponder) {
+                [self.searchBar.textField resignFirstResponder];
             }
         };
         [self.view addSubview:_searchResultView];
