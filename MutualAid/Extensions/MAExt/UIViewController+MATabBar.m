@@ -8,6 +8,8 @@
 #import "UIViewController+MATabBar.h"
 #import <objc/runtime.h>
 
+static const NSTimeInterval kAnimationDuration = 0.25;
+
 @interface UITabBarController (MATabBarPrivate)
 
 @property (nonatomic, assign) BOOL ma_tabBarHidden;
@@ -45,7 +47,7 @@
     [self ma_viewWillAppear:animated];
 
     if (self.ma_prefersTabBarHidden && !self.tabBarController.ma_tabBarHidden) {
-        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             CGRect frame = self.tabBarController.tabBar.frame;
             frame.origin.y += self.tabBarController.tabBar.frame.size.height;
             self.tabBarController.tabBar.frame = frame;
@@ -59,7 +61,7 @@
     [self ma_viewDidAppear:animated];
 
     if (self.tabBarController.ma_tabBarHidden && !self.ma_prefersTabBarHidden) {
-        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             CGRect frame = self.tabBarController.tabBar.frame;
             frame.origin.y -= self.tabBarController.tabBar.frame.size.height;
             self.tabBarController.tabBar.frame = frame;
