@@ -17,6 +17,7 @@
 		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
 		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
+		C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */; };
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
 		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
 		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
@@ -105,6 +106,8 @@
 		C61FC65C275CD9B100851257 /* MASearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchView.m; sourceTree = "<group>"; };
 		C61FC65E275CE04400851257 /* MASearchNavigationControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchNavigationControllerDelegate.m; sourceTree = "<group>"; };
+		C623B99627CE35A400C8CCB9 /* MutualAid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MutualAid-Bridging-Header.h"; sourceTree = "<group>"; };
+		C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMessageCenterView.swift; sourceTree = "<group>"; };
 		C644B09A277079C600842AFA /* MAMineActivityBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineActivityBanner.h; sourceTree = "<group>"; };
 		C644B09B277079C600842AFA /* MAMineActivityBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineActivityBanner.m; sourceTree = "<group>"; };
 		C6466CF027717C4D00EFF487 /* MAMineCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineCounterView.h; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 			children = (
 				C6023DD927662FBB00556C07 /* MAMessageCenterViewController.h */,
 				C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */,
+				C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -550,6 +554,7 @@
 				C6F1036A275B14290076F92A /* MAAppDelegate.m */,
 				C6F1037B275B142A0076F92A /* main.m */,
 				C64DD98D275B3B0A00A13707 /* MutualAid.pch */,
+				C623B99627CE35A400C8CCB9 /* MutualAid-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				TargetAttributes = {
 					C6F10365275B14290076F92A = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1320;
 					};
 					C6F10380275B142A0076F92A = {
 						CreatedOnToolsVersion = 13.1;
@@ -757,6 +763,7 @@
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
+				C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */,
 				C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */,
 				C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */,
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
@@ -968,6 +975,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
@@ -986,6 +994,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MutualAid/Classes/MutualAid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -996,6 +1007,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
@@ -1014,6 +1026,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.foyoodo.MutualAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MutualAid/Classes/MutualAid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1021,6 +1035,7 @@
 		C6F10399275B142B0076F92A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1044,6 +1059,7 @@
 		C6F1039A275B142B0076F92A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1067,6 +1083,7 @@
 		C6F1039C275B142B0076F92A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
@@ -1088,6 +1105,7 @@
 		C6F1039D275B142B0076F92A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;

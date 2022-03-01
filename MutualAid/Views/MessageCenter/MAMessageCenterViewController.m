@@ -6,8 +6,11 @@
 //
 
 #import "MAMessageCenterViewController.h"
+#import "MutualAid-Swift.h"
 
 @interface MAMessageCenterViewController ()
+
+@property (nonatomic, strong) MAMessageCenterView *messageCenterView;
 
 @end
 
@@ -20,6 +23,18 @@
 
     self.title = @"Message Center".localized;
     self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
+
+    [self.view addSubview:self.messageCenterView];
+    [self.messageCenterView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+
+- (MAMessageCenterView *)messageCenterView {
+    if (!_messageCenterView) {
+        _messageCenterView = [[MAMessageCenterView alloc] init];
+    }
+    return _messageCenterView;
 }
 
 @end
