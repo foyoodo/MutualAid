@@ -18,6 +18,7 @@
 		C61FC65D275CD9B100851257 /* MASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65C275CD9B100851257 /* MASearchView.m */; };
 		C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */; };
 		C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */; };
+		C623B99D27CE47B500C8CCB9 /* MASearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C623B99C27CE47B500C8CCB9 /* MASearchResultTableViewCell.m */; };
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
 		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
 		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
@@ -108,6 +109,8 @@
 		C61FC65F275CE04400851257 /* MASearchNavigationControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchNavigationControllerDelegate.m; sourceTree = "<group>"; };
 		C623B99627CE35A400C8CCB9 /* MutualAid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MutualAid-Bridging-Header.h"; sourceTree = "<group>"; };
 		C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMessageCenterView.swift; sourceTree = "<group>"; };
+		C623B99B27CE47B500C8CCB9 /* MASearchResultTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchResultTableViewCell.h; sourceTree = "<group>"; };
+		C623B99C27CE47B500C8CCB9 /* MASearchResultTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchResultTableViewCell.m; sourceTree = "<group>"; };
 		C644B09A277079C600842AFA /* MAMineActivityBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineActivityBanner.h; sourceTree = "<group>"; };
 		C644B09B277079C600842AFA /* MAMineActivityBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineActivityBanner.m; sourceTree = "<group>"; };
 		C6466CF027717C4D00EFF487 /* MAMineCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineCounterView.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */,
 				C64AB359275E15ED00AE98EC /* MASearchResultView.h */,
 				C64AB35A275E15ED00AE98EC /* MASearchResultView.m */,
+				C623B99B27CE47B500C8CCB9 /* MASearchResultTableViewCell.h */,
+				C623B99C27CE47B500C8CCB9 /* MASearchResultTableViewCell.m */,
 				C61FC655275C5B4300851257 /* MASearchViewController.h */,
 				C61FC656275C5B4300851257 /* MASearchViewController.m */,
 				C61FC658275CCE3C00851257 /* MASearchAnimatedTransition.h */,
@@ -762,6 +767,7 @@
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
+				C623B99D27CE47B500C8CCB9 /* MASearchResultTableViewCell.m in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
 				C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */,
 				C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */,

@@ -65,6 +65,10 @@
 
 - (void)doSearch:(NSString *)text {
     self.searchBar.searchView.textField.text = text;
+
+    BOOL hasContent = text.length > 0;
+    self.searchRecommendView.hidden = hasContent;
+    self.searchResultView.hidden = !hasContent;
 }
 
 #pragma mark - MASearchBarDelegate
@@ -90,6 +94,18 @@
 - (MASearchResultView *)searchResultView {
     if (!_searchResultView) {
         _searchResultView = [MASearchResultView new];
+        @weakify(self)
+        _searchResultView.didScrollBlock = ^{
+            @strongify(self)
+            if (self.searchBar.searchView.textField.isFirstResponder) {
+                [self.searchBar.searchView.textField resignFirstResponder];
+            }
+        };
+        [self.view addSubview:_searchResultView];
+        [_searchResultView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.searchBar.mas_bottom);
+            make.left.right.bottom.equalTo(self.view);
+        }];
     }
     return _searchResultView;
 }
