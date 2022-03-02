@@ -12,9 +12,12 @@
 "Home"="Home";
 "Map"="Map";
 "Mine"="Mine";
+"Login"="Login";
 "Search"="Search";
 "Message Center"="Message Center";
 "Hot News"="Hot News";
 "Offline Course"="Offline Course";
 "Recommended Service"="Recommended Service";
 "More Service"="More Service";
+"userid"="userid";
+"password"="password";

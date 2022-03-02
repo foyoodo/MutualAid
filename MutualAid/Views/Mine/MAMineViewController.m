@@ -13,6 +13,7 @@
 #import "MAMineHeaderView.h"
 #import "MAImageTitleModel.h"
 #import "MAMineRecommendedServiceView.h"
+#import "MALoginViewController.h"
 #import "MAMediator+BaseActions.h"
 
 static const CGFloat kStickyViewHeight = 90;
@@ -28,6 +29,8 @@ static const CGFloat kStickyViewHeight = 90;
 @property (nonatomic, strong) MAMineRecommendedServiceView *recommendedServiceView;
 
 @property (nonatomic, strong) NSMutableArray<MAImageTitleModel *> *imageTitleArray;
+
+@property (nonatomic, strong) UITapGestureRecognizer *loginTapGestureRecognizer;
 
 @end
 
@@ -77,6 +80,8 @@ static const CGFloat kStickyViewHeight = 90;
         make.left.equalTo(tableView).offset(10);
         make.width.equalTo(tableView).offset(-20);
     }];
+
+    [self.stickyView addGestureRecognizer:self.loginTapGestureRecognizer];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -160,6 +165,13 @@ static const CGFloat kStickyViewHeight = 90;
     return [[MAMediator sharedInstance] baseActions_cellForTableView:tableView withFont:[UIFont systemFontOfSize:15] andIdentifier:@"id"];
 }
 
+#pragma mark - Private Methods
+
+- (void)doLogin {
+    MALoginViewController *vc = [[MALoginViewController alloc] init];
+    [self presentViewController:vc animated:NO completion:nil];
+}
+
 #pragma mark - Lazy Load
 
 - (NSMutableArray<MAImageTitleModel *> *)imageTitleArray {
@@ -171,6 +183,13 @@ static const CGFloat kStickyViewHeight = 90;
         ] mutableCopy];
     }
     return _imageTitleArray;
+}
+
+- (UITapGestureRecognizer *)loginTapGestureRecognizer {
+    if (!_loginTapGestureRecognizer) {
+        _loginTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doLogin)];
+    }
+    return _loginTapGestureRecognizer;
 }
 
 @end

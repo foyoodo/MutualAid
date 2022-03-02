@@ -12,9 +12,12 @@
 "Home"="主页";
 "Map"="地图";
 "Mine"="我的";
+"Login"="登录";
 "Search"="搜索";
 "Message Center"="消息中心";
 "Hot News"="热点资讯";
 "Offline Course"="线下课程";
 "Recommended Service"="推荐服务";
 "More Service"="更多服务";
+"userid"="账号";
+"password"="密码";

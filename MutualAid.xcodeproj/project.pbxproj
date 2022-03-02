@@ -49,6 +49,8 @@
 		C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5C3276888D000662440 /* MACycleBannerCollectionViewCell.m */; };
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
+		C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */; };
+		C69451B227CF4ABF001BBC29 /* MALoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451B127CF4ABF001BBC29 /* MALoginInputView.m */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
 		C6BC5910277460F800973364 /* MAMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC590F277460F800973364 /* MAMediator.m */; };
 		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
@@ -172,6 +174,10 @@
 		C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyBaseViewController.m; sourceTree = "<group>"; };
 		C6938B702760E6CF00F466DA /* MAPicListCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListCardTableViewCell.h; sourceTree = "<group>"; };
 		C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardTableViewCell.m; sourceTree = "<group>"; };
+		C69451AD27CF0CBB001BBC29 /* MALoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginViewController.h; sourceTree = "<group>"; };
+		C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginViewController.m; sourceTree = "<group>"; };
+		C69451B027CF4ABF001BBC29 /* MALoginInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginInputView.h; sourceTree = "<group>"; };
+		C69451B127CF4ABF001BBC29 /* MALoginInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginInputView.m; sourceTree = "<group>"; };
 		C6AC216A276A37B700E71A95 /* NSTimer+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MAExt.h"; sourceTree = "<group>"; };
 		C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MAExt.m"; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
@@ -383,6 +389,7 @@
 		C64DEBCE276C8B6A003D87D0 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				C69451AC27CF0C88001BBC29 /* Login */,
 				C64DEBCF276C8B7D003D87D0 /* MAMineViewController.h */,
 				C64DEBD0276C8B7D003D87D0 /* MAMineViewController.m */,
 				C6DEEC33276F5845000BF19F /* MAMineStickyView.h */,
@@ -462,6 +469,17 @@
 				C6BC59112774699A00973364 /* Actions */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		C69451AC27CF0C88001BBC29 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C69451AD27CF0CBB001BBC29 /* MALoginViewController.h */,
+				C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */,
+				C69451B027CF4ABF001BBC29 /* MALoginInputView.h */,
+				C69451B127CF4ABF001BBC29 /* MALoginInputView.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C6BC590D277460D800973364 /* Services */ = {
@@ -757,6 +775,7 @@
 			files = (
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
+				C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
@@ -805,6 +824,7 @@
 				C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */,
 				C6BC5910277460F800973364 /* MAMediator.m in Sources */,
 				C64DD9B3275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m in Sources */,
+				C69451B227CF4ABF001BBC29 /* MALoginInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
