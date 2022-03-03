@@ -169,6 +169,9 @@ static const CGFloat kStickyViewHeight = 90;
 
 - (void)doLogin {
     MALoginViewController *vc = [[MALoginViewController alloc] init];
+    vc.loginSucceedBlock = ^{
+        [self.stickyView reloadData];
+    };
     [self presentViewController:vc animated:NO completion:nil];
 }
 

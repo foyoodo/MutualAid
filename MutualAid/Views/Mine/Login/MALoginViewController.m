@@ -68,11 +68,6 @@ static const NSTimeInterval kAnimationDuration = 0.3;
     [maskView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    @weakify(self)
-    [maskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id _Nonnull sender) {
-        @strongify(self)
-        [self dismiss];
-    }]];
 
     UIView *containerView = [UIView new];
     containerView.backgroundColor = [UIColor whiteColor];
@@ -128,15 +123,23 @@ static const NSTimeInterval kAnimationDuration = 0.3;
 
 - (void)setupActions {
     @weakify(self)
-    [self.loginButton addActionBlock:^(id _Nonnull sender) {
+    [self.maskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id _Nonnull sender) {
         @strongify(self)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self dismiss];
+        [self dismissWithCompletion:nil];
+    }]];
+    [self.loginButton addActionBlock:^(id _Nonnull sender) {
+        [MAUserDefaults standardUserDefaults].userPicUrl = @"https://lh3.googleusercontent.com/ogw/ADea4I6KMpBrLiKnhOyNOe_fmE3PmnHu9UclRR9ND9bD=s192-c-mo";
+        [MAUserDefaults standardUserDefaults].userName = @"foyoodo";
+        @strongify(self)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissWithCompletion:^{
+                !self.loginSucceedBlock ?: self.loginSucceedBlock();
+            }];
         });
     } forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)dismiss {
+- (void)dismissWithCompletion:(void (^)(void))completion {
     [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
         [self.containerViewVerticalConstraint uninstall];
         self.containerViewVerticalConstraint = make.top.equalTo(self.view.mas_bottom);
@@ -146,7 +149,7 @@ static const NSTimeInterval kAnimationDuration = 0.3;
         [self.uidLoginIputView hideKeyboard];
         [self.maskView setAlpha:0];
     } completion:^(BOOL finished) {
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:NO completion:completion];
     }];
 }
 

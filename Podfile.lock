@@ -2,6 +2,7 @@ PODS:
   - CTMediator (46)
   - FDFullscreenPopGesture (1.1)
   - FYDraggableView (0.0.1)
+  - GVUserDefaults (1.0.2)
   - Masonry (1.1.0)
   - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - CTMediator (~> 46)
   - FDFullscreenPopGesture (from `https://github.com/forkingdog/FDFullscreenPopGesture`)
   - FYDraggableView (~> 0.0.1)
+  - GVUserDefaults
   - Masonry (~> 1.1.0)
   - MJRefresh (~> 3.7.5)
   - ReactiveObjC (~> 3.1.1)
@@ -24,6 +26,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CTMediator
     - FYDraggableView
+    - GVUserDefaults
     - Masonry
     - MJRefresh
     - ReactiveObjC
@@ -43,12 +46,13 @@ SPEC CHECKSUMS:
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FYDraggableView: 83ece5ea65f232a3537005d3b79a220e7869c08f
+  GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 2ac0d686e14d5f149897acd6e1535473d76639d0
+PODFILE CHECKSUM: 32afa466d461dd59b177817f73c4cecac3902037
 
 COCOAPODS: 1.11.2

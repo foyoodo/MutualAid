@@ -42,6 +42,7 @@
 		C658B6C527918452000429A9 /* MAFloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C658B6C427918452000429A9 /* MAFloatingButton.m */; };
 		C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6590C402766FD6700845973 /* MAStickyScrollView.m */; };
 		C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C65A619A276351D300CE6029 /* MAPicListModel.m */; };
+		C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C6773E6827D0AEA400B9D981 /* MAUserDefaults.m */; };
 		C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C67D781A2770B6A7005B91F7 /* MAMineHeaderView.m */; };
 		C680C5B827686EBF00662440 /* MATopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5B727686EBF00662440 /* MATopListView.m */; };
 		C680C5BB27686F3100662440 /* MATopListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5BA27686F3100662440 /* MATopListCollectionViewCell.m */; };
@@ -160,6 +161,8 @@
 		C6590C402766FD6700845973 /* MAStickyScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyScrollView.m; sourceTree = "<group>"; };
 		C65A6199276351D300CE6029 /* MAPicListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListModel.h; sourceTree = "<group>"; };
 		C65A619A276351D300CE6029 /* MAPicListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListModel.m; sourceTree = "<group>"; };
+		C6773E6727D0AEA400B9D981 /* MAUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAUserDefaults.h; sourceTree = "<group>"; };
+		C6773E6827D0AEA400B9D981 /* MAUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAUserDefaults.m; sourceTree = "<group>"; };
 		C67D78192770B6A7005B91F7 /* MAMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineHeaderView.h; sourceTree = "<group>"; };
 		C67D781A2770B6A7005B91F7 /* MAMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineHeaderView.m; sourceTree = "<group>"; };
 		C680C5B627686EBF00662440 /* MATopListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATopListView.h; sourceTree = "<group>"; };
@@ -421,6 +424,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C6773E6327D0A79300B9D981 /* MAUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				C6773E6727D0AEA400B9D981 /* MAUserDefaults.h */,
+				C6773E6827D0AEA400B9D981 /* MAUserDefaults.m */,
+			);
+			path = MAUserDefaults;
+			sourceTree = "<group>";
+		};
 		C680C5BC2768816400662440 /* TopList */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BC59152774708F00973364 /* MAMediator */,
+				C6773E6327D0A79300B9D981 /* MAUserDefaults */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -774,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
+				C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MALoginViewController : UIViewController
 
+@property (nonatomic, copy) void (^loginSucceedBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

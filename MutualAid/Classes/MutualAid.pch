@@ -48,6 +48,10 @@
 #   import "UIViewController+MATabBar.h"
 #endif
 
+#if __has_include(<GVUserDefaults/GVUserDefaults.h>)
+#   import "MAUserDefaults.h"
+#endif
+
 #import <ReactiveObjC/ReactiveObjC.h>
 
 #endif /* __OBJC__ */

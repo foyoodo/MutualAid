@@ -45,8 +45,7 @@
             make.centerY.equalTo(avatorImageView);
         }];
 
-        [avatorImageView sd_setImageWithURL:[NSURL URLWithString:@"https://lh3.googleusercontent.com/ogw/ADea4I6KMpBrLiKnhOyNOe_fmE3PmnHu9UclRR9ND9bD=s192-c-mo"]];
-        nameLabel.text = @"foyoodo";
+        [self reloadData];
     }
     return self;
 }
@@ -57,6 +56,13 @@
     [super layoutSubviews];
 
     self.avatorImageView.layer.cornerRadius = self.avatorImageView.bounds.size.width / 2;
+}
+
+#pragma mark - Public Methods
+
+- (void)reloadData {
+    [self.avatorImageView sd_setImageWithURL:[NSURL URLWithString:[MAUserDefaults standardUserDefaults].userPicUrl]];
+    [self.nameLabel setText:[MAUserDefaults standardUserDefaults].userName];
 }
 
 @end

@@ -14,6 +14,7 @@ target $project_name do
   pod 'FDFullscreenPopGesture', :git => "https://github.com/forkingdog/FDFullscreenPopGesture"
   pod 'CTMediator', '~> 46'
   pod 'UICollectionViewLeftAlignedLayout'
+  pod 'GVUserDefaults'
 
   pod 'FYDraggableView', '~> 0.0.1'
 end
