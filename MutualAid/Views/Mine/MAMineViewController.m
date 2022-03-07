@@ -15,6 +15,7 @@
 #import "MAMineRecommendedServiceView.h"
 #import "MALoginViewController.h"
 #import "MAMediator+BaseActions.h"
+#import "MutualAid-Swift.h"
 
 static const CGFloat kStickyViewHeight = 90;
 
@@ -59,7 +60,10 @@ static const CGFloat kStickyViewHeight = 90;
 
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
-    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:nil]];
+    [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:^{
+        MASettingsViewController *vc = [MASettingsViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }]];
 
     MAMineHeaderView *headerView = [MAMineHeaderView new];
     headerView.frame = CGRectMake(0, 0, 0, [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);

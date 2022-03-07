@@ -16,5 +16,7 @@ target $project_name do
   pod 'UICollectionViewLeftAlignedLayout'
   pod 'GVUserDefaults'
 
+  pod 'SnapKit'
+
   pod 'FYDraggableView', '~> 0.0.1'
 end

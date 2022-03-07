@@ -21,8 +21,8 @@
     self.window.rootViewController = [MATabBarController new];
     [self.window makeKeyAndVisible];
 
-    MAFloatingButton *floatingButton = [MAFloatingButton new];
-    [self.window addSubview:floatingButton];
+//    MAFloatingButton *floatingButton = [MAFloatingButton new];
+//    [self.window addSubview:floatingButton];
 
     return YES;
 }

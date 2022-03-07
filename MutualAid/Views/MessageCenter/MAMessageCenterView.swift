@@ -25,6 +25,7 @@ class MAMessageCenterView: UIView, UITableViewDataSource {
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
 
         self.addSubview(self.tableView)
     }
@@ -44,9 +45,9 @@ class MAMessageCenterView: UIView, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "id") else {
-            return .init(style: .subtitle, reuseIdentifier: "id")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = array[indexPath.row]
         return cell
     }
 
@@ -55,7 +56,7 @@ class MAMessageCenterView: UIView, UITableViewDataSource {
 extension MAMessageCenterView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select \(indexPath.row)")
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
 }

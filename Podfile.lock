@@ -9,6 +9,7 @@ PODS:
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
+  - SnapKit (5.0.1)
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.7.5)
   - ReactiveObjC (~> 3.1.1)
   - SDWebImage (~> 5.12.1)
+  - SnapKit
   - UICollectionViewLeftAlignedLayout
 
 SPEC REPOS:
@@ -31,6 +33,7 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - SDWebImage
+    - SnapKit
     - UICollectionViewLeftAlignedLayout
 
 EXTERNAL SOURCES:
@@ -51,8 +54,9 @@ SPEC CHECKSUMS:
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 32afa466d461dd59b177817f73c4cecac3902037
+PODFILE CHECKSUM: 64a5f878468f6c15cb610601c92eef69b793c17d
 
 COCOAPODS: 1.11.2

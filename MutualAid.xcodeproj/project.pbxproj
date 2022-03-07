@@ -12,6 +12,7 @@
 		C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */; };
 		C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */; };
 		C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DBA3276242E700C5E5AE /* MANavigationBar.m */; };
+		C614AE9927D653B70046D469 /* MASettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614AE9827D653B70046D469 /* MASettingsViewController.swift */; };
 		C61CFA5B276B4EF40042FCEB /* UIViewController+MATabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C61CFA5A276B4EF40042FCEB /* UIViewController+MATabBar.m */; };
 		C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC656275C5B4300851257 /* MASearchViewController.m */; };
 		C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FC659275CCE3D00851257 /* MASearchAnimatedTransition.m */; };
@@ -100,6 +101,7 @@
 		C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAHotNewsCollectionViewCell.m; sourceTree = "<group>"; };
 		C605DBA2276242E700C5E5AE /* MANavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationBar.h; sourceTree = "<group>"; };
 		C605DBA3276242E700C5E5AE /* MANavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationBar.m; sourceTree = "<group>"; };
+		C614AE9827D653B70046D469 /* MASettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASettingsViewController.swift; sourceTree = "<group>"; };
 		C61CFA59276B4EF40042FCEB /* UIViewController+MATabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MATabBar.h"; sourceTree = "<group>"; };
 		C61CFA5A276B4EF40042FCEB /* UIViewController+MATabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MATabBar.m"; sourceTree = "<group>"; };
 		C61FC655275C5B4300851257 /* MASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchViewController.h; sourceTree = "<group>"; };
@@ -281,6 +283,14 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		C614AE9727D6538E0046D469 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C614AE9827D653B70046D469 /* MASettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		C64AB374275E2B2900AE98EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				C69451AC27CF0C88001BBC29 /* Login */,
+				C614AE9727D6538E0046D469 /* Settings */,
 				C64DEBCF276C8B7D003D87D0 /* MAMineViewController.h */,
 				C64DEBD0276C8B7D003D87D0 /* MAMineViewController.m */,
 				C6DEEC33276F5845000BF19F /* MAMineStickyView.h */,
@@ -815,6 +826,7 @@
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
+				C614AE9927D653B70046D469 /* MASettingsViewController.swift in Sources */,
 				C6466CFB2771F30A00EFF487 /* MAMineRecommendedServiceView.m in Sources */,
 				C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */,
 				C605DBA4276242E700C5E5AE /* MANavigationBar.m in Sources */,
