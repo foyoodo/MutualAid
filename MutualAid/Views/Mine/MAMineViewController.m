@@ -47,7 +47,7 @@ static const CGFloat kStickyViewHeight = 90;
 
 - (instancetype)init {
     if (self = [super init]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoginStateChanged) name:kMAUserLoginStateChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoginStateChanged:) name:kMAUserLoginStateChangedNotification object:nil];
     }
     return self;
 }
@@ -198,8 +198,13 @@ static const CGFloat kStickyViewHeight = 90;
     [self presentViewController:vc animated:NO completion:nil];
 }
 
-- (void)userLoginStateChanged {
+- (void)userLoginStateChanged:(NSNotification *)notification {
     [self.stickyView reloadData];
+    if ([notification.userInfo[@"isLogin"] boolValue] == YES) {
+        [MAToast showMessage:@"登录成功" inView:self.view];
+    } else {
+        [MAToast showMessage:@"退出成功" inView:self.view];
+    }
 }
 
 #pragma mark - Lazy Load

@@ -56,6 +56,7 @@
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
 		C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8246F27D7328D00F97125 /* Target_Settings.m */; };
 		C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */; };
+		C6B8247827D74CAD00F97125 /* MAToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8247727D74CAD00F97125 /* MAToast.m */; };
 		C6BC5910277460F800973364 /* MAMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC590F277460F800973364 /* MAMediator.m */; };
 		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
 		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
@@ -192,6 +193,8 @@
 		C6B8246F27D7328D00F97125 /* Target_Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_Settings.m; sourceTree = "<group>"; };
 		C6B8247227D7339C00F97125 /* MAMediator+SettingsActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAMediator+SettingsActions.h"; sourceTree = "<group>"; };
 		C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAMediator+SettingsActions.m"; sourceTree = "<group>"; };
+		C6B8247627D74CAD00F97125 /* MAToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAToast.h; sourceTree = "<group>"; };
+		C6B8247727D74CAD00F97125 /* MAToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAToast.m; sourceTree = "<group>"; };
 		C6BC590E277460F800973364 /* MAMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMediator.h; sourceTree = "<group>"; };
 		C6BC590F277460F800973364 /* MAMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMediator.m; sourceTree = "<group>"; };
 		C6BC5912277469BF00973364 /* Target_Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Base.h; sourceTree = "<group>"; };
@@ -521,6 +524,15 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
+		C6B8247527D74C8B00F97125 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C6B8247627D74CAD00F97125 /* MAToast.h */,
+				C6B8247727D74CAD00F97125 /* MAToast.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C6BC590D277460D800973364 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +639,7 @@
 		C6F103A1275B17E30076F92A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6B8247527D74C8B00F97125 /* Utils */,
 				C6938B6827609C6300F466DA /* Base */,
 				C605DB9E276241FF00C5E5AE /* NavigationBar */,
 				C64DD9BE275BB51200A13707 /* Search */,
@@ -841,6 +854,7 @@
 				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
+				C6B8247827D74CAD00F97125 /* MAToast.m in Sources */,
 				C680C5BB27686F3100662440 /* MATopListCollectionViewCell.m in Sources */,
 				C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */,
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,

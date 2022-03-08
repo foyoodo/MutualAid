@@ -49,7 +49,9 @@ extension MASettingsViewController: UITableViewDelegate {
         if indexPath.section == dataArray.count - 1 && indexPath.item == dataArray.last!.count - 1 {
             MAUserDefaults.standard().userPicUrl = ""
             MAUserDefaults.standard().userName = "未登录"
-            NotificationCenter.default.post(name: Notification.Name.maUserLoginStateChanged, object: nil)
+            NotificationCenter.default.post(name: .maUserLoginStateChanged, object: nil, userInfo: [
+                "isLogin": false
+            ])
 
             self.navigationController?.popViewController(animated: true)
         }

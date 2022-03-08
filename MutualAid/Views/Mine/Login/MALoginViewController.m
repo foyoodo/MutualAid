@@ -133,7 +133,9 @@ static const NSTimeInterval kAnimationDuration = 0.3;
         @strongify(self)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissWithCompletion:nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kMAUserLoginStateChangedNotification object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMAUserLoginStateChangedNotification object:nil userInfo:@{
+                @"isLogin": @YES
+            }];
         });
     } forControlEvents:UIControlEventTouchUpInside];
 }

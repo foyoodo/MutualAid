@@ -54,6 +54,8 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
+#import "MAToast.h"
+
 #endif /* __OBJC__ */
 
 #endif /* __MUTUALAID_PCH__ */
