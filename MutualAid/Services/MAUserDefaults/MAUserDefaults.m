@@ -7,6 +7,8 @@
 
 #import "MAUserDefaults.h"
 
+NSString * const kMAUserLoginStateChangedNotification = @"kMAUserLoginStateChangedNotification";
+
 @implementation MAUserDefaults
 
 @dynamic userId;

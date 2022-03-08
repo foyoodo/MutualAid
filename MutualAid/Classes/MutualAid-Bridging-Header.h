@@ -3,3 +3,5 @@
 //
 
 #import "NSString+MALocalized.h"
+
+#import "MAUserDefaults.h"

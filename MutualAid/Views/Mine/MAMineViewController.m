@@ -40,7 +40,16 @@ static const CGFloat kStickyViewHeight = 90;
 #pragma mark - Life Cycle
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
     [[MAMediator sharedInstance] baseActions_cleanTableViewCellTarget];
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoginStateChanged) name:kMAUserLoginStateChangedNotification object:nil];
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -186,10 +195,11 @@ static const CGFloat kStickyViewHeight = 90;
 
 - (void)doLogin {
     MALoginViewController *vc = [[MALoginViewController alloc] init];
-    vc.loginSucceedBlock = ^{
-        [self.stickyView reloadData];
-    };
     [self presentViewController:vc animated:NO completion:nil];
+}
+
+- (void)userLoginStateChanged {
+    [self.stickyView reloadData];
 }
 
 #pragma mark - Lazy Load

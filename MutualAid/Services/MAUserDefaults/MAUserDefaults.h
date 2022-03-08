@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const kMAUserLoginStateChangedNotification;
+
 @interface MAUserDefaults : GVUserDefaults
 
 @property (nonatomic, weak) NSNumber *userId;
