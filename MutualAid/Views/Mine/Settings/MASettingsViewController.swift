@@ -8,43 +8,72 @@
 import UIKit
 import SnapKit
 
-class MASettingsViewController: UIViewController, UITableViewDataSource {
-
-    lazy var dataArray: Array<String> = [
-        "0", "1", "2", "3", "4"
+class MASettingsViewController: UIViewController {
+    var dataArray: Array = [
+        ["个人资料"],
+        ["主题设置", "清理缓存"],
+        ["开源软件声明", "关于"],
+        ["切换账号", "退出登录"]
     ]
 
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemGroupedBackground
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "\(UITableViewCell.self)")
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.ma_prefersTabBarHidden = true
-
-        self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
+        tableView.delegate = self
+        tableView.dataSource = self
 
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(self.view)
+            make.edges.equalToSuperview()
         }
 
         self.title = NSString.init(string: "Settings").localized
     }
+}
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MASettingsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension MASettingsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return dataArray.count
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray[section].count
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
-        cell.textLabel?.text = dataArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(UITableViewCell.self)", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+
+        if indexPath.section == 1 && indexPath.item == 1 {
+            cell.accessoryType = .none
+        }
+
+        if indexPath.section == dataArray.count - 1 && indexPath.item == dataArray.last!.count - 1 {
+            cell.accessoryType = .none
+        }
+
         return cell
     }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return .init(frame: .init(x: 0, y: 0, width: 0, height: 20))
+    }
 }

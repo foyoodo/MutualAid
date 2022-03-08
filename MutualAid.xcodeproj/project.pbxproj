@@ -54,6 +54,8 @@
 		C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */; };
 		C69451B227CF4ABF001BBC29 /* MALoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451B127CF4ABF001BBC29 /* MALoginInputView.m */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
+		C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8246F27D7328D00F97125 /* Target_Settings.m */; };
+		C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */; };
 		C6BC5910277460F800973364 /* MAMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC590F277460F800973364 /* MAMediator.m */; };
 		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
 		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
@@ -186,6 +188,10 @@
 		C6AC216A276A37B700E71A95 /* NSTimer+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MAExt.h"; sourceTree = "<group>"; };
 		C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MAExt.m"; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
+		C6B8246E27D7328D00F97125 /* Target_Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Settings.h; sourceTree = "<group>"; };
+		C6B8246F27D7328D00F97125 /* Target_Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_Settings.m; sourceTree = "<group>"; };
+		C6B8247227D7339C00F97125 /* MAMediator+SettingsActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAMediator+SettingsActions.h"; sourceTree = "<group>"; };
+		C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAMediator+SettingsActions.m"; sourceTree = "<group>"; };
 		C6BC590E277460F800973364 /* MAMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMediator.h; sourceTree = "<group>"; };
 		C6BC590F277460F800973364 /* MAMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMediator.m; sourceTree = "<group>"; };
 		C6BC5912277469BF00973364 /* Target_Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Base.h; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 		C614AE9727D6538E0046D469 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C6B8247127D7334300F97125 /* Actions */,
 				C614AE9827D653B70046D469 /* MASettingsViewController.swift */,
 			);
 			path = Settings;
@@ -505,6 +512,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C6B8247127D7334300F97125 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				C6B8246E27D7328D00F97125 /* Target_Settings.h */,
+				C6B8246F27D7328D00F97125 /* Target_Settings.m */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		C6BC590D277460D800973364 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +554,8 @@
 			children = (
 				C6BC59172774711E00973364 /* MAMediator+BaseActions.h */,
 				C6BC59182774711E00973364 /* MAMediator+BaseActions.m */,
+				C6B8247227D7339C00F97125 /* MAMediator+SettingsActions.h */,
+				C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */,
 			);
 			path = MAMediatorCategories;
 			sourceTree = "<group>";
@@ -802,7 +820,9 @@
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
+				C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
+				C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
 				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,

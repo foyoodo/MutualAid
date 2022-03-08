@@ -15,7 +15,7 @@
 #import "MAMineRecommendedServiceView.h"
 #import "MALoginViewController.h"
 #import "MAMediator+BaseActions.h"
-#import "MutualAid-Swift.h"
+#import "MAMediator+SettingsActions.h"
 
 static const CGFloat kStickyViewHeight = 90;
 
@@ -61,7 +61,8 @@ static const CGFloat kStickyViewHeight = 90;
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:^{
-        MASettingsViewController *vc = [MASettingsViewController new];
+        UIViewController *vc = [[MAMediator sharedInstance] Settings_settingsViewController];
+        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }]];
 
@@ -113,6 +114,15 @@ static const CGFloat kStickyViewHeight = 90;
 
 #pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (indexPath.section == 1 && indexPath.item == 2) {
+        UIViewController *vc = [[MAMediator sharedInstance] Settings_settingsViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return;
@@ -144,7 +154,10 @@ static const CGFloat kStickyViewHeight = 90;
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    if (indexPath.section == 0) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - UITableViewDataSource

@@ -3,5 +3,3 @@
 //
 
 #import "NSString+MALocalized.h"
-
-#import "UIViewController+MATabBar.h"
