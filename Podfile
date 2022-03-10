@@ -9,7 +9,7 @@ inhibit_all_warnings!
 target $project_name do
   pod 'Masonry', '~> 1.1.0'
   pod 'ReactiveObjC', '~> 3.1.1'
-  pod 'SDWebImage', '~> 5.12.1'
+  pod 'YYWebImage'
   pod 'MJRefresh', '~> 3.7.5'
   pod 'FDFullscreenPopGesture', :git => "https://github.com/forkingdog/FDFullscreenPopGesture"
   pod 'CTMediator', '~> 46'

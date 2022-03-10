@@ -61,8 +61,8 @@
 #pragma mark - Public Methods
 
 - (void)reloadData {
-    [self.avatorImageView sd_setImageWithURL:[NSURL URLWithString:[MAUserDefaults standardUserDefaults].userPicUrl]];
-    [self.nameLabel setText:[MAUserDefaults standardUserDefaults].userName];
+    self.avatorImageView.yy_imageURL = [NSURL URLWithString:[MAUserDefaults standardUserDefaults].userPicUrl];
+    self.nameLabel.text = [MAUserDefaults standardUserDefaults].userName;
 }
 
 @end

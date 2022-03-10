@@ -52,8 +52,8 @@
 #pragma mark - Public Methods
 
 - (void)setData:(MAPicListModel *)cellModel {
-    [self.titleLabel setText:cellModel.title];
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:cellModel.picUrl]];
+    self.titleLabel.text = cellModel.title;
+    self.imageView.yy_imageURL = [NSURL URLWithString:cellModel.picUrl];
 }
 
 @end
