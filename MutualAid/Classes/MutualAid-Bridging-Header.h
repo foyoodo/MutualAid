@@ -3,5 +3,8 @@
 //
 
 #import "NSString+MALocalized.h"
+#import "UIImageView+YYWebImage.h"
 
 #import "MAUserDefaults.h"
+
+#import "MAPicListModel.h"
