@@ -11,13 +11,15 @@ import SnapKit
 class MATopListInnerViewController: UIViewController {
 
     var dataArray: Array<MAPicListModel>
+    var detailDataArray: Array<MATopListDetailModel>
 
     convenience init() {
-        self.init(dataArray: [])
+        self.init(dataArray: [], detailDataArray: [])
     }
 
-    @objc init(dataArray: Array<MAPicListModel>) {
+    @objc init(dataArray: Array<MAPicListModel>, detailDataArray: Array<MATopListDetailModel>) {
         self.dataArray = dataArray
+        self.detailDataArray = detailDataArray
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -52,7 +54,7 @@ extension MATopListInnerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
 
-        let vc: MATopListDetailViewController = MATopListDetailViewController()
+        let vc: MATopListDetailViewController = MATopListDetailViewController.init(detailDataArray[indexPath.row])
         vc.title = self.dataArray[indexPath.row].title
         self.navigationController?.pushViewController(vc, animated: true)
     }

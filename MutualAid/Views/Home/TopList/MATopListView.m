@@ -8,6 +8,7 @@
 #import "MATopListView.h"
 #import "MATopListCollectionViewCell.h"
 #import "MAPicListModel.h"
+#import "MATopListDetailModel.h"
 #import "MutualAid-Swift.h"
 
 @interface MATopListView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray<MAPicListModel *> *dataSourceArray;
 
 @property (nonatomic, strong) NSMutableArray<id> *innerListDataArray;
+@property (nonatomic, strong) NSMutableArray<id> *innerListDetailDataArray;
 
 @end
 
@@ -59,7 +61,7 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    MATopListInnerViewController *vc = [[MATopListInnerViewController alloc] initWithDataArray:self.innerListDataArray[indexPath.item]];
+    MATopListInnerViewController *vc = [[MATopListInnerViewController alloc] initWithDataArray:self.innerListDataArray[indexPath.item] detailDataArray:self.innerListDetailDataArray[indexPath.item]];
     vc.title = self.dataSourceArray[indexPath.item].title;
     vc.hidesBottomBarWhenPushed = YES;
     [self.viewController.navigationController pushViewController:vc animated:YES];
@@ -134,6 +136,48 @@
         ]];
     }
     return _innerListDataArray;
+}
+
+- (NSMutableArray<id> *)innerListDetailDataArray {
+    if (!_innerListDetailDataArray) {
+        _innerListDetailDataArray = [NSMutableArray arrayWithArray:@[
+            @[
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/1.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=24"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/23.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=38"],
+            ],
+            @[
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/24.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=32"],
+            ],
+            @[
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/2.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=16"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/3.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=17"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/5.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=19"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/6.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=20"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/13.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=21"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/7.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=22"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/4.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=23"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/15.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=35"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/14.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=37"],
+            ],
+            @[
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/8.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=8"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/16.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=9"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/10.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=10"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/19.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=12"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/11.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=13"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/20.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=14"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/9.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=15"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/17.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=39"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/18.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=40"],
+            ],
+            @[
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/22.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=26"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/21.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=27"],
+                [MATopListDetailModel modelWithPlayerUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/12.mp4" webPageUrl:@"https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=28"],
+            ],
+        ]];
+    }
+    return _innerListDetailDataArray;
 }
 
 @end

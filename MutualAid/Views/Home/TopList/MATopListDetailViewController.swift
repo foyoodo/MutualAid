@@ -12,10 +12,19 @@ import SnapKit
 
 class MATopListDetailViewController: UIViewController {
 
+    var detailData: MATopListDetailModel
+
+    init(_ detailData: MATopListDetailModel) {
+        self.detailData = detailData
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     let playerController: AVPlayerViewController = {
         let playerController = AVPlayerViewController()
-        let url = URL.init(string: "https://www.he-grace.com/files/jjxy_img/jjxy_cover/video/viedoUrl/1.mp4")
-        playerController.player = AVPlayer.init(url: url!)
         return playerController
     }()
 
@@ -58,7 +67,10 @@ class MATopListDetailViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
 
-        let link = URL.init(string: "https://www.he-grace.com/cabinet/app/jjxy/videoMessage?videoType=24")
+        let url = URL.init(string: self.detailData.playerUrl)
+        playerController.player = AVPlayer.init(url: url!)
+
+        let link = URL.init(string: self.detailData.webPageUrl)
         webView.load(URLRequest.init(url: link!))
     }
 

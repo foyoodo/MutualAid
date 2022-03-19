@@ -66,6 +66,7 @@
 		C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC591B27748DF500973364 /* MAWebViewController.m */; };
 		C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425C27E564F900CD353C /* MATopListDetailViewController.swift */; };
 		C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */; };
+		C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DB426127E57A2100CD353C /* MATopListDetailModel.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
 		C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
@@ -213,6 +214,8 @@
 		C6BC591B27748DF500973364 /* MAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWebViewController.m; sourceTree = "<group>"; };
 		C6DB425C27E564F900CD353C /* MATopListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListDetailViewController.swift; sourceTree = "<group>"; };
 		C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListDetailSegmentView.swift; sourceTree = "<group>"; };
+		C6DB426027E57A2100CD353C /* MATopListDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATopListDetailModel.h; sourceTree = "<group>"; };
+		C6DB426127E57A2100CD353C /* MATopListDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATopListDetailModel.m; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
 		C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendCollectionViewCell.h; sourceTree = "<group>"; };
@@ -451,6 +454,8 @@
 				C65A619A276351D300CE6029 /* MAPicListModel.m */,
 				C6466CF62771ED7C00EFF487 /* MAImageTitleModel.h */,
 				C6466CF72771ED7C00EFF487 /* MAImageTitleModel.m */,
+				C6DB426027E57A2100CD353C /* MATopListDetailModel.h */,
+				C6DB426127E57A2100CD353C /* MATopListDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				C61FC65D275CD9B100851257 /* MASearchView.m in Sources */,
 				C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */,
 				C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */,
+				C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */,
 				C61CFA5B276B4EF40042FCEB /* UIViewController+MATabBar.m in Sources */,
 				C6466CFE2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m in Sources */,
 				C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */,

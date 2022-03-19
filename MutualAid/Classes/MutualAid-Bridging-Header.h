@@ -8,3 +8,4 @@
 #import "MAUserDefaults.h"
 
 #import "MAPicListModel.h"
+#import "MATopListDetailModel.h"
