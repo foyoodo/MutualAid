@@ -10,64 +10,54 @@
 
 @interface MAFloatingButton () <FYDraggableViewDelegate>
 
-@property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) UIControl *circle;
-
 @end
 
-@implementation MAFloatingButton
+@implementation MAFloatingButton {
+    UIColor *_normalColor;
+    UIColor *_highlightedColor;
+}
 
 #pragma mark - Init Methods
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.frame = CGRectMake(0, 300, 112, 56);
+        _normalColor = [UIColor colorWithHex:0x0AAC8F];
+        _highlightedColor = [UIColor colorWithHex:0x08826C];
 
-        UIView *containerView = [[UIView alloc] initWithFrame:self.bounds];
-        containerView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
-        containerView.layer.cornerRadius = 28;
-        [self addSubview:(_containerView = containerView)];
-
-        UIControl *circle = [UIControl new];
-        circle.backgroundColor = [UIColor systemRedColor];
-        circle.layer.cornerRadius = 23;
-        [self addSubview:(_circle = circle)];
-        [circle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.equalTo(self).offset(5);
-            make.bottom.equalTo(self).offset(-5);
-            make.width.equalTo(circle.mas_height);
-        }];
+        self.frame = CGRectMake(334, 725, 72, 72);
+        self.layer.cornerRadius = 36;
+        self.backgroundColor = _normalColor;
 
         self.fy_draggable = YES;
         self.fy_draggableViewDelegate = self;
-        self.fy_draggablePanGestureRecognizerView = circle;
 
-        FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll position:FYDraggableViewPositionLeft];
-        configuration.recognizerContentInsets = UIEdgeInsetsMake(5, 5, 5, 10);
-        configuration.extraContentInsets = UIEdgeInsetsMake(0, 0, 0, -56);
+        FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll position:FYDraggableViewPositionRight | FYDraggableViewPositionBottom];
+        configuration.extraContentInsets = UIEdgeInsetsMake(0, 0, 16, 8);
         self.fy_draggableViewConfiguration = configuration;
+
+        self.titleLabel.numberOfLines = 2;
+        [self setAttributedTitle:[[NSAttributedString alloc] initWithString:@"一键呼救" attributes:@{
+            NSFontAttributeName: [UIFont systemFontOfSize:18 weight:UIFontWeightMedium]
+        }]  forState:UIControlStateNormal];
+        [self setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+
+        @weakify(self)
+        [self addActionBlock:^(id _Nonnull sender) {
+            @strongify(self)
+            [MAToast showMessage:@"正在呼救..." inView:self.superview];
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
 
-#pragma mark - FYDraggableViewDelegate
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
 
-- (void)fy_draggableViewWillBeginDragging:(UIView *)view {
-    CGFloat dx = 56;
-    CGRect frame = self.containerView.frame;
-    frame.size.width -= dx;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.containerView.frame = frame;
-    }];
-}
-
-- (void)fy_draggableViewDidEndDragging:(UIView *)view willDecelerate:(BOOL)decelerate {
-    CGFloat dx = 56;
-    CGRect frame = self.containerView.frame;
-    frame.size.width += dx;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.containerView.frame = frame;
-    }];
+    if (highlighted) {
+        self.backgroundColor = _highlightedColor;
+    } else {
+        self.backgroundColor = _normalColor;
+    }
 }
 
 @end

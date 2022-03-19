@@ -6,8 +6,11 @@
 //
 
 #import "MATabBarController.h"
+#import "MAFloatingButton.h"
 
 @interface MATabBarController () <UITabBarControllerDelegate>
+
+@property (nonatomic, strong) MAFloatingButton *floatingButton;
 
 @end
 
@@ -28,6 +31,8 @@
     if (@available(iOS 15.0, *)) {
         self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance;
     }
+
+    [self tabBarController:self didSelectViewController:self.viewControllers.firstObject];
 }
 
 #pragma mark - Private Methods
@@ -44,8 +49,19 @@ static inline UIViewController *tabBarItemWithName(NSString *name, NSString *ima
 
 #pragma mark - UITabBarControllerDelegate
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    return YES;
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:UINavigationController.class]) {
+        [((UINavigationController *)viewController).viewControllers.firstObject.view addSubview:self.floatingButton];
+    }
+}
+
+#pragma mark - Lazy Load
+
+- (MAFloatingButton *)floatingButton {
+    if (!_floatingButton) {
+        _floatingButton = [MAFloatingButton new];
+    }
+    return _floatingButton;
 }
 
 @end

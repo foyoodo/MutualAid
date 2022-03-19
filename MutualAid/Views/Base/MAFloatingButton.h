@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAFloatingButton : UIView
+@interface MAFloatingButton : UIButton
 
 @end
 
