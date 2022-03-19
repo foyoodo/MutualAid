@@ -61,7 +61,7 @@
 #pragma mark - Public Methods
 
 - (void)reloadData {
-    self.avatorImageView.yy_imageURL = [NSURL URLWithString:[MAUserDefaults standardUserDefaults].userPicUrl];
+    [self.avatorImageView yy_setImageWithURL:[NSURL URLWithString:[MAUserDefaults standardUserDefaults].userPicUrl] options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation];
     self.nameLabel.text = [MAUserDefaults standardUserDefaults].userName;
 }
 

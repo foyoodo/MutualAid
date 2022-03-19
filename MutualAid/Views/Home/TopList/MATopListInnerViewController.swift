@@ -70,6 +70,7 @@ extension MATopListInnerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MATopListInnerCell", for: indexPath) as! MATopListInnerCell
         cell.iconView.yy_imageURL = URL.init(string: dataArray[indexPath.row].picUrl)
+        cell.iconView.yy_setImage(with: URL.init(string: dataArray[indexPath.row].picUrl), options:.progressiveBlur.union(.setImageWithFadeAnimation))
         cell.titleLabel.text = dataArray[indexPath.row].title
         return cell
     }

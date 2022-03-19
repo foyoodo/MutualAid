@@ -31,7 +31,7 @@
 #pragma mark - Public Methods
 
 - (void)setData:(MAPicListModel *)cellModel {
-    self.imageView.yy_imageURL = [NSURL URLWithString:cellModel.picUrl];
+    [self.imageView yy_setImageWithURL:[NSURL URLWithString:cellModel.picUrl] options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation];
 }
 
 @end
