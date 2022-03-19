@@ -29,7 +29,6 @@ class MATopListInnerViewController: UIViewController {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.rowHeight = 60
-        tableView.estimatedRowHeight = 60
         tableView.register(UINib.init(nibName: "MATopListInnerCell", bundle: nil), forCellReuseIdentifier: "MATopListInnerCell")
         return tableView
     }();
@@ -52,6 +51,10 @@ extension MATopListInnerViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+
+        let vc: MATopListDetailViewController = MATopListDetailViewController()
+        vc.title = self.dataArray[indexPath.row].title
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

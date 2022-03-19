@@ -64,6 +64,8 @@
 		C6BC5914277469BF00973364 /* Target_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC5913277469BF00973364 /* Target_Base.m */; };
 		C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC59182774711E00973364 /* MAMediator+BaseActions.m */; };
 		C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC591B27748DF500973364 /* MAWebViewController.m */; };
+		C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425C27E564F900CD353C /* MATopListDetailViewController.swift */; };
+		C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
 		C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
@@ -209,6 +211,8 @@
 		C6BC59182774711E00973364 /* MAMediator+BaseActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAMediator+BaseActions.m"; sourceTree = "<group>"; };
 		C6BC591A27748DF500973364 /* MAWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAWebViewController.h; sourceTree = "<group>"; };
 		C6BC591B27748DF500973364 /* MAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWebViewController.m; sourceTree = "<group>"; };
+		C6DB425C27E564F900CD353C /* MATopListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListDetailViewController.swift; sourceTree = "<group>"; };
+		C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListDetailSegmentView.swift; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
 		C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendCollectionViewCell.h; sourceTree = "<group>"; };
@@ -470,6 +474,8 @@
 				C680C5BA27686F3100662440 /* MATopListCollectionViewCell.m */,
 				C68A325927E4DC9B00DD162B /* MATopListInnerCell.swift */,
 				C68A325A27E4DC9B00DD162B /* MATopListInnerCell.xib */,
+				C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */,
+				C6DB425C27E564F900CD353C /* MATopListDetailViewController.swift */,
 			);
 			path = TopList;
 			sourceTree = "<group>";
@@ -843,6 +849,7 @@
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */,
 				C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */,
+				C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
 				C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
@@ -856,6 +863,7 @@
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
 				C623B99D27CE47B500C8CCB9 /* MASearchResultTableViewCell.m in Sources */,
+				C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */,
 				C68A324D27E4A7F500DD162B /* MATopListInnerViewController.swift in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
 				C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */,
