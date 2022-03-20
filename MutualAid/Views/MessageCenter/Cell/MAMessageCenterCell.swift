@@ -9,7 +9,7 @@ import UIKit
 
 class MAMessageCenterCell: UITableViewCell {
 
-    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
 
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -19,7 +19,8 @@ class MAMessageCenterCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        containerView.layer.cornerRadius = 6
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
