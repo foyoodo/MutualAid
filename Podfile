@@ -17,6 +17,7 @@ target $project_name do
   pod 'GVUserDefaults'
 
   pod 'SnapKit'
+  pod 'Eureka'
 
   pod 'FYDraggableView', '~> 0.0.1'
 end

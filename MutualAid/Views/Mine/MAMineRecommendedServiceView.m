@@ -9,8 +9,9 @@
 #import "MAMineRecommendedServiceCollectionViewCell.h"
 #import "MAMineEntryView.h"
 #import "MAImageTitleModel.h"
+#import "MutualAid-Swift.h"
 
-@interface MAMineRecommendedServiceView () <UICollectionViewDataSource>
+@interface MAMineRecommendedServiceView () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 
@@ -30,6 +31,7 @@
         
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:(_flowLayout = flowLayout)];
         collectionView.backgroundColor = [UIColor clearColor];
+        collectionView.delegate = self;
         collectionView.dataSource = self;
         [self addSubview:(_collectionView = collectionView)];
         NSInteger count = (self.imageTitleArray.count - 1) / 4 + 1;
@@ -49,6 +51,26 @@
     [super layoutSubviews];
     if (!CGSizeEqualToSize(self.bounds.size, CGSizeZero)) {
         self.flowLayout.itemSize = CGSizeMake(self.bounds.size.width / 4, [[MAMineEntryView new] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+    }
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item == 0) {
+        MAPersonalViewController *vc = [MAPersonalViewController new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.item == 3) {
+        UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.item == 5) {
+        MAFeedbackViewController *vc = [MAFeedbackViewController new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.viewController.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -43,6 +43,8 @@
 		C658B6C527918452000429A9 /* MAFloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C658B6C427918452000429A9 /* MAFloatingButton.m */; };
 		C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6590C402766FD6700845973 /* MAStickyScrollView.m */; };
 		C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C65A619A276351D300CE6029 /* MAPicListModel.m */; };
+		C676626427E75989006EB97D /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676626327E75989006EB97D /* MAPersonalViewController.swift */; };
+		C676626727E76556006EB97D /* MAFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676626627E76556006EB97D /* MAFeedbackViewController.swift */; };
 		C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C6773E6827D0AEA400B9D981 /* MAUserDefaults.m */; };
 		C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C67D781A2770B6A7005B91F7 /* MAMineHeaderView.m */; };
 		C680C5B827686EBF00662440 /* MATopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5B727686EBF00662440 /* MATopListView.m */; };
@@ -174,6 +176,8 @@
 		C6590C402766FD6700845973 /* MAStickyScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyScrollView.m; sourceTree = "<group>"; };
 		C65A6199276351D300CE6029 /* MAPicListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListModel.h; sourceTree = "<group>"; };
 		C65A619A276351D300CE6029 /* MAPicListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListModel.m; sourceTree = "<group>"; };
+		C676626327E75989006EB97D /* MAPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalViewController.swift; sourceTree = "<group>"; };
+		C676626627E76556006EB97D /* MAFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFeedbackViewController.swift; sourceTree = "<group>"; };
 		C6773E6727D0AEA400B9D981 /* MAUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAUserDefaults.h; sourceTree = "<group>"; };
 		C6773E6827D0AEA400B9D981 /* MAUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAUserDefaults.m; sourceTree = "<group>"; };
 		C67D78192770B6A7005B91F7 /* MAMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineHeaderView.h; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 			children = (
 				C69451AC27CF0C88001BBC29 /* Login */,
 				C614AE9727D6538E0046D469 /* Settings */,
+				C676626027E74FAD006EB97D /* Personal */,
+				C676626527E76535006EB97D /* Feedback */,
 				C64DEBCF276C8B7D003D87D0 /* MAMineViewController.h */,
 				C64DEBD0276C8B7D003D87D0 /* MAMineViewController.m */,
 				C6DEEC33276F5845000BF19F /* MAMineStickyView.h */,
@@ -463,6 +469,22 @@
 				C6DB426127E57A2100CD353C /* MATopListDetailModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C676626027E74FAD006EB97D /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				C676626327E75989006EB97D /* MAPersonalViewController.swift */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		C676626527E76535006EB97D /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				C676626627E76556006EB97D /* MAFeedbackViewController.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		C6773E6327D0A79300B9D981 /* MAUserDefaults */ = {
@@ -864,6 +886,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C676626727E76556006EB97D /* MAFeedbackViewController.swift in Sources */,
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
 				C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
@@ -874,6 +897,7 @@
 				C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
 				C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */,
+				C676626427E75989006EB97D /* MAPersonalViewController.swift in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
 				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
