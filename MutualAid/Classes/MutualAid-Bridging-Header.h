@@ -6,6 +6,7 @@
 #import "UIImageView+YYWebImage.h"
 
 #import "MAUserDefaults.h"
+#import "MAToast.h"
 
 #import "MAPicListModel.h"
 #import "MATopListDetailModel.h"

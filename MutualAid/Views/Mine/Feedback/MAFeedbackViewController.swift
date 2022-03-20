@@ -35,6 +35,15 @@ class MAFeedbackViewController: FormViewController {
         <<< PhoneRow() {
             $0.placeholder = "手机号"
         }
+
+        +++ Section()
+        <<< ButtonRow() {
+            $0.title = "提交"
+        }
+        .onCellSelection { [weak self] cell, row in
+            self?.navigationController?.popViewController(animated: true)
+            MAToast.showMessage("提交成功", in: (self?.navigationController?.viewControllers.first?.view)!)
+        }
     }
 
 }

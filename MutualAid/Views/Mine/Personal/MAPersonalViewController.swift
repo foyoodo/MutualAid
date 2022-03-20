@@ -55,6 +55,9 @@ class MAPersonalViewController: FormViewController {
         <<< ButtonRow() {
             $0.title = "申请成为志愿者"
         }
+        .onCellSelection { [weak self] cell, row in
+            MAToast.showMessage("该功能暂未开放，敬请期待...", in: (self?.view)!)
+        }
     }
 
 }
