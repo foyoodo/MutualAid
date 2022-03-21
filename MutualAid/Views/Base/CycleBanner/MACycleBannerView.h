@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setData:(NSArray<MAPicListModel *> *)modelArray;
 
+- (void)adjustPosition;
+
 @property (nonatomic, strong, readonly) UICollectionView *collectionView;
 
 @end

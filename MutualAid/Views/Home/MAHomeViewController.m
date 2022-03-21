@@ -126,6 +126,12 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.cycleBannerView adjustPosition];
+}
+
 #pragma mark - Private Methods
 
 - (void)requestData {

@@ -53,7 +53,7 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
         if (CGRectEqualToRect(self.collectionView.frame, CGRectZero)) {
             self.collectionView.frame = self.bounds;
             self.collectionViewFlowLayout.itemSize = self.bounds.size;
-            self.collectionView.contentOffset = CGPointMake(self.collectionView.bounds.size.width, 0);
+            self.collectionView.contentOffset = CGPointMake(self.bounds.size.width, 0);
             self.pageControl.frame = CGRectMake(0, self.bounds.size.height - kPageControlHeight, self.bounds.size.width, kPageControlHeight);
         }
     }
@@ -70,6 +70,10 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
     [self.collectionView reloadData];
 
     self.pageControl.numberOfPages = modelArray.count;
+}
+
+- (void)adjustPosition {
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.pageControl.currentPage + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
 }
 
 #pragma mark - Private Mthods
@@ -123,20 +127,19 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
     if (self.collectionView.isDragging) {
         return;
     }
-    [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.collectionView.bounds.size.width, 0) animated:YES];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.pageControl.currentPage + 2 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 }
 
 - (void)pageControlSelectionAction:(UIPageControl *)pageControl {
-    NSInteger page = pageControl.currentPage;
-    [self.collectionView setContentOffset:CGPointMake((page + 1) * self.collectionView.bounds.size.width, 0) animated:YES];
-    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:pageControl.currentPage + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    _timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self cycleScroll];
-    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
+    _timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:kCycleScrollInterval];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
