@@ -28,7 +28,7 @@ class MAMessageCenterView: UIView, UITableViewDataSource {
 
     let swipeActionsConfiguration: UISwipeActionsConfiguration = {
         let actionRead = UIContextualAction(style: .normal, title: "已读") { (action, view, completionHandler) in
-            view.backgroundColor = .init(named: "AccentColor")
+            view.backgroundColor = .accent
             completionHandler(true)
         }
         let actionDelete = UIContextualAction(style: .destructive, title: "删除") { (action, view, completionHandler) in

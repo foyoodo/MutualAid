@@ -68,7 +68,7 @@ static const CGFloat kStickyViewHeight = 90;
     MAMineStickyView *stickyView = [[MAMineStickyView alloc] initWithFrame:CGRectMake(0, 0, 0, kStickyViewHeight)];
 
     MANavigationBar *navigationBar = [[MANavigationBar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
-    navigationBar.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+    navigationBar.backgroundColor = [UIColor accentColor];
     [navigationBar addRightBarButtonItem:[MABarButtonItem itemWithImage:[UIImage imageNamed:@"settings_normal"] handler:^{
         UIViewController *vc = [[MAMediator sharedInstance] Settings_settingsViewController];
         vc.hidesBottomBarWhenPushed = YES;

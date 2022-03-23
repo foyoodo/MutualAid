@@ -16,6 +16,7 @@
 
 #if __has_include(<UIKit/UIColor.h>)
 #   import "UIColor+FYExt.h"
+#   import "UIColor+MAExt.h"
 #endif
 
 #if __has_include(<UIKit/UIImage.h>)

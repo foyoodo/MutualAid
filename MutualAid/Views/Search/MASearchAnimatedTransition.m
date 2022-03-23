@@ -50,7 +50,7 @@
 
         [UIView animateWithDuration:transitionDuration animations:^{
             tempSearchView.frame = toSearchViewFrame;
-            tempSearchView.layer.borderColor = [UIColor colorNamed:@"AccentColor"].CGColor;
+            tempSearchView.layer.borderColor = [UIColor accentColor].CGColor;
             toVC.view.alpha = 1.0;
             [tempSearchView layoutIfNeeded];
         } completion:^(BOOL finished) {
@@ -64,7 +64,7 @@
         [containerView addSubview:fromVC.view];
         [containerView addSubview:tempSearchView];
 
-        tempSearchView.layer.borderColor = [UIColor colorNamed:@"AccentColor"].CGColor;
+        tempSearchView.layer.borderColor = [UIColor accentColor].CGColor;
 
         [tempSearchView prepareForTransitionIfShow:YES];
         [tempSearchView layoutIfNeeded];

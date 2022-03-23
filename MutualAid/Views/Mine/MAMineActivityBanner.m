@@ -26,7 +26,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 
-        self.layer.borderColor = [UIColor colorNamed:@"AccentColor"].CGColor;
+        self.layer.borderColor = [UIColor accentColor].CGColor;
         self.layer.borderWidth = 1.0;
         self.layer.cornerRadius = 6;
 
@@ -49,7 +49,7 @@
         }];
 
         UIButton *button = [UIButton new];
-        button.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+        button.backgroundColor = [UIColor accentColor];
         button.layer.cornerRadius = 16;
         button.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
         button.titleLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];

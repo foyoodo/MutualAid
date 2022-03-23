@@ -106,7 +106,7 @@
     }]];
 
     MAStickyScrollView *stickyScrollView = [[MAStickyScrollView alloc] initWithScrollView:(_tableView = tableView)];
-    stickyScrollView.stickyContainerBackgroundView.backgroundColor = [UIColor colorNamed:@"AccentColor"];
+    stickyScrollView.stickyContainerBackgroundView.backgroundColor = [UIColor accentColor];
     stickyScrollView.stickyHeaderView = navigationBar;
     stickyScrollView.stickyView = self.searchBar;
 

@@ -34,21 +34,21 @@ class MALoginViewController: UIViewController, UITextFieldDelegate {
 
     private func setUp(_ textField: RAGTextField) {
         textField.delegate = self
-        textField.textColor = .init(hex: 0x34495E)
-        textField.tintColor = .init(hex: 0x34495E)
+        textField.textColor = .midnight
+        textField.tintColor = .midnight
         textField.textBackgroundView = makeTextBackgroundView()
         textField.textPadding = UIEdgeInsets(top: 6.0, left: 6.0, bottom: 6.0, right: 6.0)
         textField.textPaddingMode = .textAndPlaceholderAndHint
         textField.scaledPlaceholderOffset = 2.0
         textField.placeholderMode = .scalesWhenEditing
         textField.placeholderScaleWhenEditing = 0.8
-        textField.placeholderColor = .init(hex: 0x95A5A6)
+        textField.placeholderColor = .stone
     }
 
     private func makeTextBackgroundView() -> UIView {
         let view = UIView()
         view.layer.cornerRadius = 6.0
-        view.backgroundColor = .init(hex: 0xECF0F1)
+        view.backgroundColor = .chalk
         return view
     }
 

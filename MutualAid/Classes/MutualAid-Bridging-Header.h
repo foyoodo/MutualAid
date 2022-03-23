@@ -5,6 +5,7 @@
 #import "NSString+MALocalized.h"
 #import "UIImageView+YYWebImage.h"
 #import "UIColor+FYExt.h"
+#import "UIColor+MAExt.h"
 
 #import "MAUserDefaults.h"
 #import "MAToast.h"

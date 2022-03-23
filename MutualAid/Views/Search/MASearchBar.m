@@ -41,7 +41,7 @@
 #pragma mark - Public Methods
 
 - (void)prepareForTransition {
-    self.searchView.layer.borderColor = [UIColor colorNamed:@"AccentColor"].CGColor;
+    self.searchView.layer.borderColor = [UIColor accentColor].CGColor;
     [self.searchView prepareForTransitionIfShow:YES];
     [self.searchView mas_updateConstraints:^(MASConstraintMaker *make) {
         [self.searchViewHorizontalConstraint uninstall];
