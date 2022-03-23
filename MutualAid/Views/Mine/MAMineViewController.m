@@ -13,9 +13,9 @@
 #import "MAMineHeaderView.h"
 #import "MAImageTitleModel.h"
 #import "MAMineRecommendedServiceView.h"
-#import "MALoginViewController.h"
 #import "MAMediator+BaseActions.h"
 #import "MAMediator+SettingsActions.h"
+#import "MutualAid-Swift.h"
 
 static const CGFloat kStickyViewHeight = 90;
 
@@ -194,8 +194,8 @@ static const CGFloat kStickyViewHeight = 90;
 #pragma mark - Private Methods
 
 - (void)doLogin {
-    MALoginViewController *vc = [[MALoginViewController alloc] init];
-    [self presentViewController:vc animated:NO completion:nil];
+    MALoginViewController *vc = [MALoginViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)userLoginStateChanged:(NSNotification *)notification {

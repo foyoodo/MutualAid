@@ -21,6 +21,8 @@
 		C623B99A27CE361B00C8CCB9 /* MAMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623B99927CE361B00C8CCB9 /* MAMessageCenterView.swift */; };
 		C623B99D27CE47B500C8CCB9 /* MASearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C623B99C27CE47B500C8CCB9 /* MASearchResultTableViewCell.m */; };
 		C644B09C277079C600842AFA /* MAMineActivityBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C644B09B277079C600842AFA /* MAMineActivityBanner.m */; };
+		C644F6C627EAEDC4005D8C7E /* MALoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644F6C427EAEDC4005D8C7E /* MALoginViewController.swift */; };
+		C644F6C727EAEDC4005D8C7E /* MALoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C644F6C527EAEDC4005D8C7E /* MALoginViewController.xib */; };
 		C6466CF227717C4D00EFF487 /* MAMineCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF127717C4D00EFF487 /* MAMineCounterView.m */; };
 		C6466CF5277182E700EFF487 /* MAMineEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF4277182E700EFF487 /* MAMineEntryView.m */; };
 		C6466CF82771ED7C00EFF487 /* MAImageTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6466CF72771ED7C00EFF487 /* MAImageTitleModel.m */; };
@@ -58,8 +60,6 @@
 		C691E71527E6BD2A008446B6 /* MAMessageCenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C691E71327E6BD2A008446B6 /* MAMessageCenterCell.xib */; };
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
-		C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */; };
-		C69451B227CF4ABF001BBC29 /* MALoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C69451B127CF4ABF001BBC29 /* MALoginInputView.m */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
 		C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8246F27D7328D00F97125 /* Target_Settings.m */; };
 		C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */; };
@@ -131,6 +131,8 @@
 		C623B99C27CE47B500C8CCB9 /* MASearchResultTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchResultTableViewCell.m; sourceTree = "<group>"; };
 		C644B09A277079C600842AFA /* MAMineActivityBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineActivityBanner.h; sourceTree = "<group>"; };
 		C644B09B277079C600842AFA /* MAMineActivityBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineActivityBanner.m; sourceTree = "<group>"; };
+		C644F6C427EAEDC4005D8C7E /* MALoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginViewController.swift; sourceTree = "<group>"; };
+		C644F6C527EAEDC4005D8C7E /* MALoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MALoginViewController.xib; sourceTree = "<group>"; };
 		C6466CF027717C4D00EFF487 /* MAMineCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineCounterView.h; sourceTree = "<group>"; };
 		C6466CF127717C4D00EFF487 /* MAMineCounterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineCounterView.m; sourceTree = "<group>"; };
 		C6466CF3277182E700EFF487 /* MAMineEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineEntryView.h; sourceTree = "<group>"; };
@@ -199,10 +201,6 @@
 		C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyBaseViewController.m; sourceTree = "<group>"; };
 		C6938B702760E6CF00F466DA /* MAPicListCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListCardTableViewCell.h; sourceTree = "<group>"; };
 		C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardTableViewCell.m; sourceTree = "<group>"; };
-		C69451AD27CF0CBB001BBC29 /* MALoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginViewController.h; sourceTree = "<group>"; };
-		C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginViewController.m; sourceTree = "<group>"; };
-		C69451B027CF4ABF001BBC29 /* MALoginInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginInputView.h; sourceTree = "<group>"; };
-		C69451B127CF4ABF001BBC29 /* MALoginInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginInputView.m; sourceTree = "<group>"; };
 		C6AC216A276A37B700E71A95 /* NSTimer+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MAExt.h"; sourceTree = "<group>"; };
 		C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MAExt.m"; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
@@ -323,6 +321,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		C644F6B027EADA94005D8C7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C64AB374275E2B2900AE98EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +439,6 @@
 		C64DEBCE276C8B6A003D87D0 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				C69451AC27CF0C88001BBC29 /* Login */,
 				C614AE9727D6538E0046D469 /* Settings */,
 				C676626027E74FAD006EB97D /* Personal */,
 				C676626527E76535006EB97D /* Feedback */,
@@ -563,10 +567,8 @@
 		C69451AC27CF0C88001BBC29 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C69451AD27CF0CBB001BBC29 /* MALoginViewController.h */,
-				C69451AE27CF0CBB001BBC29 /* MALoginViewController.m */,
-				C69451B027CF4ABF001BBC29 /* MALoginInputView.h */,
-				C69451B127CF4ABF001BBC29 /* MALoginInputView.m */,
+				C644F6C427EAEDC4005D8C7E /* MALoginViewController.swift */,
+				C644F6C527EAEDC4005D8C7E /* MALoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -656,6 +658,7 @@
 				C6F1039E275B17300076F92A /* Classes */,
 				C6BC590D277460D800973364 /* Services */,
 				C65A6198276351A400CE6029 /* Model */,
+				C644F6B027EADA94005D8C7E /* ViewModel */,
 				C6F103A1275B17E30076F92A /* Views */,
 				C64AB374275E2B2900AE98EC /* Extensions */,
 				C64DD9B5275B728C00A13707 /* Resources */,
@@ -700,6 +703,7 @@
 				C605DB9E276241FF00C5E5AE /* NavigationBar */,
 				C64DD9BE275BB51200A13707 /* Search */,
 				C6023DD827662F6300556C07 /* MessageCenter */,
+				C69451AC27CF0C88001BBC29 /* Login */,
 				C64DD9BA275BB3D300A13707 /* Home */,
 				C64DEBCA276C7FC6003D87D0 /* Map */,
 				C64DEBCE276C8B6A003D87D0 /* Mine */,
@@ -815,6 +819,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C644F6C727EAEDC4005D8C7E /* MALoginViewController.xib in Resources */,
 				C68A325C27E4DC9B00DD162B /* MATopListInnerCell.xib in Resources */,
 				C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */,
 				C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */,
@@ -890,7 +895,6 @@
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
 				C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
-				C69451AF27CF0CBB001BBC29 /* MALoginViewController.m in Sources */,
 				C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */,
 				C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
@@ -947,10 +951,10 @@
 				C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */,
 				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
 				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,
+				C644F6C627EAEDC4005D8C7E /* MALoginViewController.swift in Sources */,
 				C61FC660275CE04400851257 /* MASearchNavigationControllerDelegate.m in Sources */,
 				C6BC5910277460F800973364 /* MAMediator.m in Sources */,
 				C64DD9B3275B6C2A00A13707 /* UIGestureRecognizer+FYExt.m in Sources */,
-				C69451B227CF4ABF001BBC29 /* MALoginInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
