@@ -61,6 +61,7 @@
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
 		C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */; };
+		C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517727EB383000274B47 /* LoginViewModel.swift */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
 		C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8246F27D7328D00F97125 /* Target_Settings.m */; };
 		C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */; };
@@ -204,6 +205,7 @@
 		C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardTableViewCell.m; sourceTree = "<group>"; };
 		C6A2517227EB2E7800274B47 /* UIColor+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MAExt.h"; sourceTree = "<group>"; };
 		C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MAExt.m"; sourceTree = "<group>"; };
+		C6A2517727EB383000274B47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C6AC216A276A37B700E71A95 /* NSTimer+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MAExt.h"; sourceTree = "<group>"; };
 		C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MAExt.m"; sourceTree = "<group>"; };
 		C6B10F2B275DD2F600D4511B /* MASearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchBarDelegate.h; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		C644F6B027EADA94005D8C7E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C6A2517727EB383000274B47 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 			files = (
 				C676626727E76556006EB97D /* MAFeedbackViewController.swift in Sources */,
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
+				C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */,
 				C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */,

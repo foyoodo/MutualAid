@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import RAGTextField
 
 class MALoginViewController: UIViewController, UITextFieldDelegate {
@@ -22,14 +24,39 @@ class MALoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBOutlet weak var loginButton: UIButton!
+
+    private var viewModel: LoginViewModel!
+
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.bindViewModel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         let _ = uidTextField.becomeFirstResponder()
+    }
+
+    private func bindViewModel() {
+        viewModel = .init(
+            uid: uidTextField.rx.text.orEmpty.asObservable(),
+            pwd: pwdTextField.rx.text.orEmpty.asObservable()
+        )
+
+        viewModel.uidValid
+            .map { $0.isValidate }
+            .bind(to: pwdTextField.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        viewModel.uidValid.bind(to: uidTextField.rx.validationResult).disposed(by: disposeBag)
+        viewModel.pwdValid.bind(to: pwdTextField.rx.validationResult).disposed(by: disposeBag)
+
+        viewModel.allValid.bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 
     private func setUp(_ textField: RAGTextField) {
@@ -43,6 +70,7 @@ class MALoginViewController: UIViewController, UITextFieldDelegate {
         textField.placeholderMode = .scalesWhenEditing
         textField.placeholderScaleWhenEditing = 0.8
         textField.placeholderColor = .stone
+        textField.hintFont = .systemFont(ofSize: 10.0)
     }
 
     private func makeTextBackgroundView() -> UIView {
@@ -67,4 +95,5 @@ class MALoginViewController: UIViewController, UITextFieldDelegate {
             ])
         }
     }
+
 }

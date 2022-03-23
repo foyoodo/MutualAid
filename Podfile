@@ -19,6 +19,8 @@ target $project_name do
   pod 'SnapKit'
   pod 'Eureka'
   pod "RAGTextField"
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
 
   pod 'FYDraggableView', '~> 0.0.1'
 end
