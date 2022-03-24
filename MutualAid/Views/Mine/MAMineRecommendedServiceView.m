@@ -58,7 +58,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.item == 0) {
-        MAPersonalViewController *vc = [MAPersonalViewController new];
+        MAPersonalViewController *vc = [[MAPersonalViewController alloc] initWithStyle:UITableViewStyleInsetGrouped];
         vc.hidesBottomBarWhenPushed = YES;
         [self.viewController.navigationController pushViewController:vc animated:YES];
     }
@@ -68,7 +68,7 @@
         [self.viewController.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.item == 5) {
-        MAFeedbackViewController *vc = [MAFeedbackViewController new];
+        MAFeedbackViewController *vc = [[MAFeedbackViewController alloc] initWithStyle:UITableViewStyleInsetGrouped];
         vc.hidesBottomBarWhenPushed = YES;
         [self.viewController.navigationController pushViewController:vc animated:YES];
     }

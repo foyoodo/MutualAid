@@ -11,7 +11,7 @@
 @implementation Target_Settings
 
 - (UIViewController *)Action_settingsViewController:(NSDictionary *)params {
-    MASettingsViewController *vc = [MASettingsViewController new];
+    MASettingsViewController *vc = [[MASettingsViewController alloc] initWithStyle:UITableViewStyleInsetGrouped];
     return vc;
 }
 
