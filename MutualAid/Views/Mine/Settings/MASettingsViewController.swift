@@ -62,6 +62,7 @@ class MASettingsViewController: FormViewController {
         .onCellSelection{ [weak self] cell, row in
             MAUserDefaults.standard().userPicUrl = ""
             MAUserDefaults.standard().userName = "未登录"
+            MAUserDefaults.standard().userId = 0 as NSNumber?
             NotificationCenter.default.post(name: .maUserLoginStateChanged, object: nil, userInfo: [
                 "isLogin": false
             ])

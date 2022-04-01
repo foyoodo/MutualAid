@@ -57,6 +57,13 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (!MAUserDefaults.standardUserDefaults.userId.intValue) {
+        MALoginViewController *loginVC = [MALoginViewController new];
+        [self.viewController presentViewController:loginVC animated:YES completion:^{
+            [MAToast showMessage:@"请先登录" inView:loginVC.view];
+        }];
+        return;
+    }
     if (indexPath.item == 0) {
         MAPersonalViewController *vc = [[MAPersonalViewController alloc] initWithStyle:UITableViewStyleInsetGrouped];
         vc.hidesBottomBarWhenPushed = YES;
