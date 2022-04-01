@@ -16,6 +16,8 @@ target $project_name do
   pod 'UICollectionViewLeftAlignedLayout'
   pod 'GVUserDefaults'
 
+  pod 'HWPanModal'
+
   pod 'SnapKit'
   pod 'Eureka'
   pod "RAGTextField"

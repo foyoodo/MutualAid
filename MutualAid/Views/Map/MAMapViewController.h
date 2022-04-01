@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MASearchBarDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAMapViewController : UIViewController
+@interface MAMapViewController : UIViewController <MASearchBarDelegate>
 
 @end
 

@@ -4,6 +4,14 @@
 <dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Request for location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Request for location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Request for location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Request for location</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
