@@ -56,6 +56,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 #import "MAToast.h"
+#import "MALoginHelper.h"
 
 #endif /* __OBJC__ */
 

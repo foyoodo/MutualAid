@@ -60,13 +60,9 @@ class MASettingsViewController: FormViewController {
             $0.title = "退出登录"
         }
         .onCellSelection{ [weak self] cell, row in
-            MAUserDefaults.standard().userPicUrl = ""
-            MAUserDefaults.standard().userName = "未登录"
-            MAUserDefaults.standard().userId = 0 as NSNumber?
-            NotificationCenter.default.post(name: .maUserLoginStateChanged, object: nil, userInfo: [
-                "isLogin": false
-            ])
-            self?.navigationController?.popViewController(animated: true)
+            MALoginHelper.default().logout {
+                self?.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

@@ -75,6 +75,7 @@
 		C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */; };
 		C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DB426127E57A2100CD353C /* MATopListDetailModel.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
+		C6E90640280B154A0088F465 /* MALoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9063F280B154A0088F465 /* MALoginHelper.m */; };
 		C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
 		C6F10376275B142A0076F92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F10375275B142A0076F92A /* Assets.xcassets */; };
@@ -232,6 +233,8 @@
 		C6DB426127E57A2100CD353C /* MATopListDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATopListDetailModel.m; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
+		C6E9063E280B154A0088F465 /* MALoginHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginHelper.h; sourceTree = "<group>"; };
+		C6E9063F280B154A0088F465 /* MALoginHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginHelper.m; sourceTree = "<group>"; };
 		C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendCollectionViewCell.h; sourceTree = "<group>"; };
 		C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASearchRecommendCollectionViewCell.m; sourceTree = "<group>"; };
 		C6F10366275B14290076F92A /* MutualAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -617,6 +620,7 @@
 			children = (
 				C6BC59152774708F00973364 /* MAMediator */,
 				C6773E6327D0A79300B9D981 /* MAUserDefaults */,
+				C6E9063D280B15280088F465 /* MALoginHelper */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -649,6 +653,15 @@
 				C6B8247327D7339C00F97125 /* MAMediator+SettingsActions.m */,
 			);
 			path = MAMediatorCategories;
+			sourceTree = "<group>";
+		};
+		C6E9063D280B15280088F465 /* MALoginHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C6E9063E280B154A0088F465 /* MALoginHelper.h */,
+				C6E9063F280B154A0088F465 /* MALoginHelper.m */,
+			);
+			path = MALoginHelper;
 			sourceTree = "<group>";
 		};
 		C6F1035D275B14290076F92A = {
@@ -953,6 +966,7 @@
 				C64DD9B0275B6C2A00A13707 /* UIControl+FYExt.m in Sources */,
 				C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */,
 				C64DD9B4275B6C2A00A13707 /* UIView+FYExt.m in Sources */,
+				C6E90640280B154A0088F465 /* MALoginHelper.m in Sources */,
 				C614AE9927D653B70046D469 /* MASettingsViewController.swift in Sources */,
 				C6466CFB2771F30A00EFF487 /* MAMineRecommendedServiceView.m in Sources */,
 				C6BC59192774711E00973364 /* MAMediator+BaseActions.m in Sources */,

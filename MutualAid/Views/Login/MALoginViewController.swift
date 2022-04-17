@@ -86,14 +86,11 @@ class MALoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func didClickLogin(_ sender: Any) {
-        MAUserDefaults.standard().userPicUrl = "https://lh3.googleusercontent.com/ogw/ADea4I6KMpBrLiKnhOyNOe_fmE3PmnHu9UclRR9ND9bD=s192-c-mo"
-        MAUserDefaults.standard().userName = uidTextField.text as NSString?
-        MAUserDefaults.standard().userId = uidTextField.text?.hashValue as NSNumber?
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        MALoginHelper.default().login(with: .username, userInfo: [
+            kMALoginUserInfoKeyUsername: uidTextField.text ?? "",
+            kMALoginUserInfoKeyPassword: pwdTextField.text ?? ""
+        ]) {
             self.dismiss(animated: true)
-            NotificationCenter.default.post(name: .maUserLoginStateChanged, object: nil, userInfo: [
-                "isLogin": true
-            ])
         }
     }
 

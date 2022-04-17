@@ -8,6 +8,7 @@
 
 #import "MAUserDefaults.h"
 #import "MAToast.h"
+#import "MALoginHelper.h"
 
 #import "MAPicListModel.h"
 #import "MATopListDetailModel.h"
