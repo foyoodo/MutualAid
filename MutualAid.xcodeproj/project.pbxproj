@@ -56,6 +56,7 @@
 		C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5C3276888D000662440 /* MACycleBannerCollectionViewCell.m */; };
 		C685915E27F6A511003D9CCC /* MAMapPanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C685915D27F6A511003D9CCC /* MAMapPanView.m */; };
 		C685FF3728163CFB00BB6037 /* PublicArt.geojson in Resources */ = {isa = PBXBuildFile; fileRef = C685FF3628163CFB00BB6037 /* PublicArt.geojson */; };
+		C685FF3F2816B34A00BB6037 /* MAMapPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C685FF3E2816B34A00BB6037 /* MAMapPointViewController.m */; };
 		C68A324D27E4A7F500DD162B /* MATopListInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A324C27E4A7F500DD162B /* MATopListInnerViewController.swift */; };
 		C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A325927E4DC9B00DD162B /* MATopListInnerCell.swift */; };
 		C68A325C27E4DC9B00DD162B /* MATopListInnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68A325A27E4DC9B00DD162B /* MATopListInnerCell.xib */; };
@@ -203,6 +204,9 @@
 		C685915C27F6A511003D9CCC /* MAMapPanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMapPanView.h; sourceTree = "<group>"; };
 		C685915D27F6A511003D9CCC /* MAMapPanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMapPanView.m; sourceTree = "<group>"; };
 		C685FF3628163CFB00BB6037 /* PublicArt.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PublicArt.geojson; sourceTree = "<group>"; };
+		C685FF3B281686D400BB6037 /* MutualAid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MutualAid.entitlements; sourceTree = "<group>"; };
+		C685FF3D2816B34A00BB6037 /* MAMapPointViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMapPointViewController.h; sourceTree = "<group>"; };
+		C685FF3E2816B34A00BB6037 /* MAMapPointViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMapPointViewController.m; sourceTree = "<group>"; };
 		C68A324C27E4A7F500DD162B /* MATopListInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListInnerViewController.swift; sourceTree = "<group>"; };
 		C68A325927E4DC9B00DD162B /* MATopListInnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListInnerCell.swift; sourceTree = "<group>"; };
 		C68A325A27E4DC9B00DD162B /* MATopListInnerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MATopListInnerCell.xib; sourceTree = "<group>"; };
@@ -462,6 +466,8 @@
 				C685915B27F6A234003D9CCC /* MapPanView */,
 				C64DEBCB276C7FDF003D87D0 /* MAMapViewController.h */,
 				C64DEBCC276C7FDF003D87D0 /* MAMapViewController.m */,
+				C685FF3D2816B34A00BB6037 /* MAMapPointViewController.h */,
+				C685FF3E2816B34A00BB6037 /* MAMapPointViewController.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 		C6F10368275B14290076F92A /* MutualAid */ = {
 			isa = PBXGroup;
 			children = (
+				C685FF3B281686D400BB6037 /* MutualAid.entitlements */,
 				C6F1039E275B17300076F92A /* Classes */,
 				C6BC590D277460D800973364 /* Services */,
 				C65A6198276351A400CE6029 /* Model */,
@@ -946,6 +953,7 @@
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
 				C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */,
 				C6773E6927D0AEA400B9D981 /* MAUserDefaults.m in Sources */,
+				C685FF3F2816B34A00BB6037 /* MAMapPointViewController.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */,
 				C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */,
@@ -1188,6 +1196,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MutualAid/MutualAid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;
@@ -1220,6 +1229,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MutualAid/MutualAid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42LU364YZR;

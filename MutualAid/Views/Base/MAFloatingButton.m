@@ -7,6 +7,7 @@
 
 #import "MAFloatingButton.h"
 #import "UIView+FYDraggable.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface MAFloatingButton () <FYDraggableViewDelegate>
 
@@ -45,6 +46,23 @@
         [self addActionBlock:^(id _Nonnull sender) {
             @strongify(self)
             [MAToast showMessage:@"正在呼救..." inView:self.superview];
+
+            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
+            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+            content.title = @"呼救提醒";
+            content.subtitle = @"有一位患者正在呼救...";
+            content.userInfo = @{
+                @"title": @"title"
+            };
+
+            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"id" content:content trigger:trigger];
+
+            [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"%@", error);
+                }
+            }];
+
         } forControlEvents:UIControlEventTouchUpInside];
     }
     return self;

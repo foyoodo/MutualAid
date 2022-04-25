@@ -36,7 +36,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title
                    coordinate:(CLLocationCoordinate2D)coordinate {
-    return [self initWithTitle:title locationName:nil coordinate:coordinate];
+    return [self initWithTitle:title locationName:@"" coordinate:coordinate];
 }
 
 - (instancetype)initWithTitle:(NSString *)title
