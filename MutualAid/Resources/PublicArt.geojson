@@ -1,0 +1,107 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "AED设备",
+                "location": "A区主楼",
+                "discipline": "aed",
+                "latitude": "24.600977307880154",
+                "longitude": "118.08591485023499"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.08591485023499,
+                    24.601033398939173
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "AED设备",
+                "location": "机电及自动化学院",
+                "discipline": "aed",
+                "latitude": "24.602179602030084",
+                "longitude": "118.08469712734222"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.08469712734222,
+                    24.602179602030084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "AED设备",
+                "location": "信息科学与工程学院",
+                "discipline": "aed",
+                "latitude": "24.605032870507785",
+                "longitude": "118.08430552482605"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.08430552482605,
+                    24.605032870507785
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "AED设备",
+                "location": "王源兴国际会议中心",
+                "discipline": "aed",
+                "latitude": "24.603886693553502",
+                "longitude": "118.08097958564758"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.08097958564758,
+                    24.603886693553502
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "急救点",
+                "location": "门诊部",
+                "discipline": "aid",
+                "latitude": "24.604467099365998",
+                "longitude": "118.08799088001251"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.08799088001251,
+                    24.604467099365998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "急救点",
+                "location": "厦门市第二医院",
+                "discipline": "aid",
+                "latitude": "24.584270808666993",
+                "longitude": "118.10461521148682"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    118.10461521148682,
+                    24.584270808666993
+                ]
+            }
+        }
+    ]
+}

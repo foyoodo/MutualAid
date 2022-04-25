@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C6023DDB27662FBB00556C07 /* MAMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */; };
+		C60498F32815ABEF0011D5F0 /* MAArtwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C60498F22815ABEF0011D5F0 /* MAArtwork.m */; };
 		C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB952761F59900C5E5AE /* MASectionHeaderView.m */; };
 		C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB992761FDCC00C5E5AE /* MAHotNewsView.m */; };
 		C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C605DB9C2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m */; };
@@ -54,6 +55,7 @@
 		C680C5C12768867200662440 /* MACycleBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5C02768867200662440 /* MACycleBannerView.m */; };
 		C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C680C5C3276888D000662440 /* MACycleBannerCollectionViewCell.m */; };
 		C685915E27F6A511003D9CCC /* MAMapPanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C685915D27F6A511003D9CCC /* MAMapPanView.m */; };
+		C685FF3728163CFB00BB6037 /* PublicArt.geojson in Resources */ = {isa = PBXBuildFile; fileRef = C685FF3628163CFB00BB6037 /* PublicArt.geojson */; };
 		C68A324D27E4A7F500DD162B /* MATopListInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A324C27E4A7F500DD162B /* MATopListInnerViewController.swift */; };
 		C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A325927E4DC9B00DD162B /* MATopListInnerCell.swift */; };
 		C68A325C27E4DC9B00DD162B /* MATopListInnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68A325A27E4DC9B00DD162B /* MATopListInnerCell.xib */; };
@@ -110,6 +112,8 @@
 		A9A8568112121D6B5824CCCE /* Pods-MutualAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MutualAid.release.xcconfig"; path = "Target Support Files/Pods-MutualAid/Pods-MutualAid.release.xcconfig"; sourceTree = "<group>"; };
 		C6023DD927662FBB00556C07 /* MAMessageCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMessageCenterViewController.h; sourceTree = "<group>"; };
 		C6023DDA27662FBB00556C07 /* MAMessageCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMessageCenterViewController.m; sourceTree = "<group>"; };
+		C60498F12815ABEF0011D5F0 /* MAArtwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAArtwork.h; sourceTree = "<group>"; };
+		C60498F22815ABEF0011D5F0 /* MAArtwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAArtwork.m; sourceTree = "<group>"; };
 		C605DB942761F59900C5E5AE /* MASectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASectionHeaderView.h; sourceTree = "<group>"; };
 		C605DB952761F59900C5E5AE /* MASectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASectionHeaderView.m; sourceTree = "<group>"; };
 		C605DB982761FDCC00C5E5AE /* MAHotNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAHotNewsView.h; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		C680C5C3276888D000662440 /* MACycleBannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACycleBannerCollectionViewCell.m; sourceTree = "<group>"; };
 		C685915C27F6A511003D9CCC /* MAMapPanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMapPanView.h; sourceTree = "<group>"; };
 		C685915D27F6A511003D9CCC /* MAMapPanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMapPanView.m; sourceTree = "<group>"; };
+		C685FF3628163CFB00BB6037 /* PublicArt.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PublicArt.geojson; sourceTree = "<group>"; };
 		C68A324C27E4A7F500DD162B /* MATopListInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListInnerViewController.swift; sourceTree = "<group>"; };
 		C68A325927E4DC9B00DD162B /* MATopListInnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATopListInnerCell.swift; sourceTree = "<group>"; };
 		C68A325A27E4DC9B00DD162B /* MATopListInnerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MATopListInnerCell.xib; sourceTree = "<group>"; };
@@ -305,6 +310,15 @@
 			path = MessageCenter;
 			sourceTree = "<group>";
 		};
+		C60498F02815ABD30011D5F0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C60498F12815ABEF0011D5F0 /* MAArtwork.h */,
+				C60498F22815ABEF0011D5F0 /* MAArtwork.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		C605DB972761FCBD00C5E5AE /* SectionHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +400,7 @@
 			children = (
 				C6F10375275B142A0076F92A /* Assets.xcassets */,
 				C6F10377275B142A0076F92A /* LaunchScreen.storyboard */,
+				C685FF3628163CFB00BB6037 /* PublicArt.geojson */,
 				C6F1037A275B142A0076F92A /* Info.plist */,
 				C64AB370275E2A9E00AE98EC /* Localizable.strings */,
 			);
@@ -480,6 +495,7 @@
 		C65A6198276351A400CE6029 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C60498F02815ABD30011D5F0 /* Map */,
 				C65A6199276351D300CE6029 /* MAPicListModel.h */,
 				C65A619A276351D300CE6029 /* MAPicListModel.m */,
 				C6466CF62771ED7C00EFF487 /* MAImageTitleModel.h */,
@@ -859,6 +875,7 @@
 				C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */,
 				C6F10376275B142A0076F92A /* Assets.xcassets in Resources */,
 				C691E71527E6BD2A008446B6 /* MAMessageCenterCell.xib in Resources */,
+				C685FF3728163CFB00BB6037 /* PublicArt.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +998,7 @@
 				C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */,
 				C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */,
 				C61CFA5B276B4EF40042FCEB /* UIViewController+MATabBar.m in Sources */,
+				C60498F32815ABEF0011D5F0 /* MAArtwork.m in Sources */,
 				C6466CFE2771F5EE00EFF487 /* MAMineRecommendedServiceCollectionViewCell.m in Sources */,
 				C605DB962761F59900C5E5AE /* MASectionHeaderView.m in Sources */,
 				C6590C412766FD6700845973 /* MAStickyScrollView.m in Sources */,
