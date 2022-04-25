@@ -47,9 +47,11 @@
 
     NSDictionary *userInfo = response.notification.request.content.userInfo;
 
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([userInfo[@"latitude"] doubleValue], [userInfo[@"longitude"] doubleValue]);
+
     MAMapPointViewController *vc = [MAMapPointViewController new];
 
-    MAArtwork *artwork = [[MAArtwork alloc] initWithTitle:@"患者所在位置" locationName:@"点击图标赶往急救现场" coordinate:CLLocationCoordinate2DMake(24.588622029882156, 118.09502363204956)];
+    MAArtwork *artwork = [[MAArtwork alloc] initWithTitle:userInfo[@"title"] ?: @"患者所在位置" locationName:userInfo[@"detail"] ?: @"点击图标赶往急救现场" coordinate:coordinate];
 
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance;

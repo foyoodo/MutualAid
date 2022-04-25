@@ -52,7 +52,10 @@
             content.title = @"呼救提醒";
             content.subtitle = @"有一位患者正在呼救...";
             content.userInfo = @{
-                @"title": @"title"
+                @"title": @"患者所在位置",
+                @"detail": @"点击图标赶往急救现场",
+                @"latitude": @24.588622029882156,
+                @"longitude": @118.09502363204956
             };
 
             UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"id" content:content trigger:trigger];
