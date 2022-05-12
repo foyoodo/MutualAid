@@ -7,8 +7,12 @@
 
 #import "MASearchNavigationControllerDelegate.h"
 #import "MASearchAnimatedTransition.h"
+#import "MAScaleAnimationController.h"
+#import "MAPanInteractionController.h"
 
 @interface MASearchNavigationControllerDelegate ()
+
+@property (nonatomic, strong) MAPanInteractionController *interactionController;
 
 @end
 
@@ -19,7 +23,33 @@
     if ([fromVC isKindOfClass:clz] || [toVC isKindOfClass:clz]) {
         return [MASearchAnimatedTransition new];
     }
+
+    MAScaleAnimationController *animationController = [MAScaleAnimationController new];
+    if (operation == UINavigationControllerOperationPop) {
+        animationController.reverse = YES;
+        return animationController;
+    }
+
     return nil;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    return self.interactionController.interactive ? self.interactionController : nil;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    Class clz = NSClassFromString(@"MASearchViewController");
+    if ([viewController isKindOfClass:clz]) {
+        return;
+    }
+    [self.interactionController wireToViewController:viewController forOperation:MAInteractionOperationPop];
+}
+
+- (MAPanInteractionController *)interactionController {
+    if (!_interactionController) {
+        _interactionController = [MAPanInteractionController new];
+    }
+    return _interactionController;
 }
 
 @end

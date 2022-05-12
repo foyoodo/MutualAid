@@ -16,19 +16,12 @@
 
 @implementation MAWebViewController
 
-#pragma mark - Init Methods
-
-- (instancetype)init {
-    if (self = [super init]) {
-        self.hidesBottomBarWhenPushed = YES;
-    }
-    return self;
-}
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.ma_prefersTabBarHidden = YES;
 
     self.view.backgroundColor = UIColor.whiteColor;
 

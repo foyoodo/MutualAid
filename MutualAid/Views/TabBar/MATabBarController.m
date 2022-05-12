@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     self.viewControllers = @[
         tabBarItemWithName(@"Home", @"home_normal", @"home_highlight"),
         tabBarItemWithName(@"Map", @"map_normal", @"map_highlight"),

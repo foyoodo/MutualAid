@@ -16,15 +16,10 @@
 
 @implementation MAMessageCenterViewController
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.hidesBottomBarWhenPushed = YES;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.ma_prefersTabBarHidden = YES;
 
     self.title = @"Message Center".localized;
     self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];

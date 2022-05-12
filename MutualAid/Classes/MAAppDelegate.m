@@ -54,7 +54,6 @@
     MAArtwork *artwork = [[MAArtwork alloc] initWithTitle:userInfo[@"title"] ?: @"患者所在位置" locationName:userInfo[@"detail"] ?: @"点击图标赶往急救现场" coordinate:coordinate];
 
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance;
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [CT() presentViewController:nav animated:YES completion:^{
         [vc pointToTargetAnnotation:artwork];

@@ -78,6 +78,10 @@
 		C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB425E27E5664900CD353C /* MATopListDetailSegmentView.swift */; };
 		C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DB426127E57A2100CD353C /* MATopListDetailModel.m */; };
 		C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEEC34276F5845000BF19F /* MAMineStickyView.m */; };
+		C6DFDB7A282D05C000A24741 /* MAReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFDB79282D05C000A24741 /* MAReversibleAnimationController.m */; };
+		C6DFDB7D282D07D300A24741 /* MAScaleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFDB7C282D07D300A24741 /* MAScaleAnimationController.m */; };
+		C6DFDB81282D215100A24741 /* MABaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFDB80282D215100A24741 /* MABaseInteractionController.m */; };
+		C6DFDB84282D21F800A24741 /* MAPanInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFDB83282D21F800A24741 /* MAPanInteractionController.m */; };
 		C6E90640280B154A0088F465 /* MALoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9063F280B154A0088F465 /* MALoginHelper.m */; };
 		C6ECF7B527CB57F300E88633 /* MASearchRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ECF7B427CB57F300E88633 /* MASearchRecommendCollectionViewCell.m */; };
 		C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F1036A275B14290076F92A /* MAAppDelegate.m */; };
@@ -242,6 +246,14 @@
 		C6DB426127E57A2100CD353C /* MATopListDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATopListDetailModel.m; sourceTree = "<group>"; };
 		C6DEEC33276F5845000BF19F /* MAMineStickyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAMineStickyView.h; sourceTree = "<group>"; };
 		C6DEEC34276F5845000BF19F /* MAMineStickyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMineStickyView.m; sourceTree = "<group>"; };
+		C6DFDB78282D05C000A24741 /* MAReversibleAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAReversibleAnimationController.h; sourceTree = "<group>"; };
+		C6DFDB79282D05C000A24741 /* MAReversibleAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAReversibleAnimationController.m; sourceTree = "<group>"; };
+		C6DFDB7B282D07D300A24741 /* MAScaleAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAScaleAnimationController.h; sourceTree = "<group>"; };
+		C6DFDB7C282D07D300A24741 /* MAScaleAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAScaleAnimationController.m; sourceTree = "<group>"; };
+		C6DFDB7F282D215100A24741 /* MABaseInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MABaseInteractionController.h; sourceTree = "<group>"; };
+		C6DFDB80282D215100A24741 /* MABaseInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MABaseInteractionController.m; sourceTree = "<group>"; };
+		C6DFDB82282D21F800A24741 /* MAPanInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPanInteractionController.h; sourceTree = "<group>"; };
+		C6DFDB83282D21F800A24741 /* MAPanInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPanInteractionController.m; sourceTree = "<group>"; };
 		C6E9063E280B154A0088F465 /* MALoginHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MALoginHelper.h; sourceTree = "<group>"; };
 		C6E9063F280B154A0088F465 /* MALoginHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MALoginHelper.m; sourceTree = "<group>"; };
 		C6ECF7B327CB57F300E88633 /* MASearchRecommendCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASearchRecommendCollectionViewCell.h; sourceTree = "<group>"; };
@@ -677,6 +689,28 @@
 			path = MAMediatorCategories;
 			sourceTree = "<group>";
 		};
+		C6DFDB77282D048100A24741 /* AnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFDB78282D05C000A24741 /* MAReversibleAnimationController.h */,
+				C6DFDB79282D05C000A24741 /* MAReversibleAnimationController.m */,
+				C6DFDB7B282D07D300A24741 /* MAScaleAnimationController.h */,
+				C6DFDB7C282D07D300A24741 /* MAScaleAnimationController.m */,
+			);
+			path = AnimationControllers;
+			sourceTree = "<group>";
+		};
+		C6DFDB7E282D20B600A24741 /* InteractionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFDB7F282D215100A24741 /* MABaseInteractionController.h */,
+				C6DFDB80282D215100A24741 /* MABaseInteractionController.m */,
+				C6DFDB82282D21F800A24741 /* MAPanInteractionController.h */,
+				C6DFDB83282D21F800A24741 /* MAPanInteractionController.m */,
+			);
+			path = InteractionControllers;
+			sourceTree = "<group>";
+		};
 		C6E9063D280B15280088F465 /* MALoginHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +751,8 @@
 				C65A6198276351A400CE6029 /* Model */,
 				C644F6B027EADA94005D8C7E /* ViewModel */,
 				C6F103A1275B17E30076F92A /* Views */,
+				C6DFDB7E282D20B600A24741 /* InteractionControllers */,
+				C6DFDB77282D048100A24741 /* AnimationControllers */,
 				C64AB374275E2B2900AE98EC /* Extensions */,
 				C64DD9B5275B728C00A13707 /* Resources */,
 			);
@@ -956,15 +992,18 @@
 				C685FF3F2816B34A00BB6037 /* MAMapPointViewController.m in Sources */,
 				C6BC591C27748DF500973364 /* MAWebViewController.m in Sources */,
 				C68A325B27E4DC9B00DD162B /* MATopListInnerCell.swift in Sources */,
+				C6DFDB81282D215100A24741 /* MABaseInteractionController.m in Sources */,
 				C6DB425D27E564F900CD353C /* MATopListDetailViewController.swift in Sources */,
 				C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */,
 				C6B8247027D7328D00F97125 /* Target_Settings.m in Sources */,
 				C65A619B276351D300CE6029 /* MAPicListModel.m in Sources */,
 				C6B8247427D7339C00F97125 /* MAMediator+SettingsActions.m in Sources */,
+				C6DFDB7D282D07D300A24741 /* MAScaleAnimationController.m in Sources */,
 				C676626427E75989006EB97D /* MAPersonalViewController.swift in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
 				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
+				C6DFDB7A282D05C000A24741 /* MAReversibleAnimationController.m in Sources */,
 				C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
@@ -982,6 +1021,7 @@
 				C64DD9B2275B6C2A00A13707 /* UIColor+FYExt.m in Sources */,
 				C64DD9C1275BB56D00A13707 /* MASearchBar.m in Sources */,
 				C6F1036B275B14290076F92A /* MAAppDelegate.m in Sources */,
+				C6DFDB84282D21F800A24741 /* MAPanInteractionController.m in Sources */,
 				C64DD9B1275B6C2A00A13707 /* UIImage+FYExt.m in Sources */,
 				C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */,
 				C685915E27F6A511003D9CCC /* MAMapPanView.m in Sources */,
