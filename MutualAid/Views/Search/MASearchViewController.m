@@ -60,8 +60,6 @@
     [super viewWillDisappear:animated];
 
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-
-    [self.searchBar.textField resignFirstResponder];
 }
 
 #pragma mark - Private Methods
