@@ -55,8 +55,6 @@ static const CGFloat kStickyViewHeight = 90;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.fd_prefersNavigationBarHidden = YES;
-
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.sectionFooterHeight = 0;
@@ -96,6 +94,18 @@ static const CGFloat kStickyViewHeight = 90;
     }];
 
     [self.stickyView addGestureRecognizer:self.loginTapGestureRecognizer];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 #pragma mark - UIScrollViewDelegate

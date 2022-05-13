@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.fd_prefersNavigationBarHidden = YES;
     self.ma_prefersTabBarHidden = YES;
     self.view.backgroundColor = [UIColor systemGray5Color];
 
@@ -48,6 +47,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+
     self.searchBar.searchView.textFieldUserInteractionEnabled = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.searchBar.textField becomeFirstResponder];
@@ -56,6 +58,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+
     [self.searchBar.textField resignFirstResponder];
 }
 

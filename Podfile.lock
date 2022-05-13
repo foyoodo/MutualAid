@@ -1,7 +1,6 @@
 PODS:
   - CTMediator (46)
   - Eureka (5.3.5)
-  - FDFullscreenPopGesture (1.1)
   - FYDraggableView (0.0.1)
   - GVUserDefaults (1.0.2)
   - HWPanModal (0.8.9)
@@ -28,7 +27,6 @@ PODS:
 DEPENDENCIES:
   - CTMediator (~> 46)
   - Eureka
-  - FDFullscreenPopGesture (from `https://github.com/forkingdog/FDFullscreenPopGesture`)
   - FYDraggableView (~> 0.0.1)
   - GVUserDefaults
   - HWPanModal
@@ -62,19 +60,9 @@ SPEC REPOS:
     - YYImage
     - YYWebImage
 
-EXTERNAL SOURCES:
-  FDFullscreenPopGesture:
-    :git: https://github.com/forkingdog/FDFullscreenPopGesture
-
-CHECKOUT OPTIONS:
-  FDFullscreenPopGesture:
-    :commit: 44ddc103fd7ce7ffd5250b5a39ee69aca4465c95
-    :git: https://github.com/forkingdog/FDFullscreenPopGesture
-
 SPEC CHECKSUMS:
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   Eureka: 7b39a479d074620d43028a0e2bfc3e0d667724df
-  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FYDraggableView: 83ece5ea65f232a3537005d3b79a220e7869c08f
   GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
   HWPanModal: 259f6916c706b3f63003a325ad1bdfbe913b0fdc
@@ -91,6 +79,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 47d90cced62d53d22e628a54580b5df4cabaef7b
+PODFILE CHECKSUM: 8431548a9c692edb9c5e30b8f260d072eb5dd9a8
 
 COCOAPODS: 1.11.3

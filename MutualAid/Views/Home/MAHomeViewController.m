@@ -45,7 +45,6 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
-    self.fd_prefersNavigationBarHidden = YES;
 
     CGFloat cycleBannerViewHeight = floor(([UIScreen mainScreen].bounds.size.width - 12 * 2) * 0.35);
 
@@ -125,7 +124,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+
     [self.cycleBannerView adjustPosition];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 #pragma mark - Private Methods
