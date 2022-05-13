@@ -14,6 +14,7 @@
     MAWebViewController *webViewController = [MAWebViewController new];
     webViewController.title = params[@"title"];
     webViewController.requestURL = params[@"requestURL"];
+    webViewController.detailListItem = params[@"detailListItem"];
     return webViewController;
 }
 

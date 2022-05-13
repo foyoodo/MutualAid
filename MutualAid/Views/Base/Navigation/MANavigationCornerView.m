@@ -121,7 +121,7 @@
     }
 
     if (_pointInside) {
-        [[MAListDataManager sharedManager] addToReadList:[MAPicListModel modelWithTitle:self.webViewController.title picUrl:@"" jumpUrl:self.webViewController.requestURL.absoluteString]];
+        [[MAListDataManager sharedManager] addToReadList:self.webViewController.detailListItem];
         [MAToast showMessage:@"已加入稍后阅读" inView:self.superview];
     }
     CGRect frame = self.frame;

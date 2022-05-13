@@ -17,11 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addToStarList:(MAPicListModel *)listItem;
 - (void)addToReadList:(MAPicListModel *)listItem;
 
-- (void)removeFromStarListWithItemId:(NSString *)itemId;
-- (void)removeFromReadListWithItemId:(NSString *)itemId;
+- (void)removeFromStarList:(MAPicListModel *)listItem;
+- (void)removeFromReadList:(MAPicListModel *)listItem;
 
 - (BOOL)staredWithItemId:(NSString *)itemId;
 - (BOOL)readedWithItemId:(NSString *)itemId;
+
+@property (nonatomic, strong, readonly) NSMutableDictionary *starList;
+@property (nonatomic, strong, readonly) NSMutableDictionary *readList;
 
 @end
 

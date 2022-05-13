@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MAPicListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSURL *requestURL;
 
 @property (nonatomic, assign, readonly) BOOL star;
+
+@property (nonatomic, strong, nullable) MAPicListModel *detailListItem;
 
 @end
 

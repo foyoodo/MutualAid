@@ -227,7 +227,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:[self.picListData objectAtIndex:indexPath.row].title requestURL:[NSURL URLWithString:[self.picListData objectAtIndex:indexPath.row].jumpUrl]];
+        UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:[self.picListData objectAtIndex:indexPath.row].title requestURL:[NSURL URLWithString:[self.picListData objectAtIndex:indexPath.row].jumpUrl] detailListItem:[self.picListData objectAtIndex:indexPath.row]];
         [CT() pushViewController:webViewController animated:YES];
     }
 }

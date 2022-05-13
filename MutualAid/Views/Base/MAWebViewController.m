@@ -48,12 +48,19 @@
 - (void)addToStarList {
     _star = !_star;
     if (_star) {
-        [[MAListDataManager sharedManager] addToStarList:[MAPicListModel modelWithTitle:self.title picUrl:@"" jumpUrl:self.requestURL.absoluteString]];
+        [[MAListDataManager sharedManager] addToStarList:self.detailListItem];
     } else {
-        [[MAListDataManager sharedManager] removeFromStarListWithItemId:self.requestURL.absoluteString];
+        [[MAListDataManager sharedManager] removeFromStarList:self.detailListItem];
     }
     self.navigationItem.rightBarButtonItem.image = [UIImage systemImageNamed:(_star ? @"star.fill" : @"star")];
     [MAToast showMessage:(_star ? @"添加收藏" : @"取消收藏") inView:self.view];
+}
+
+- (MAPicListModel *)detailListItem {
+    if (!_detailListItem) {
+        _detailListItem = [MAPicListModel modelWithTitle:self.title picUrl:@"" jumpUrl:self.requestURL.absoluteString];
+    }
+    return _detailListItem;
 }
 
 @end

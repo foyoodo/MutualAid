@@ -67,6 +67,11 @@
 		C6A24978282E06CF0016E4AC /* MANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24977282E06CF0016E4AC /* MANavigationController.m */; };
 		C6A2497C282E3A080016E4AC /* MANavigationCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */; };
 		C6A24980282E87BF0016E4AC /* MAListDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2497F282E87BF0016E4AC /* MAListDataManager.m */; };
+		C6A24984282EAB380016E4AC /* MAStarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24983282EAB380016E4AC /* MAStarListViewController.m */; };
+		C6A24988282EABBB0016E4AC /* MAReadLaterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24987282EABBB0016E4AC /* MAReadLaterListViewController.m */; };
+		C6A2498F282EAD820016E4AC /* MAPicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2498E282EAD820016E4AC /* MAPicListViewController.m */; };
+		C6A24993282EB53B0016E4AC /* MAPicListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24991282EB53B0016E4AC /* MAPicListTableViewCell.m */; };
+		C6A24994282EB53B0016E4AC /* MAPicListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A24992282EB53B0016E4AC /* MAPicListTableViewCell.xib */; };
 		C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */; };
 		C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517727EB383000274B47 /* LoginViewModel.swift */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
@@ -229,6 +234,15 @@
 		C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationCornerView.m; sourceTree = "<group>"; };
 		C6A2497E282E87BF0016E4AC /* MAListDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAListDataManager.h; sourceTree = "<group>"; };
 		C6A2497F282E87BF0016E4AC /* MAListDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAListDataManager.m; sourceTree = "<group>"; };
+		C6A24982282EAB380016E4AC /* MAStarListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAStarListViewController.h; sourceTree = "<group>"; };
+		C6A24983282EAB380016E4AC /* MAStarListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStarListViewController.m; sourceTree = "<group>"; };
+		C6A24986282EABBB0016E4AC /* MAReadLaterListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAReadLaterListViewController.h; sourceTree = "<group>"; };
+		C6A24987282EABBB0016E4AC /* MAReadLaterListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAReadLaterListViewController.m; sourceTree = "<group>"; };
+		C6A2498D282EAD820016E4AC /* MAPicListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListViewController.h; sourceTree = "<group>"; };
+		C6A2498E282EAD820016E4AC /* MAPicListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListViewController.m; sourceTree = "<group>"; };
+		C6A24990282EB53B0016E4AC /* MAPicListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListTableViewCell.h; sourceTree = "<group>"; };
+		C6A24991282EB53B0016E4AC /* MAPicListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListTableViewCell.m; sourceTree = "<group>"; };
+		C6A24992282EB53B0016E4AC /* MAPicListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAPicListTableViewCell.xib; sourceTree = "<group>"; };
 		C6A2517227EB2E7800274B47 /* UIColor+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MAExt.h"; sourceTree = "<group>"; };
 		C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MAExt.m"; sourceTree = "<group>"; };
 		C6A2517727EB383000274B47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -496,6 +510,9 @@
 		C64DEBCE276C8B6A003D87D0 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				C6A24989282EAD610016E4AC /* PicList */,
+				C6A24981282EAAFE0016E4AC /* StarList */,
+				C6A24985282EABA00016E4AC /* ReadLaterList */,
 				C614AE9727D6538E0046D469 /* Settings */,
 				C676626027E74FAD006EB97D /* Personal */,
 				C676626527E76535006EB97D /* Feedback */,
@@ -659,6 +676,44 @@
 				C6A2497F282E87BF0016E4AC /* MAListDataManager.m */,
 			);
 			path = MAListDataManager;
+			sourceTree = "<group>";
+		};
+		C6A24981282EAAFE0016E4AC /* StarList */ = {
+			isa = PBXGroup;
+			children = (
+				C6A24982282EAB380016E4AC /* MAStarListViewController.h */,
+				C6A24983282EAB380016E4AC /* MAStarListViewController.m */,
+			);
+			path = StarList;
+			sourceTree = "<group>";
+		};
+		C6A24985282EABA00016E4AC /* ReadLaterList */ = {
+			isa = PBXGroup;
+			children = (
+				C6A24986282EABBB0016E4AC /* MAReadLaterListViewController.h */,
+				C6A24987282EABBB0016E4AC /* MAReadLaterListViewController.m */,
+			);
+			path = ReadLaterList;
+			sourceTree = "<group>";
+		};
+		C6A24989282EAD610016E4AC /* PicList */ = {
+			isa = PBXGroup;
+			children = (
+				C6A24995282EBFA20016E4AC /* Cell */,
+				C6A2498D282EAD820016E4AC /* MAPicListViewController.h */,
+				C6A2498E282EAD820016E4AC /* MAPicListViewController.m */,
+			);
+			path = PicList;
+			sourceTree = "<group>";
+		};
+		C6A24995282EBFA20016E4AC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6A24990282EB53B0016E4AC /* MAPicListTableViewCell.h */,
+				C6A24991282EB53B0016E4AC /* MAPicListTableViewCell.m */,
+				C6A24992282EB53B0016E4AC /* MAPicListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C6B8247127D7334300F97125 /* Actions */ = {
@@ -947,6 +1002,7 @@
 				C68A325C27E4DC9B00DD162B /* MATopListInnerCell.xib in Resources */,
 				C6F10379275B142A0076F92A /* LaunchScreen.storyboard in Resources */,
 				C64AB372275E2A9E00AE98EC /* Localizable.strings in Resources */,
+				C6A24994282EB53B0016E4AC /* MAPicListTableViewCell.xib in Resources */,
 				C6F10376275B142A0076F92A /* Assets.xcassets in Resources */,
 				C691E71527E6BD2A008446B6 /* MAMessageCenterCell.xib in Resources */,
 				C685FF3728163CFB00BB6037 /* PublicArt.geojson in Resources */,
@@ -1016,6 +1072,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A24984282EAB380016E4AC /* MAStarListViewController.m in Sources */,
 				C6A24980282E87BF0016E4AC /* MAListDataManager.m in Sources */,
 				C676626727E76556006EB97D /* MAFeedbackViewController.swift in Sources */,
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
@@ -1045,6 +1102,7 @@
 				C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */,
 				C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */,
 				C623B99D27CE47B500C8CCB9 /* MASearchResultTableViewCell.m in Sources */,
+				C6A24988282EABBB0016E4AC /* MAReadLaterListViewController.m in Sources */,
 				C6DB425F27E5664900CD353C /* MATopListDetailSegmentView.swift in Sources */,
 				C68A324D27E4A7F500DD162B /* MATopListInnerViewController.swift in Sources */,
 				C680C5B827686EBF00662440 /* MATopListView.m in Sources */,
@@ -1076,6 +1134,7 @@
 				C6F1037C275B142A0076F92A /* main.m in Sources */,
 				C658B6C527918452000429A9 /* MAFloatingButton.m in Sources */,
 				C61FC65D275CD9B100851257 /* MASearchView.m in Sources */,
+				C6A24993282EB53B0016E4AC /* MAPicListTableViewCell.m in Sources */,
 				C64AB35E275E16BC00AE98EC /* MASearchRecommendView.m in Sources */,
 				C6DEEC35276F5845000BF19F /* MAMineStickyView.m in Sources */,
 				C6DB426227E57A2100CD353C /* MATopListDetailModel.m in Sources */,
@@ -1087,6 +1146,7 @@
 				C6466CF82771ED7C00EFF487 /* MAImageTitleModel.m in Sources */,
 				C6BC5914277469BF00973364 /* Target_Base.m in Sources */,
 				C605DB9D2762002B00C5E5AE /* MAHotNewsCollectionViewCell.m in Sources */,
+				C6A2498F282EAD820016E4AC /* MAPicListViewController.m in Sources */,
 				C64DD9BD275BB3E900A13707 /* MAHomeViewController.m in Sources */,
 				C61FC657275C5B4300851257 /* MASearchViewController.m in Sources */,
 				C644F6C627EAEDC4005D8C7E /* MALoginViewController.swift in Sources */,

@@ -41,12 +41,12 @@
     [self.readList setValue:listItem forKey:listItem.jumpUrl];
 }
 
-- (void)removeFromStarListWithItemId:(NSString *)itemId {
-    [self.starList removeObjectForKey:itemId];
+- (void)removeFromStarList:(MAPicListModel *)listItem {
+    [self.starList removeObjectForKey:listItem.jumpUrl];
 }
 
-- (void)removeFromReadListWithItemId:(NSString *)itemId {
-    [self.readList removeObjectForKey:itemId];
+- (void)removeFromReadList:(MAPicListModel *)listItem {
+    [self.readList removeObjectForKey:listItem.jumpUrl];
 }
 
 - (BOOL)staredWithItemId:(NSString *)itemId {

@@ -9,10 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MAPicListModel;
+
 @interface MAMediator (BaseActions)
 
 - (UIViewController *)baseActions_webViewControllerWithTitle:(NSString *)title
-                                                  requestURL:(NSURL *)requestURL;
+                                                  requestURL:(NSURL *)requestURL
+                                              detailListItem:(nullable MAPicListModel *)detailListItem;
 
 - (UITableViewCell *)baseActions_cellForTableView:(UITableView *)tableView
                                          withFont:(UIFont *)font

@@ -9,6 +9,8 @@
 #import "MAMineActivityBanner.h"
 #import "MAMineCounterView.h"
 #import "MAMineEntryView.h"
+#import "MAStarListViewController.h"
+#import "MAReadLaterListViewController.h"
 
 @interface MAMineHeaderView ()
 
@@ -102,6 +104,17 @@
                 make.height.equalTo(@([entryView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height));
             }];
         }
+        @weakify(self)
+        [entryView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id _Nonnull sender) {
+            @strongify(self)
+            UIViewController *vc = nil;
+            if (i == 2) {
+                vc = [MAStarListViewController new];
+            } else if (i == 3) {
+                vc = [MAReadLaterListViewController new];
+            }
+            !vc ?: [self.viewController.navigationController pushViewController:vc animated:YES];
+        }]];
     }
 }
 

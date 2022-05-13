@@ -16,10 +16,11 @@ NSString * const kMAMediatorActionConfigCell = @"configCell";
 @implementation MAMediator (BaseActions)
 
 - (UIViewController *)baseActions_webViewControllerWithTitle:(NSString *)title
-                                                  requestURL:(NSURL *)requestURL {
+                                                  requestURL:(NSURL *)requestURL
+                                              detailListItem:(MAPicListModel *)detailListItem {
     return [self performTarget:kMAMediatorTargetBase
                         action:kMAMediatorActionWebViewController
-                        params:@{ @"title": title, @"requestURL": requestURL }
+                        params:@{ @"title": title, @"requestURL": requestURL, @"detailListItem": detailListItem }
              shouldCacheTarget:NO];
 }
 
