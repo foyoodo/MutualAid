@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSURL *requestURL;
 
+@property (nonatomic, assign, readonly) BOOL star;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -89,7 +89,7 @@
         @"离线缓存",
         @"历史记录",
         @"我的收藏",
-        @"稍后再看"
+        @"稍后阅读"
     ];
 
     for (NSInteger i = 0; i < imageArray.count; ++i) {

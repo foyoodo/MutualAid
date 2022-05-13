@@ -7,15 +7,16 @@
 
 #import "MANavigationCornerView.h"
 #import "MAWebViewController.h"
+#import "MAListDataManager.h"
 
 @interface MANavigationCornerView ()
-
-@property (nonatomic, assign) BOOL interactive;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *generator;
+
+@property (nonatomic, unsafe_unretained) MAWebViewController *webViewController;
 
 @end
 
@@ -58,11 +59,10 @@
 
 - (void)startInteractiveTransitionWithViewController:(UIViewController *)viewController {
     if (![viewController isKindOfClass:[MAWebViewController class]]) {
-        self.interactive = NO;
         return;
     }
 
-    self.interactive = YES;
+    self.webViewController = (MAWebViewController *)viewController;
 
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
 
@@ -80,7 +80,7 @@
 }
 
 - (void)updateInteractiveTransition:(CGFloat)percentComplete panGesture:(UIPanGestureRecognizer *)pan {
-    if (!self.interactive) {
+    if (!self.webViewController) {
         return;
     }
 
@@ -107,7 +107,7 @@
 }
 
 - (void)cancelInteractiveTransition {
-    if (!self.interactive) {
+    if (!self.webViewController) {
         return;
     }
 
@@ -115,11 +115,12 @@
 }
 
 - (void)finishInteractiveTransition {
-    if (!self.interactive) {
+    if (!self.webViewController) {
         return;
     }
 
     if (_pointInside) {
+        [[MAListDataManager sharedManager] addToReadList:[MAPicListModel modelWithTitle:self.webViewController.title picUrl:@"" jumpUrl:self.webViewController.requestURL.absoluteString]];
         [MAToast showMessage:@"已加入稍后阅读" inView:self.superview];
     }
     CGRect frame = self.frame;

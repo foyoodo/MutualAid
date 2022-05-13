@@ -66,6 +66,7 @@
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
 		C6A24978282E06CF0016E4AC /* MANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24977282E06CF0016E4AC /* MANavigationController.m */; };
 		C6A2497C282E3A080016E4AC /* MANavigationCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */; };
+		C6A24980282E87BF0016E4AC /* MAListDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2497F282E87BF0016E4AC /* MAListDataManager.m */; };
 		C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */; };
 		C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517727EB383000274B47 /* LoginViewModel.swift */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
@@ -226,6 +227,8 @@
 		C6A24977282E06CF0016E4AC /* MANavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationController.m; sourceTree = "<group>"; };
 		C6A2497A282E3A080016E4AC /* MANavigationCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationCornerView.h; sourceTree = "<group>"; };
 		C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationCornerView.m; sourceTree = "<group>"; };
+		C6A2497E282E87BF0016E4AC /* MAListDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAListDataManager.h; sourceTree = "<group>"; };
+		C6A2497F282E87BF0016E4AC /* MAListDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAListDataManager.m; sourceTree = "<group>"; };
 		C6A2517227EB2E7800274B47 /* UIColor+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MAExt.h"; sourceTree = "<group>"; };
 		C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MAExt.m"; sourceTree = "<group>"; };
 		C6A2517727EB383000274B47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -649,6 +652,15 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		C6A2497D282E87800016E4AC /* MAListDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C6A2497E282E87BF0016E4AC /* MAListDataManager.h */,
+				C6A2497F282E87BF0016E4AC /* MAListDataManager.m */,
+			);
+			path = MAListDataManager;
+			sourceTree = "<group>";
+		};
 		C6B8247127D7334300F97125 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +682,7 @@
 		C6BC590D277460D800973364 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C6A2497D282E87800016E4AC /* MAListDataManager */,
 				C6BC59152774708F00973364 /* MAMediator */,
 				C6773E6327D0A79300B9D981 /* MAUserDefaults */,
 				C6E9063D280B15280088F465 /* MALoginHelper */,
@@ -1003,6 +1016,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A24980282E87BF0016E4AC /* MAListDataManager.m in Sources */,
 				C676626727E76556006EB97D /* MAFeedbackViewController.swift in Sources */,
 				C605DB9A2761FDCC00C5E5AE /* MAHotNewsView.m in Sources */,
 				C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */,

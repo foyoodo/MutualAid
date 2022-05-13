@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cancelInteractiveTransition;
 - (void)finishInteractiveTransition;
 
-@property (nonatomic, assign, readonly) BOOL interactive;
-
 @end
 
 NS_ASSUME_NONNULL_END

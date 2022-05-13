@@ -7,10 +7,13 @@
 
 #import "MAWebViewController.h"
 #import <WebKit/WebKit.h>
+#import "MAListDataManager.h"
 
 @interface MAWebViewController ()
 
 @property (nonatomic, strong) WKWebView *webView;
+
+@property (nonatomic, assign) BOOL star;
 
 @end
 
@@ -36,6 +39,21 @@
     if (self.requestURL) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.requestURL]];
     }
+
+    _star = [[MAListDataManager sharedManager] staredWithItemId:self.requestURL.absoluteString];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:(_star ? @"star.fill" : @"star")] style:UIBarButtonItemStylePlain target:self action:@selector(addToStarList)];
+}
+
+- (void)addToStarList {
+    _star = !_star;
+    if (_star) {
+        [[MAListDataManager sharedManager] addToStarList:[MAPicListModel modelWithTitle:self.title picUrl:@"" jumpUrl:self.requestURL.absoluteString]];
+    } else {
+        [[MAListDataManager sharedManager] removeFromStarListWithItemId:self.requestURL.absoluteString];
+    }
+    self.navigationItem.rightBarButtonItem.image = [UIImage systemImageNamed:(_star ? @"star.fill" : @"star")];
+    [MAToast showMessage:(_star ? @"添加收藏" : @"取消收藏") inView:self.view];
 }
 
 @end
