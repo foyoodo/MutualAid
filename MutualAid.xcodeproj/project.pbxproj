@@ -65,6 +65,7 @@
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
 		C6A24978282E06CF0016E4AC /* MANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24977282E06CF0016E4AC /* MANavigationController.m */; };
+		C6A2497C282E3A080016E4AC /* MANavigationCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */; };
 		C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */; };
 		C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517727EB383000274B47 /* LoginViewModel.swift */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
@@ -223,6 +224,8 @@
 		C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardTableViewCell.m; sourceTree = "<group>"; };
 		C6A24976282E06CF0016E4AC /* MANavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationController.h; sourceTree = "<group>"; };
 		C6A24977282E06CF0016E4AC /* MANavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationController.m; sourceTree = "<group>"; };
+		C6A2497A282E3A080016E4AC /* MANavigationCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationCornerView.h; sourceTree = "<group>"; };
+		C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationCornerView.m; sourceTree = "<group>"; };
 		C6A2517227EB2E7800274B47 /* UIColor+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MAExt.h"; sourceTree = "<group>"; };
 		C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MAExt.m"; sourceTree = "<group>"; };
 		C6A2517727EB383000274B47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -640,6 +643,8 @@
 			children = (
 				C6A24976282E06CF0016E4AC /* MANavigationController.h */,
 				C6A24977282E06CF0016E4AC /* MANavigationController.m */,
+				C6A2497A282E3A080016E4AC /* MANavigationCornerView.h */,
+				C6A2497B282E3A080016E4AC /* MANavigationCornerView.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1019,6 +1024,7 @@
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C6DFDB7A282D05C000A24741 /* MAReversibleAnimationController.m in Sources */,
 				C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */,
+				C6A2497C282E3A080016E4AC /* MANavigationCornerView.m in Sources */,
 				C64DD9B9275BA8BC00A13707 /* MATabBarController.m in Sources */,
 				C61FC65A275CCE3D00851257 /* MASearchAnimatedTransition.m in Sources */,
 				C680C5C4276888D000662440 /* MACycleBannerCollectionViewCell.m in Sources */,

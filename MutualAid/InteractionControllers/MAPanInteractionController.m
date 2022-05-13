@@ -7,6 +7,7 @@
 
 #import "MAPanInteractionController.h"
 #import <objc/runtime.h>
+#import "MANavigationCornerView.h"
 
 const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
 
@@ -47,6 +48,7 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
             if (self.operation == MAInteractionOperationPop) {
                 self.interactive = YES;
                 [self.viewController.navigationController popViewControllerAnimated:YES];
+                [[MANavigationCornerView sharedInstance] startInteractiveTransition];
             } else if (self.operation == MAInteractionOperationDismiss) {
                 // dismiss
             }
@@ -59,6 +61,7 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
             _shouldCompleteTransition = (fraction > 0.5);
 
             [self updateInteractiveTransition:fraction];
+            [[MANavigationCornerView sharedInstance] updateInteractiveTransition:fraction panGesture:pan];
 
             self.interactive = YES;
             break;
@@ -69,8 +72,10 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
             self.completionSpeed = 0.5;
             if (!_shouldCompleteTransition || pan.state == UIGestureRecognizerStateCancelled) {
                 [self cancelInteractiveTransition];
+                [[MANavigationCornerView sharedInstance] cancelInteractiveTransition];
             } else {
                 [self finishInteractiveTransition];
+                [[MANavigationCornerView sharedInstance] finishInteractiveTransition];
             }
             self.interactive = NO;
             break;
