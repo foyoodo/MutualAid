@@ -71,7 +71,6 @@
     }
     else if (indexPath.item == 3) {
         UIViewController *vc = [NSClassFromString(@"MAMessageCenterViewController") new];
-        vc.hidesBottomBarWhenPushed = YES;
         [self.viewController.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.item == 5) {

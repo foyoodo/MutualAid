@@ -31,8 +31,6 @@
 @property (nonatomic, strong) MATopListView *topListView;
 @property (nonatomic, strong) MAHotNewsView *hotNewsView;
 
-@property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
-
 @property (nonatomic, strong) NSMutableArray<MAPicListModel *> *picListData;
 
 @end
@@ -48,8 +46,6 @@
 
     self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
     self.fd_prefersNavigationBarHidden = YES;
-
-    self.navigationController.delegate = self.navigationControllerDelegate;
 
     CGFloat cycleBannerViewHeight = floor(([UIScreen mainScreen].bounds.size.width - 12 * 2) * 0.35);
 
@@ -282,13 +278,6 @@
         _searchBar.delegate = self;
     }
     return _searchBar;
-}
-
-- (MASearchNavigationControllerDelegate *)navigationControllerDelegate {
-    if (!_navigationControllerDelegate) {
-        _navigationControllerDelegate = [MASearchNavigationControllerDelegate new];
-    }
-    return _navigationControllerDelegate;
 }
 
 - (NSMutableArray<MAPicListModel *> *)picListData {

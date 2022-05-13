@@ -6,6 +6,7 @@
 //
 
 #import "MATabBarController.h"
+#import "MANavigationController.h"
 #import "MAFloatingButton.h"
 
 @interface MATabBarController () <UITabBarControllerDelegate>
@@ -42,7 +43,7 @@ static inline UIViewController *tabBarItemWithName(NSString *name, NSString *ima
     vc.title = name.localized;
     vc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *nav = [[MANavigationController alloc] initWithRootViewController:vc];
     return nav;
 }
 

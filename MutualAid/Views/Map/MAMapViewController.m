@@ -21,8 +21,6 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
-@property (nonatomic, strong) MASearchNavigationControllerDelegate *navigationControllerDelegate;
-
 @property (nonatomic, strong) NSMutableArray<MAArtwork *> *artworks;
 
 @end
@@ -51,8 +49,6 @@
 
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
-
-    self.navigationController.delegate = self.navigationControllerDelegate;
 
     // Set initial location
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(24.604467099365998, 118.08799088001251), 5000, 5000);
@@ -171,13 +167,6 @@
         _searchBar.delegate = self;
     }
     return _searchBar;
-}
-
-- (MASearchNavigationControllerDelegate *)navigationControllerDelegate {
-    if (!_navigationControllerDelegate) {
-        _navigationControllerDelegate = [MASearchNavigationControllerDelegate new];
-    }
-    return _navigationControllerDelegate;
 }
 
 - (NSMutableArray *)artworks {

@@ -64,6 +64,7 @@
 		C691E71527E6BD2A008446B6 /* MAMessageCenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C691E71327E6BD2A008446B6 /* MAMessageCenterCell.xib */; };
 		C6938B6B27609CC400F466DA /* MAStickyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */; };
 		C6938B722760E6CF00F466DA /* MAPicListCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */; };
+		C6A24978282E06CF0016E4AC /* MANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A24977282E06CF0016E4AC /* MANavigationController.m */; };
 		C6A2517427EB2E7800274B47 /* UIColor+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */; };
 		C6A2517827EB383000274B47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2517727EB383000274B47 /* LoginViewModel.swift */; };
 		C6AC216C276A37B700E71A95 /* NSTimer+MAExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC216B276A37B700E71A95 /* NSTimer+MAExt.m */; };
@@ -220,6 +221,8 @@
 		C6938B6A27609CC400F466DA /* MAStickyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAStickyBaseViewController.m; sourceTree = "<group>"; };
 		C6938B702760E6CF00F466DA /* MAPicListCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPicListCardTableViewCell.h; sourceTree = "<group>"; };
 		C6938B712760E6CF00F466DA /* MAPicListCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPicListCardTableViewCell.m; sourceTree = "<group>"; };
+		C6A24976282E06CF0016E4AC /* MANavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANavigationController.h; sourceTree = "<group>"; };
+		C6A24977282E06CF0016E4AC /* MANavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANavigationController.m; sourceTree = "<group>"; };
 		C6A2517227EB2E7800274B47 /* UIColor+MAExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MAExt.h"; sourceTree = "<group>"; };
 		C6A2517327EB2E7800274B47 /* UIColor+MAExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MAExt.m"; sourceTree = "<group>"; };
 		C6A2517727EB383000274B47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -608,6 +611,7 @@
 		C6938B6827609C6300F466DA /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C6A24979282E07990016E4AC /* Navigation */,
 				C6BC591A27748DF500973364 /* MAWebViewController.h */,
 				C6BC591B27748DF500973364 /* MAWebViewController.m */,
 				C6938B6927609CC400F466DA /* MAStickyBaseViewController.h */,
@@ -629,6 +633,15 @@
 				C644F6C527EAEDC4005D8C7E /* MALoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C6A24979282E07990016E4AC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				C6A24976282E06CF0016E4AC /* MANavigationController.h */,
+				C6A24977282E06CF0016E4AC /* MANavigationController.m */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		C6B8247127D7334300F97125 /* Actions */ = {
@@ -1002,6 +1015,7 @@
 				C676626427E75989006EB97D /* MAPersonalViewController.swift in Sources */,
 				C680C5C12768867200662440 /* MACycleBannerView.m in Sources */,
 				C64DEBCD276C7FDF003D87D0 /* MAMapViewController.m in Sources */,
+				C6A24978282E06CF0016E4AC /* MANavigationController.m in Sources */,
 				C64AB377275E2B7F00AE98EC /* NSString+MALocalized.m in Sources */,
 				C6DFDB7A282D05C000A24741 /* MAReversibleAnimationController.m in Sources */,
 				C67D781B2770B6A7005B91F7 /* MAMineHeaderView.m in Sources */,
