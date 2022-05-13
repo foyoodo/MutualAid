@@ -27,10 +27,9 @@
     MAScaleAnimationController *animationController = [MAScaleAnimationController new];
     if (operation == UINavigationControllerOperationPop) {
         animationController.reverse = YES;
-        return animationController;
     }
 
-    return nil;
+    return animationController;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
