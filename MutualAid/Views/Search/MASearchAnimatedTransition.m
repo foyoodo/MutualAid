@@ -76,7 +76,11 @@
             fromVC.view.alpha = 0.0;
             [tempSearchView layoutIfNeeded];
         } completion:^(BOOL finished) {
-            toSearchView.hidden = NO;
+            if ([transitionContext transitionWasCancelled]) {
+                fromSearchView.hidden = NO;
+            } else {
+                toSearchView.hidden = NO;
+            }
             [tempSearchView removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];

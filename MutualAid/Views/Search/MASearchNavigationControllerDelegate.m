@@ -37,10 +37,6 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    Class clz = NSClassFromString(@"MASearchViewController");
-    if ([viewController isKindOfClass:clz]) {
-        return;
-    }
     [self.interactionController wireToViewController:viewController forOperation:MAInteractionOperationPop];
 }
 
