@@ -59,6 +59,7 @@
 
 - (void)startInteractiveTransitionWithViewController:(UIViewController *)viewController {
     if (![viewController isKindOfClass:[MAWebViewController class]]) {
+        self.webViewController = nil;
         return;
     }
 
