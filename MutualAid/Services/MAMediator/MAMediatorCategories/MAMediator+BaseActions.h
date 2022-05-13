@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIViewController *)baseActions_webViewControllerWithTitle:(NSString *)title
                                                   requestURL:(NSURL *)requestURL
-                                              detailListItem:(nullable MAPicListModel *)detailListItem;
+                                              detailListItem:(MAPicListModel *)detailListItem;
 
 - (UITableViewCell *)baseActions_cellForTableView:(UITableView *)tableView
                                          withFont:(UIFont *)font

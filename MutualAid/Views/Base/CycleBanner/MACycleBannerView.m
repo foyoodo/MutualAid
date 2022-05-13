@@ -12,7 +12,6 @@
 #import "MAPicListModel.h"
 #import "NSTimer+MAExt.h"
 #import "MAMediator+BaseActions.h"
-#import "CTMediator+HandyTools.h"
 
 static const CGFloat kPageControlHeight = 35.0;
 static const NSTimeInterval kCycleScrollInterval = 3.0;
@@ -149,8 +148,10 @@ static const NSTimeInterval kCycleScrollInterval = 3.0;
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:@"详情" requestURL:[NSURL URLWithString:[self.dataSourceArray objectAtIndex:indexPath.item].jumpUrl] detailListItem:nil];
-    [CT() pushViewController:webViewController animated:YES];
+    MAPicListModel *listItem = [self.dataSourceArray objectAtIndex:indexPath.item];
+    listItem.title = @"轮播图页面";
+    UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:@"详情" requestURL:[NSURL URLWithString:listItem.jumpUrl] detailListItem:listItem];
+    [self.viewController.navigationController pushViewController:webViewController animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
