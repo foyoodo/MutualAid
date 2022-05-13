@@ -48,7 +48,7 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
             if (self.operation == MAInteractionOperationPop) {
                 self.interactive = YES;
                 [self.viewController.navigationController popViewControllerAnimated:YES];
-                [[MANavigationCornerView sharedInstance] startInteractiveTransition];
+                [[MANavigationCornerView sharedInstance] startInteractiveTransitionWithViewController:self.viewController];
             } else if (self.operation == MAInteractionOperationDismiss) {
                 // dismiss
             }

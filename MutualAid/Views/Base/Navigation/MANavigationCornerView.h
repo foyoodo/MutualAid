@@ -13,10 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (void)startInteractiveTransition;
+- (void)startInteractiveTransitionWithViewController:(UIViewController *)viewController;
 - (void)updateInteractiveTransition:(CGFloat)percentComplete panGesture:(nullable UIPanGestureRecognizer *)pan;
 - (void)cancelInteractiveTransition;
 - (void)finishInteractiveTransition;
+
+@property (nonatomic, assign, readonly) BOOL interactive;
 
 @end
 

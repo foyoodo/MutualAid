@@ -6,8 +6,11 @@
 //
 
 #import "MANavigationCornerView.h"
+#import "MAWebViewController.h"
 
 @interface MANavigationCornerView ()
+
+@property (nonatomic, assign) BOOL interactive;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -53,7 +56,14 @@
     return self;
 }
 
-- (void)startInteractiveTransition {
+- (void)startInteractiveTransitionWithViewController:(UIViewController *)viewController {
+    if (![viewController isKindOfClass:[MAWebViewController class]]) {
+        self.interactive = NO;
+        return;
+    }
+
+    self.interactive = YES;
+
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
 
     CGRect frame = self.frame;
@@ -70,6 +80,10 @@
 }
 
 - (void)updateInteractiveTransition:(CGFloat)percentComplete panGesture:(UIPanGestureRecognizer *)pan {
+    if (!self.interactive) {
+        return;
+    }
+
     CGRect frame = self.frame;
 
     percentComplete = fminf(percentComplete, 0.7);
@@ -93,10 +107,18 @@
 }
 
 - (void)cancelInteractiveTransition {
+    if (!self.interactive) {
+        return;
+    }
+
     [self removeFromSuperview];
 }
 
 - (void)finishInteractiveTransition {
+    if (!self.interactive) {
+        return;
+    }
+
     if (_pointInside) {
         [MAToast showMessage:@"已加入稍后阅读" inView:self.superview];
     }
