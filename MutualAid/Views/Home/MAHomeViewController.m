@@ -140,14 +140,9 @@
 - (void)requestData {
     [self.cycleBannerView setData:@[
         [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/d64b5e0b83d924ad8b9affe8a67d97e4.jpg" jumpUrl:@"https://h-gracetc.cn:9360/hhfxiang/train.html"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/3e6a75e32015fd3cb48b9fd0b74067fb.jpg" jumpUrl:@"https://www.wenjuan.com/s/UZBZJvuOuX/"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/4d7c82c756cb682536b8b69e582bc92b.jpg" jumpUrl:@"http://a.xiumi.us/stage/v5/2Y0D4/342485170/#/"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/c1765bf23382cad56bbbe64608d2d23a.jpg" jumpUrl:@"http://v.xiumi.us/stage/v5/2Y0D4/342768870"],
         [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/bb3275d037d620b867f723090e829e59.jpg" jumpUrl:@"http://v.xiumi.us/stage/v5/2Y0D4/342863542"],
         [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/2d11cbeb7aa52bac369e50cf1bcd0cf8.jpg" jumpUrl:@"http://v.xiumi.us/stage/v5/2Y0D4/343429730"],
         [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_banner/bannerImg/8bbea80510ebb299cbbbe84ff50d8978.jpg" jumpUrl:@"http://v.xiumi.us/stage/v5/2Y0D4/343812602"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/e928630ae162d7d917179382ee04783f.jpg" jumpUrl:@"https://mp.weixin.qq.com/s?__biz=MzA3MTMxODA2Ng==&mid=2650420564&idx=1&sn=4a307e8a5b1e192484b790599239ef43&chksm=8721fa09b056731ff1e332e2ba730f51e29449b212430d06bfe85c80b5ce6fe7eb78269a0a98&token=1749941061&lang=zh_CN#rd"],
-        [MAPicListModel modelWithTitle:@"" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_cover/coverImg/c5dcf2ac9a99a4da14aba294e82277dd.jpg" jumpUrl:@"https://www.wjx.cn/vj/wGyy4kL.aspx"],
     ]];
 }
 
@@ -291,11 +286,9 @@
     if (!_picListData) {
         _picListData = [NSMutableArray array];
         [_picListData addObjectsFromArray:@[
-            [MAPicListModel modelWithTitle:@"常见急症急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/68f4534217eda27fdb5b81ecb513a741.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=15"],
-            [MAPicListModel modelWithTitle:@"公众 CPR AED 课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/d4bf7b3e8ebe404ab48710c19afd3ae3.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=14"],
-            [MAPicListModel modelWithTitle:@"公众必会急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/8062674e17bcbcc8c920d06597b73a07.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=18"],
-            [MAPicListModel modelWithTitle:@"美国心脏协会心脏救护员课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/ed37a644d441d0d3694569d47bb5da9f.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=18"],
-            [MAPicListModel modelWithTitle:@"国际野外医学协会野外高级急救课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/c5451deb77b9185a79410b33f2096958.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=12"],
+            [MAPicListModel modelWithTitle:@"公众CPR AED课程（1.5小时）" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/2af13a082f5a977f4eab5c0ac75eed21.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=14"],
+            [MAPicListModel modelWithTitle:@"公众必会急救课程（3小时）" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/12a57edf260b24c9aaffd1468c9bfb70.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=18"],
+            [MAPicListModel modelWithTitle:@"美国心脏协会心脏救护员课程" picUrl:@"https://www.he-grace.com/files/jjxy_img/jjxy_course/coursePic/1878037db13190e5d9ce7a842d0b4697.jpg" jumpUrl:@"https://www.he-grace.com/cabinet/app/jjxy/courseMessage?id=12"],
         ]];
     }
     return _picListData;
