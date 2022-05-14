@@ -24,4 +24,13 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[MAListDataManager sharedManager] removeFromStarList:[self.dataArray objectAtIndex:indexPath.row]];
+        [MAToast showMessage:@"取消收藏" inView:self.view];
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 @end

@@ -10,7 +10,7 @@
 #import "MAPicListModel.h"
 #import "MAMediator+BaseActions.h"
 
-@interface MAPicListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MAPicListViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -57,6 +57,10 @@
     MAPicListModel *listItem = [self.dataArray objectAtIndex:indexPath.row];
     UIViewController *webViewController = [[MAMediator sharedInstance] baseActions_webViewControllerWithTitle:@"详情" requestURL:[NSURL URLWithString:listItem.jumpUrl] detailListItem:listItem];
     [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"移除";
 }
 
 - (NSMutableArray *)dataArray {

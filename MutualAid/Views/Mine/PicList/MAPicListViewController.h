@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class MAPicListModel;
 
-@interface MAPicListViewController : UIViewController
+@interface MAPicListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray<MAPicListModel *> *dataArray;
 

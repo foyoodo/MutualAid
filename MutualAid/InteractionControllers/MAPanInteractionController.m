@@ -11,6 +11,10 @@
 
 const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
 
+@interface MAPanInteractionController () <UIGestureRecognizerDelegate>
+
+@end
+
 @implementation MAPanInteractionController {
     BOOL _shouldCompleteTransition;
 }
@@ -29,6 +33,7 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
     }
 
     pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    pan.delegate = self;
     [view addGestureRecognizer:pan];
 
     objc_setAssociatedObject(view, kMAHorizontalPanGestureKey, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -86,6 +91,18 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
         default:
             break;
     }
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    BOOL shouldBegin = YES;
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint vel = [pan velocityInView:pan.view];
+        if (vel.x < 0) {
+            shouldBegin = NO;
+        }
+    }
+    return shouldBegin;
 }
 
 @end

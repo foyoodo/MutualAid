@@ -24,4 +24,13 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[MAListDataManager sharedManager] removeFromReadList:[self.dataArray objectAtIndex:indexPath.row]];
+        [MAToast showMessage:@"移除成功" inView:self.view];
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 @end
