@@ -56,28 +56,30 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
         }
 
         case UIGestureRecognizerStateChanged: {
-            CGFloat fraction = translation.x / pan.view.frame.size.width;
-            fraction = fminf(fmaxf(fraction, 0.0), 1.0);
-            _shouldCompleteTransition = (fraction > 0.5);
+            if (self.interactive) {
+                CGFloat fraction = translation.x / pan.view.frame.size.width;
+                fraction = fminf(fmaxf(fraction, 0.0), 1.0);
+                _shouldCompleteTransition = (fraction > 0.5);
 
-            [self updateInteractiveTransition:fraction];
-            [[MANavigationCornerView sharedInstance] updateInteractiveTransition:fraction panGesture:pan];
-
-            self.interactive = YES;
+                [self updateInteractiveTransition:fraction];
+                [[MANavigationCornerView sharedInstance] updateInteractiveTransition:fraction panGesture:pan];
+            }
             break;
         }
 
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled: {
-            self.completionSpeed = 0.5;
-            if (!_shouldCompleteTransition || pan.state == UIGestureRecognizerStateCancelled) {
-                [self cancelInteractiveTransition];
-                [[MANavigationCornerView sharedInstance] cancelInteractiveTransition];
-            } else {
-                [self finishInteractiveTransition];
-                [[MANavigationCornerView sharedInstance] finishInteractiveTransition];
+            if (self.interactive) {
+                self.interactive = NO;
+                self.completionSpeed = 0.5;
+                if (!_shouldCompleteTransition || pan.state == UIGestureRecognizerStateCancelled) {
+                    [self cancelInteractiveTransition];
+                    [[MANavigationCornerView sharedInstance] cancelInteractiveTransition];
+                } else {
+                    [self finishInteractiveTransition];
+                    [[MANavigationCornerView sharedInstance] finishInteractiveTransition];
+                }
             }
-            self.interactive = NO;
             break;
         }
 
