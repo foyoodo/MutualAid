@@ -12,11 +12,21 @@ static const NSTimeInterval kAnimationDuration = 0.25;
 
 @interface UITabBarController (MATabBarPrivate)
 
+@property (nonatomic, assign) CGFloat ma_height;
+
 @property (nonatomic, assign) BOOL ma_tabBarHidden;
 
 @end
 
 @implementation UITabBarController (MATabBarPrivate)
+
+- (CGFloat)ma_height {
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
+}
+
+- (void)setMa_height:(CGFloat)ma_height {
+    objc_setAssociatedObject(self, @selector(ma_height), @(ma_height), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 - (BOOL)ma_tabBarHidden {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -47,27 +57,30 @@ static const NSTimeInterval kAnimationDuration = 0.25;
     [self ma_viewWillAppear:animated];
 
     if (self.ma_prefersTabBarHidden && !self.tabBarController.ma_tabBarHidden) {
+        self.tabBarController.ma_tabBarHidden = YES;
         [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             CGRect frame = self.tabBarController.tabBar.frame;
-            frame.origin.y += self.tabBarController.tabBar.frame.size.height;
+            frame.origin.y += self.tabBarController.ma_height;
             self.tabBarController.tabBar.frame = frame;
-        } completion:^(BOOL finished) {
-            self.tabBarController.ma_tabBarHidden = YES;
-        }];
+        } completion:nil];
     }
 }
 
 - (void)ma_viewDidAppear:(BOOL)animated {
     [self ma_viewDidAppear:animated];
 
+    if ([self isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBarController = (UITabBarController *)self;
+        tabBarController.ma_height = tabBarController.tabBar.frame.size.height;
+    }
+
     if (self.tabBarController.ma_tabBarHidden && !self.ma_prefersTabBarHidden) {
+        self.tabBarController.ma_tabBarHidden = NO;
         [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             CGRect frame = self.tabBarController.tabBar.frame;
-            frame.origin.y -= self.tabBarController.tabBar.frame.size.height;
+            frame.origin.y -= self.tabBarController.ma_height;
             self.tabBarController.tabBar.frame = frame;
-        } completion:^(BOOL finished) {
-            self.tabBarController.ma_tabBarHidden = NO;
-        }];
+        } completion:nil];
     }
 }
 

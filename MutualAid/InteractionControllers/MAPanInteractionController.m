@@ -64,7 +64,7 @@ const void *kMAHorizontalPanGestureKey = &kMAHorizontalPanGestureKey;
             if (self.interactive) {
                 CGFloat fraction = translation.x / pan.view.frame.size.width;
                 fraction = fminf(fmaxf(fraction, 0.0), 1.0);
-                _shouldCompleteTransition = (fraction > 0.5);
+                _shouldCompleteTransition = (fraction > 0.5) || (vel.x > 2300) || (fraction > 0.2 && vel.x > 1000);
 
                 [self updateInteractiveTransition:fraction];
                 [[MANavigationCornerView sharedInstance] updateInteractiveTransition:fraction panGesture:pan];
