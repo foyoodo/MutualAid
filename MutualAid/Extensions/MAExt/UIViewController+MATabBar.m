@@ -7,6 +7,7 @@
 
 #import "UIViewController+MATabBar.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 static const NSTimeInterval kAnimationDuration = 0.25;
 
@@ -19,6 +20,16 @@ static const NSTimeInterval kAnimationDuration = 0.25;
 @end
 
 @implementation UITabBarController (MATabBarPrivate)
+
+- (void)ma_viewDidAppear:(BOOL)animated {
+    struct objc_super superObj = {
+        .receiver = self,
+        .super_class = [UIViewController class]
+    };
+    ((void(*)(struct objc_super *, SEL, BOOL))(objc_msgSendSuper))(&superObj, @selector(ma_viewDidAppear:), animated);
+
+    self.ma_height = self.tabBar.frame.size.height;
+}
 
 - (CGFloat)ma_height {
     return [objc_getAssociatedObject(self, _cmd) floatValue];
@@ -68,11 +79,6 @@ static const NSTimeInterval kAnimationDuration = 0.25;
 
 - (void)ma_viewDidAppear:(BOOL)animated {
     [self ma_viewDidAppear:animated];
-
-    if ([self isKindOfClass:[UITabBarController class]]) {
-        UITabBarController *tabBarController = (UITabBarController *)self;
-        tabBarController.ma_height = tabBarController.tabBar.frame.size.height;
-    }
 
     if (self.tabBarController.ma_tabBarHidden && !self.ma_prefersTabBarHidden) {
         self.tabBarController.ma_tabBarHidden = NO;
