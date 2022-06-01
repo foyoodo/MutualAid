@@ -35,6 +35,23 @@
     [self tabBarController:self didSelectViewController:self.viewControllers.firstObject];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    CGRect frame = self.floatingButton.frame;
+    frame.origin.x = self.view.frame.size.width - frame.size.width - 8;
+    frame.origin.y = self.view.frame.size.height - frame.size.height - self.tabBar.frame.size.height - 8;
+    self.floatingButton.frame = frame;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    CGRect frame = self.floatingButton.frame;
+    frame.origin.y -= self.view.safeAreaInsets.bottom;
+    self.floatingButton.frame = frame;
+}
+
 #pragma mark - Private Methods
 
 static inline UIViewController *tabBarItemWithName(NSString *name, NSString *image, NSString *selectedImage) {
