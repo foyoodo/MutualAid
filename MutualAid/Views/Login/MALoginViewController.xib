@@ -90,7 +90,6 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="s7L-KE-fsv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="2lD-Kt-aQk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="s7L-KE-fsv" secondAttribute="bottom" constant="398" id="frd-uF-mMM"/>
                 <constraint firstItem="s7L-KE-fsv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="xiH-Ky-fRz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s7L-KE-fsv" secondAttribute="trailing" constant="32" id="xs0-iv-lrm"/>
             </constraints>

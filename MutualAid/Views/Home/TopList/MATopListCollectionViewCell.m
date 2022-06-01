@@ -31,6 +31,7 @@
 
         UILabel *titleLabel = [UILabel new];
         titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.adjustsFontSizeToFitWidth = YES;
         [titleLabel setFont:[UIFont systemFontOfSize:12]];
         [self.contentView addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

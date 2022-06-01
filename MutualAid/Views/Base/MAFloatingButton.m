@@ -33,7 +33,7 @@
         self.fy_draggableViewDelegate = self;
 
         FYDraggableViewConfiguration *configuration = [FYDraggableViewConfiguration configurationWithDirection:FYDraggableViewDirectionAll position:FYDraggableViewPositionRight | FYDraggableViewPositionBottom];
-        configuration.extraContentInsets = UIEdgeInsetsMake(0, 0, 16, 8);
+        configuration.extraContentInsets = UIEdgeInsetsMake(0, 0, 8, 8);
         self.fy_draggableViewConfiguration = configuration;
 
         self.titleLabel.numberOfLines = 2;

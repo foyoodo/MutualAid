@@ -49,6 +49,7 @@
         }];
 
         UILabel *titleLabel = [UILabel new];
+        titleLabel.numberOfLines = 0;
         titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         [containerView addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -34,11 +34,12 @@
         [self addSubview:(_leftContainerView = leftContainerView)];
         [leftContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(12);
-            make.right.equalTo(self).offset(-12);
+            make.right.lessThanOrEqualTo(self).offset(-12);
             make.centerY.equalTo(self);
         }];
 
         UILabel *titleLabel = [UILabel new];
+        titleLabel.adjustsFontSizeToFitWidth = YES;
         titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         [self.leftContainerView addSubview:(_titleLabel = titleLabel)];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,6 +64,10 @@
             make.centerY.equalTo(leftContainerView);
             make.width.equalTo(button.mas_height).multipliedBy(3);
             make.height.equalTo(@(32));
+        }];
+
+        [leftContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.lessThanOrEqualTo(button.mas_left).offset(-12);
         }];
 
         self.imageView.image = [UIImage systemImageNamed:@"books.vertical"];
@@ -98,6 +103,7 @@
         _descLabel = [UILabel new];
         _descLabel.font = [UIFont systemFontOfSize:12];
         _descLabel.textColor = [UIColor lightGrayColor];
+        _descLabel.adjustsFontSizeToFitWidth = YES;
         [self.leftContainerView addSubview:_descLabel];
         [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.titleLabel.mas_bottom).offset(8);
